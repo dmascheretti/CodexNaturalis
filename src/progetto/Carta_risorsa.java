@@ -24,6 +24,7 @@ public Carta_risorsa(String risorse1,String risorse2, String risorse3,String ris
 	this.celle=new Cella[2][3];
 	this.risorse1=risorse1;
 	this.risorse2=risorse2;
+	System.out.println("cccc");
 	this.risorse3=risorse3;
 	this.risorse4=risorse4;
 	this.punti=punti;
