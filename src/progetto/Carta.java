@@ -10,6 +10,7 @@ public class Carta {
 	private String risorse1,risorse2,risorse3,risorse4;
 	private String risorse1r,risorse2r;
 	private Colore_carta colore;
+	private int a;
 
 	
 	/**Creates a gold card
