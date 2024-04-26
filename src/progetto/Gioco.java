@@ -91,8 +91,8 @@ public void Gioca() {
 	sc.nextLine();
 	}while(s!=1 || s!=2);
 	
-		giocatori[i].pescaCarta(mazzo_oro.pescaCarta());
-		mazzo_oro.rimuoviCarta(mazzo_oro.cartaPescata());
+		//giocatori[i].pescaCarta(mazzo_oro.pescaCarta());
+		//smazzo_oro.rimuoviCarta(mazzo_oro.cartaPescata());
 
 		giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
 		mazzo_risorse.rimuoviCarta(mazzo_risorse.cartaPescata());
@@ -122,6 +122,7 @@ public void Gioca() {
 	
 	
 	}
+	
 	
 }
 }

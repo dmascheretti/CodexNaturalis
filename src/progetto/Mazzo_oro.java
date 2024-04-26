@@ -1,5 +1,5 @@
 package progetto;
-
+/*
 import java.util.ArrayList;
 
 import java.util.Collections;
@@ -23,7 +23,7 @@ public Mazzo_oro(){
 	mazzo_oro.add(carta_oro3);
 	//mazzo_oro.add(Carta_oro4);
 	//mazzo_oro.add(Carta_oro5);
-	/*
+	
 	mazzo_oro.add(Carta_oro6);
 	mazzo_oro.add(Carta_oro7);
 	mazzo_oro.add(Carta_oro8);
@@ -59,7 +59,7 @@ public Mazzo_oro(){
 	mazzo_oro.add(Carta_oro38);
 	mazzo_oro.add(Carta_oro39);
 	mazzo_oro.add(Carta_oro40);
-	*/
+	
 	
 }
 
@@ -103,6 +103,5 @@ public Carta cartaPescata()
 	mazzo_oro.remove(mazzo_oro.get(0));
 }
 */
-}
 
 

@@ -7,8 +7,7 @@ private final String name;
 private ArrayList<Carta> mano;
 private Segnalino segnalino;
 private static int somma=0;
-private Cella[][] tavolo;
-
+private int[][]tabellone;
 
 
 
@@ -16,6 +15,7 @@ public Giocatore(String name, Colore colore) {
 	this.name=name;
 	this.mano= new ArrayList<Carta>();
 	this.segnalino=new Segnalino(colore);
+	this.tabellone=new int [40][40];
 }
 
 public String getSegnalino() {
@@ -42,6 +42,10 @@ public void giocaCarta(Carta carta) {
 	carta.getCarta();
 	mano.remove(carta);
 }
+//modificare Carta in Carta_iniziale
+public void giocaCartaIniziale(Carta carta) {
+	tabellone[19][19]=carta.getID();
+}
 
 public void getPunteggio(int punti) {
 	somma=somma+punti;
@@ -49,6 +53,11 @@ public void getPunteggio(int punti) {
 
 public int getSomma() {
 	return (somma);
+}
+
+//da finire (come metodo get carta in Carta)
+public int[][] getTabellone() {
+	return tabellone;
 }
 
 

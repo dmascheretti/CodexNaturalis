@@ -1,5 +1,5 @@
 package progetto;
-/*
+
 public class Carta_oro {
 protected String risorsenec;
 private int punti;
@@ -8,18 +8,8 @@ private String risorse1,risorse2,risorse3,risorse4;
 private Regno regno1,regno2,regno3,regno4;
 
 
-public Carta_oro(String risorse, int punti)
-{
-	this.celle=new Cella[2][3];
-	this.risorse=risorse;
-	this.punti=punti;
-	this.celle[0][0]=new Cella(0,0,this.risorse);
-	this.celle[0][1]=new Cella(0,0,"Punteggio");
-	this.celle[1][0]=new Cella(0,0,"Risorsa");
-	this.celle[1][1]=new Cella(0,0,"Risorsa");
-	this.celle[1][2]=new Cella(0,0,"Risorsa");
-	this.celle[0][2]=new Cella(0,0,"Risorsa");
-}
+//inserire super() come in carta risorsa
+
 public Carta_oro(String risorse1,String risorse2, String risorse3,String risorse4,int punti, String risorsenec)
 {
 	this.celle=new Cella[2][3];

@@ -1,27 +1,15 @@
 package progetto;
 
-public class Carta_risorsa {
+public class Carta_risorsa extends Carta{
 	private int punti;
 	private Cella[][] celle;
 	private String risorse1,risorse2,risorse3,risorse4;
 	private Colore_carta color;
-/*
-public Carta_risorsa(String risorse, int punti){
-	this.risorse=risorse;
-	this.punti=punti;
-	celle=new Cella[2][3];
-	this.celle[0][0]=new Cella(0,0,"Angolo visibile");
-	this.celle[0][1]=new Cella(0,1,"Angolo nascosto");
-	this.celle[0][2]=new Cella(0,2,"Risorsa posseduta");
-	this.celle[1][0]=new Cella(1,0,"Oggetto posseduto");
-	this.celle[1][1]=new Cella(1,1,"Oggetto posseduto");
-	this.celle[1][2]=new Cella(1,2,"Oggetto posseduto");
 
-}
-*/
-public Carta_risorsa(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta color)
+public Carta_risorsa(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta color, String risorse1r, String risorse2r, int ID)
 {
-	this.celle=new Cella[2][3];
+	super(risorse1,risorse2, risorse3, risorse4, punti, risorse1r, color, risorse2r,ID);
+	/*this.celle=new Cella[2][3];
 	this.risorse1=risorse1;
 	this.risorse2=risorse2;
 	System.out.println("cccc");
@@ -37,6 +25,8 @@ public Carta_risorsa(String risorse1,String risorse2, String risorse3,String ris
 	this.celle[1][1]=new Cella(1,1,"");
 	this.celle[1][0]=new Cella(1,2,risorse3);
 	this.celle[1][2]=new Cella(0,2,risorse4);
+	
+	*/
 }
 
 

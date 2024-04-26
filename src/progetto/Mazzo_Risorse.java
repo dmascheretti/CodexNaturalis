@@ -7,7 +7,7 @@ import java.util.Collections;
 
 public class Mazzo_Risorse {
     private ArrayList<Carta> mazzo_risorse = new ArrayList<Carta>();
-    private Carta carta_risorsa1=new Carta(Regno.ANIMALE.toString(),Regno.FUNGHI.getRegno(),Regno.NULL.toString(),
+    private Carta carta_risorsa1=new Carta_risorsa(Regno.ANIMALE.toString(),Regno.FUNGHI.getRegno(),Regno.NULL.toString(),
     		Regno.INSETTI.toString(),1,Colore_carta.ROSSO,Regno.INSETTI.toString(),
     		Regno.VEGETALE.toString());
     
