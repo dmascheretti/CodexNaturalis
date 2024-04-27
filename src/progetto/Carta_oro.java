@@ -1,16 +1,27 @@
 package progetto;
 
-public class Carta_oro {
-protected String risorsenec;
-private int punti;
-private Cella[][] celle;
-private String risorse1,risorse2,risorse3,risorse4;
-private Regno regno1,regno2,regno3,regno4;
+public class Carta_oro extends Carta{
+	
+	/*
+	protected String risorsenec;
+	private int punti;
+	private Cella[][] celle;
+	private String risorse1,risorse2,risorse3,risorse4;
+
+	*/
+	
+public Carta_oro(String risorse1, String risorse2, String risorse3, String risorse4, int punti, String risorsenec,
+			Colore_carta colore, String risorse1r, int ID) {
+		super(risorse1, risorse2, risorse3, risorse4, punti, risorsenec, colore, risorse1r, ID);
+	}
+
+}
+
 
 
 //inserire super() come in carta risorsa
-
-public Carta_oro(String risorse1,String risorse2, String risorse3,String risorse4,int punti, String risorsenec)
+/*
+public Carta_oro extends Carta(String risorse1,String risorse2, String risorse3,String risorse4,int punti, String risorsenec)
 {
 	this.celle=new Cella[2][3];
 	this.risorse1=risorse1;
