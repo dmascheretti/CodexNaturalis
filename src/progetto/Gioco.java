@@ -8,14 +8,14 @@ public class Gioco {
 private Mazzo_oro mazzo_oro;
 private Mazzo_Risorse mazzo_risorse;
 private Giocatore[] giocatori;
-//private Mazzo_obiettivo mazzo_obiettivo;
-//private Segnalino segnalino;
-//private static Integer[] tabella=new Integer[30];
+private Mazzo_iniziale mazzo_iniziale;
+
 
 
 public Gioco() {
 	this.mazzo_risorse=new Mazzo_Risorse();
 	this.mazzo_oro=new Mazzo_oro();
+	this.mazzo_iniziale=new Mazzo_iniziale();
 	//this.mazzo_obiettivo=new Mazzo_obiettivo();
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Selezione numero giocatori: ");
@@ -30,36 +30,31 @@ public Gioco() {
     int randomInt = random.nextInt(n);
 	this.giocatori=new Giocatore[n];
 	for (int i=0;i<n;i++) {
-		int k=i+1;
-		System.out.println("Selezione nome giocatore "+k+": ");
+		System.out.println("Selezione nome giocatore "+(i+1)+": ");
 		String name=sc.next();
 		if(i==randomInt) this.giocatori[i]=new Giocatore(name,Colore.NERO);
 		else if(i==0) this.giocatori[i]=new Giocatore(name,Colore.ROSSO);
 		else if (i==1) this.giocatori[i]=new Giocatore(name,Colore.GIALLO);
 		else if (i==2) this.giocatori[i]=new Giocatore(name,Colore.ROSSO);
-		else this.giocatori[i]=new Giocatore(name,Colore.ROSSO);
 		
 	}
 }
 
 public void Gioca() {
 	
-	//mazzo_oro.getMazzo();
-	//mazzo_oro.mescolaMazzo();
-	mazzo_risorse.getMazzo();
-	//mazzo_risorse.mescolaMazzo();
+	mazzo_iniziale.mescolaMazzo();
+	mazzo_risorse.mescolaMazzo();
+	mazzo_oro.mescolaMazzo();
 	System.out.println("\n\n\n");
 	
 	//PESCA CARTE INIZIALI
 	
 	for(int i=0;i<giocatori.length;i++) {
+		giocatori[i].pescaCarta(mazzo_iniziale.pescaCarta());
 		giocatori[i].pescaCarta(mazzo_oro.pescaCarta());
-		mazzo_oro.rimuoviCarta(mazzo_oro.cartaPescata());
 		
 		for(int j=0;j<2;j++)giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
 		
-		//giocatori[i].pescaCarta(mazzo_iniziale.pescaCarta());
-		//giocatori[i].pescaCarta(mazzo_obiettivo.pescaCarta());
 		
 	}
 	

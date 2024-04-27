@@ -1,28 +1,27 @@
 package progetto;
-/*
 import java.util.ArrayList;
 
 import java.util.Collections;
 
 
 public class Mazzo_oro {
-//private Carta_oro[] mazzo_oro;
-private ArrayList<Carta> mazzo_oro = new ArrayList<Carta>();
-private Carta carta_oro1=new Carta(Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),
-		Regno.NULL.toString(),Regno.INSETTI.toString(),1,"VVV", Colore_carta.BLU, "h2h","jhshj");
-private Carta carta_oro2=new Carta(Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),
-		Regno.NULL.toString(),Regno.INSETTI.toString(),1,"VVV", Colore_carta.BLU, "h2h","jhshj");
-private Carta carta_oro3=new Carta(Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),
-		Regno.NULL.toString(),Regno.INSETTI.toString(),1,"VVV", Colore_carta.BLU, "h2h","jhshj");
-
+	
+//esempi non carte reali
+private ArrayList<Carta_oro> mazzo_oro = new ArrayList<Carta_oro>();
+private Carta_oro carta_oro1=new Carta_oro(Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),
+		Regno.NULL.toString(),Regno.INSETTI.toString(),1,"VVV", Colore_carta.BLU,"jhshj",05);
+private Carta_oro carta_oro2=new Carta_oro(Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),
+		Regno.NULL.toString(),Regno.INSETTI.toString(),1,"VVV", Colore_carta.BLU,"jhshj",06);
+private Carta_oro carta_oro3=new Carta_oro(Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),
+		Regno.NULL.toString(),Regno.INSETTI.toString(),1,"VVV", Colore_carta.BLU, "h2h",07);
 
 public Mazzo_oro(){
 	//this.mazzo_oro=new Carta_oro[40];
 	mazzo_oro.add(carta_oro1);
 	mazzo_oro.add(carta_oro2);
 	mazzo_oro.add(carta_oro3);
-	//mazzo_oro.add(Carta_oro4);
-	//mazzo_oro.add(Carta_oro5);
+
+/*
 	
 	mazzo_oro.add(Carta_oro6);
 	mazzo_oro.add(Carta_oro7);
@@ -59,7 +58,7 @@ public Mazzo_oro(){
 	mazzo_oro.add(Carta_oro38);
 	mazzo_oro.add(Carta_oro39);
 	mazzo_oro.add(Carta_oro40);
-	
+	*/
 	
 }
 
@@ -72,13 +71,13 @@ for(int i=0;i<mazzo_oro.size();i++) mazzo_oro.get(i).getCarta();
 public void mescolaMazzo() {
 	Collections.shuffle(mazzo_oro);
 }
-public void rimuoviCarta(Carta carta)
+public void rimuoviCarta(Carta_oro carta)
 {
 	mazzo_oro.remove(carta);
 }
 
 
-public Carta pescaCarta()
+public Carta_oro pescaCarta()
 {
 	//System.out.println("Hai pescato:\t\t");
 	//mazzo_oro.get(0).getCarta1();
@@ -91,9 +90,7 @@ public void printCarta(Carta carta_oro) {
 		carta_oro.getCarta();
 }
 
-public Carta cartaPescata()
-{
-	return mazzo_oro.get(0);
+
 }
 
 
