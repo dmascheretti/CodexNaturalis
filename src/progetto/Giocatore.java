@@ -56,8 +56,9 @@ public int getSomma() {
 }
 
 //da finire (come metodo get carta in Carta)
-public int[][] getTabellone() {
-	return tabellone;
+public void getTabellone() {
+	for(int i=0;i<40;i++)
+		for(int j=0;j<40;j++) System.out.println(tabellone[i][j]);
 }
 
 
