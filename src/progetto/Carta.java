@@ -71,6 +71,7 @@ public abstract class Carta {
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, Colore_carta colore,
 			String ris1Retro, int ID)
 	{
+		//da vedere se servono quattro risorse settate a null sul retro
 		this.celle_fronte=new Cella[2][3];
 		this.celle_retro=new Cella[2][3];
 		this.ris1Retro=ris1Retro;
