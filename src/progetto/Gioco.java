@@ -45,8 +45,8 @@ public void Gioca() {
 	
 	mazzo_iniziale.mescolaMazzo();
 	mazzo_risorse.mescolaMazzo();
-	mazzo_oro.mescolaMazzo();
-	
+	//mazzo_oro.mescolaMazzo();
+	mazzo_oro.getMazzo();
 	System.out.println("\n\n\n");
 	
 	

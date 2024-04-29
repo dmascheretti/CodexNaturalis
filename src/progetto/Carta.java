@@ -161,6 +161,7 @@ public abstract class Carta {
 	public void getCarta(){
 		System.out.println("\n");
 		System.out.println("punti carta: "+punti);
+		System.out.println("\nrisorse necessarie: "+risorsenec+"\n");
 		System.out.println("--------------------------");
 		for(int i=0;i<2;i++) {
 			if(i==1)System.out.println("\n");
@@ -170,7 +171,7 @@ public abstract class Carta {
 				}
 				else {
 					if(celle_fronte[i][j].getTipo()=="NULL")
-						{System.out.print("");}
+						System.out.print(" / " );
 					else{				System.out.print(celle_fronte[i][j].getTipo()+"\t");
 	 }
 					
@@ -179,8 +180,8 @@ public abstract class Carta {
 			
 		}
 		System.out.println("\n--------------------------");
-		System.out.println("risorse necessarie: "+risorsenec);
-		System.out.println("\n\n\n");
+		
+		System.out.println("\n");
 		
 		System.out.println("--------------------------");
 		for(int i=0;i<2;i++) {
