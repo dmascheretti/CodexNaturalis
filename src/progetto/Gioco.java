@@ -45,19 +45,20 @@ public void Gioca() {
 	mazzo_iniziale.mescolaMazzo();
 	mazzo_risorse.mescolaMazzo();
 	mazzo_oro.mescolaMazzo();
+	
 	System.out.println("\n\n\n");
 	
-	//PESCA CARTE INIZIALI
 	
 	for(int i=0;i<giocatori.length;i++) {
-		giocatori[i].pescaCarta(mazzo_iniziale.pescaCarta());
-		giocatori[i].pescaCarta(mazzo_oro.pescaCarta());
+		giocatori[i].pescaCarta(mazzo_iniziale.cartaPescata());
+		mazzo_iniziale.rimuoviCarta();
+		//giocatori[i].pescaCarta(mazzo_oro.pescaCarta());
 		
-		for(int j=0;j<2;j++)giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
+		//for(int j=0;j<2;j++)giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
 		
-		
-	}
+		}
 	
+
 	
 	for(int i=0;i<giocatori.length;i++) {
 	System.out.println(giocatori[i].getName().toUpperCase()+" : "+giocatori[i].getSegnalino()); 
@@ -70,6 +71,8 @@ public void Gioca() {
 	do {
 	h=sc.nextInt();
 	}while(h<1||h>3);
+	
+	/*
 	int punti = (giocatori[i].scegliCarta(h-1).getPunteggio());
 	giocatori[i].giocaCarta(giocatori[i].scegliCarta(h-1));
 	System.out.println("PUNTI TOTALI "+ giocatori[i].getName());
@@ -118,6 +121,8 @@ public void Gioca() {
 	
 	}
 	
+	*/
+}
 	
 }
 }
