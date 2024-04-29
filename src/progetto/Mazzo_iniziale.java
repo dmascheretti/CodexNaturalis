@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
  
 
-public class Mazzo_iniziale {
+public class Mazzo_iniziale extends Mazzo {
     private ArrayList<Carta_iniziale> mazzo_iniziale = new ArrayList<Carta_iniziale>();
 
     private Carta_iniziale carta_iniziale1=new Carta_iniziale(Regno.VEGETALE.toString(),Regno.FUNGHI.toString(),Regno.INSETTI.toString(),Regno.ANIMALE.toString(),

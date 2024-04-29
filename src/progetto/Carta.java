@@ -1,6 +1,6 @@
 package progetto;
 
-
+// 49 carte 
 public abstract class Carta {
 
 	private String risorsenec;
@@ -11,6 +11,7 @@ public abstract class Carta {
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
 	private String ris1Centro, ris2Centro;
 	private Colore_carta colore;
+	private String obiettivo;
 	protected final int ID;
 
 	
@@ -22,7 +23,7 @@ public abstract class Carta {
 	 * @param punti: cars points 
 	 * @param risorsenec: the necessary resources to play a card 
 	 * @param colore: cards color
-	 * @param ris1Retro: back ressource 
+	 * @param ris1Retro: back resource 
 	 * @param ID: cards identification code 
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, 
@@ -146,7 +147,12 @@ public abstract class Carta {
 		this.celle_retro[1][2]=new Cella(0,2,ris4Retro);
 	}
 	
-	
+	// obiettivo
+	public Carta(int ID, int punti, String obiettivo) {
+		this.ID=ID; 
+		this.punti=punti;
+		this.obiettivo=obiettivo;
+	}
 
 
 	/**
