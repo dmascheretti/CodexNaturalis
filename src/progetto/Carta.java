@@ -5,8 +5,8 @@ public abstract class Carta {
 
 	private String risorsenec;
 	private int punti;
-	private Cella[][] celle_fronte;
-	private Cella[][] celle_retro;
+	protected Cella[][] celle_fronte;
+	protected Cella[][] celle_retro;
 	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
 	private String ris1Centro, ris2Centro;
