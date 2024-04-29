@@ -1,5 +1,5 @@
 package progetto;
-
+//FORSE DA ELIMINARE SEGNALINO NON SERVE 
 //import java.util.Random;
 
 public class Segnalino {

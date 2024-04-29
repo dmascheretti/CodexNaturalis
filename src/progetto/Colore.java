@@ -1,6 +1,6 @@
 package progetto;
 
-
+//FORSE DA ELIMINARE COLORE SEGNALINO NON SERVE 
 public enum Colore {
 ROSSO, BLU, VERDE, GIALLO, NERO;
 }
