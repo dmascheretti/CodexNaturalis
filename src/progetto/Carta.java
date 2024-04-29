@@ -5,8 +5,8 @@ public abstract class Carta {
 
 	private String risorsenec;
 	private int punti;
-	private Cella[][] celle_fronte;
-	private Cella[][] celle_retro;
+	protected Cella[][] celle_fronte;
+	protected Cella[][] celle_retro;
 	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
 	private String ris1Centro, ris2Centro;
@@ -129,17 +129,17 @@ public abstract class Carta {
 		
 		this.celle_fronte[0][0]=new Cella(0,0,risorse1);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(1,0,risorse2);
+		this.celle_fronte[0][2]=new Cella(0,2,risorse2);
 		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,2,risorse3);
+		this.celle_fronte[1][0]=new Cella(1,0,risorse3);
 		this.celle_fronte[1][2]=new Cella(0,2,risorse4);
 		
 		this.celle_retro[0][0]=new Cella(0,0, risorse1r);
 		this.celle_retro[0][1]=new Cella(0,1,ris1Centro);
-		this.celle_retro[0][2]=new Cella(1,0,risorse2r);
+		this.celle_retro[0][2]=new Cella(0,2,risorse2r);
+		this.celle_retro[1][0]=new Cella(1,1,risorse3r);
 		this.celle_retro[1][1]=new Cella(1,1,ris2Centro);
-		this.celle_retro[1][0]=new Cella(1,2,risorse3r);
-		this.celle_retro[1][2]=new Cella(0,2,risorse4r);
+		this.celle_retro[1][2]=new Cella(1,2,risorse4r);
 	}
 	
 	

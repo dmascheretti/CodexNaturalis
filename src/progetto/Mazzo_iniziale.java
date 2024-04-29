@@ -5,18 +5,19 @@ import java.util.Collections;
  
 
 public class Mazzo_iniziale {
+	
     private ArrayList<Carta_iniziale> mazzo_iniziale = new ArrayList<Carta_iniziale>();
 
-    private Carta_iniziale carta_iniziale1=new Carta_iniziale(Regno.VEGETALE.toString(),Regno.FUNGHI.toString(),Regno.INSETTI.toString(),Regno.ANIMALE.toString(),
-    		Regno.ANIMALE.toString(),"",Regno.FUNGHI.toString(),"",Regno.FUNGHI.toString(),Regno.NULL.toString(),01);
-    private Carta_iniziale carta_iniziale2=new Carta_iniziale(Regno.VEGETALE.toString(),Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),Regno.INSETTI.toString(),
-    		"","","","",Regno.ANIMALE.toString(),Regno.INSETTI.toString(),02);
+    private Carta_iniziale carta_iniziale1=new Carta_iniziale(Regno.VEGETALE.toString(),Regno.INSETTI.toString(),Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),
+    		"","","","",Regno.ANIMALE.toString(),Regno.INSETTI.toString(),01);
+    private Carta_iniziale carta_iniziale2=new Carta_iniziale(Regno.INSETTI.toString(),Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),Regno.VEGETALE.toString(),
+    		"","","","",Regno.VEGETALE.toString(),Regno.FUNGHI.toString(),02);
     
-    private Carta_iniziale carta_iniziale3=new Carta_iniziale(Regno.INSETTI.toString(),Regno.FUNGHI.toString(),Regno.VEGETALE.toString(),Regno.ANIMALE.toString(),
-    		"","","","",Regno.VEGETALE.toString(),Regno.FUNGHI.toString(),03);
+    private Carta_iniziale carta_iniziale3=new Carta_iniziale(Regno.VEGETALE.toString(),Regno.INSETTI.toString(),Regno.FUNGHI.toString(),Regno.INSETTI.toString(),
+    		Regno.ANIMALE.toString(),"","",Regno.FUNGHI.toString(),Regno.FUNGHI.toString(),"",03);
     
-    private Carta_iniziale carta_iniziale4=new Carta_iniziale(Regno.FUNGHI.toString(),Regno.INSETTI.toString(),Regno.ANIMALE.toString(),Regno.VEGETALE.toString(),
-    		"",Regno.INSETTI.toString(),"",Regno.VEGETALE.toString(),Regno.INSETTI.toString(),Regno.NULL.toString(),04);
+    private Carta_iniziale carta_iniziale4=new Carta_iniziale(Regno.FUNGHI.toString(),Regno.VEGETALE.toString(),Regno.INSETTI.toString(),Regno.ANIMALE.toString(),
+    		"",Regno.VEGETALE.toString(),Regno.INSETTI.toString(),"",Regno.INSETTI.toString(),"",04);
     
   
 
@@ -45,6 +46,10 @@ public class Mazzo_iniziale {
 
     public Carta_iniziale cartaPescata() {
         return mazzo_iniziale.get(0);
+    }
+    
+    public void rimuoviCarta() {
+    	mazzo_iniziale.remove(0);
     }
 
 }
