@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class Mazzo_oro {
+public class Mazzo_oro extends Mazzo{
 	
 //esempi non carte reali
 private ArrayList<Carta_oro> mazzo_oro = new ArrayList<Carta_oro>();

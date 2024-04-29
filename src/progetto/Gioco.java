@@ -1,5 +1,6 @@
 package progetto;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -71,6 +72,9 @@ public void Gioca() {
 	do {
 	h=sc.nextInt();
 	}while(h<1||h>3);
+	
+	System.out.println("\f");
+	
 	
 	/*
 	int punti = (giocatori[i].scegliCarta(h-1).getPunteggio());

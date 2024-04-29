@@ -1,6 +1,6 @@
 package progetto;
 
-
+// 49 carte 
 public abstract class Carta {
 
 	private String risorsenec;
@@ -11,6 +11,7 @@ public abstract class Carta {
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
 	private String ris1Centro, ris2Centro;
 	private Colore_carta colore;
+	private String obiettivo;
 	protected final int ID;
 
 	
@@ -22,7 +23,7 @@ public abstract class Carta {
 	 * @param punti: cars points 
 	 * @param risorsenec: the necessary resources to play a card 
 	 * @param colore: cards color
-	 * @param ris1Retro: back ressource 
+	 * @param ris1Retro: back resource 
 	 * @param ID: cards identification code 
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, 
@@ -42,17 +43,17 @@ public abstract class Carta {
 		
 		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(1,0,ris2Fronte);
+		this.celle_fronte[0][2]=new Cella(0,2,ris2Fronte);
 		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,2,ris3Fronte);
-		this.celle_fronte[1][2]=new Cella(0,2,ris4Fronte);
+		this.celle_fronte[1][0]=new Cella(1,0,ris3Fronte);
+		this.celle_fronte[1][2]=new Cella(1,2,ris4Fronte);
 		
 		this.celle_retro[0][0]=new Cella(0,0,"");
 		this.celle_retro[0][1]=new Cella(0,1,ris1Retro);
-		this.celle_retro[0][2]=new Cella(1,0,"");
+		this.celle_retro[0][2]=new Cella(0,2,"");
 		this.celle_retro[1][1]=new Cella(1,1,"");
-		this.celle_retro[1][0]=new Cella(1,2,"");
-		this.celle_retro[1][2]=new Cella(0,2,"");
+		this.celle_retro[1][0]=new Cella(1,0,"");
+		this.celle_retro[1][2]=new Cella(1,2,"");
 	}
 	
 	
@@ -83,17 +84,17 @@ public abstract class Carta {
 		
 		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(1,0,ris2Fronte);
+		this.celle_fronte[0][2]=new Cella(0,2,ris2Fronte);
 		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,2,ris3Fronte);
-		this.celle_fronte[1][2]=new Cella(0,2,ris4Fronte);
+		this.celle_fronte[1][0]=new Cella(1,0,ris3Fronte);
+		this.celle_fronte[1][2]=new Cella(1,2,ris4Fronte);
 		
 		this.celle_retro[0][0]=new Cella(0,0,"");
 		this.celle_retro[0][1]=new Cella(0,1,ris1Retro);
-		this.celle_retro[0][2]=new Cella(1,0,"");
+		this.celle_retro[0][2]=new Cella(0,2,"");
 		this.celle_retro[1][1]=new Cella(1,1,ris2Retro);
-		this.celle_retro[1][0]=new Cella(1,2,"");
-		this.celle_retro[1][2]=new Cella(0,2,"");
+		this.celle_retro[1][0]=new Cella(1,0,"");
+		this.celle_retro[1][2]=new Cella(1,2,"");
 	}
 
 	
@@ -133,20 +134,25 @@ public abstract class Carta {
 		
 		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(1,0,ris2Fronte);
+		this.celle_fronte[0][2]=new Cella(0,2,ris2Fronte);
 		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,2,ris3Fronte);
-		this.celle_fronte[1][2]=new Cella(0,2,ris4Fronte);
+		this.celle_fronte[1][0]=new Cella(1,0,ris3Fronte);
+		this.celle_fronte[1][2]=new Cella(1,2,ris4Fronte);
 		
 		this.celle_retro[0][0]=new Cella(0,0, ris1Retro);
 		this.celle_retro[0][1]=new Cella(0,1,ris1Centro);
-		this.celle_retro[0][2]=new Cella(1,0,ris2Retro);
+		this.celle_retro[0][2]=new Cella(0,2,ris2Retro);
 		this.celle_retro[1][1]=new Cella(1,1,ris2Centro);
-		this.celle_retro[1][0]=new Cella(1,2,ris3Retro);
-		this.celle_retro[1][2]=new Cella(0,2,ris4Retro);
+		this.celle_retro[1][0]=new Cella(1,0,ris3Retro);
+		this.celle_retro[1][2]=new Cella(1,2,ris4Retro);
 	}
 	
-	
+	// obiettivo
+	public Carta(int ID, int punti, String obiettivo) {
+		this.ID=ID; 
+		this.punti=punti;
+		this.obiettivo=obiettivo;
+	}
 
 
 	/**

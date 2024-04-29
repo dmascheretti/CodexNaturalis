@@ -13,7 +13,7 @@ public class Mazzo_iniziale {
     private Carta_iniziale carta_iniziale2=new Carta_iniziale(Regno.INSETTI.toString(),Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),Regno.VEGETALE.toString(),
     		"","","","",Regno.VEGETALE.toString(),Regno.FUNGHI.toString(),02);
     
-    private Carta_iniziale carta_iniziale3=new Carta_iniziale(Regno.VEGETALE.toString(),Regno.INSETTI.toString(),Regno.FUNGHI.toString(),Regno.INSETTI.toString(),
+    private Carta_iniziale carta_iniziale3=new Carta_iniziale(Regno.VEGETALE.toString(),Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),Regno.INSETTI.toString(),
     		Regno.ANIMALE.toString(),"","",Regno.FUNGHI.toString(),Regno.FUNGHI.toString(),"",03);
     
     private Carta_iniziale carta_iniziale4=new Carta_iniziale(Regno.FUNGHI.toString(),Regno.VEGETALE.toString(),Regno.INSETTI.toString(),Regno.ANIMALE.toString(),
