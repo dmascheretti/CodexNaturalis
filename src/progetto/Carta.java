@@ -5,8 +5,8 @@ public abstract class Carta {
 
 	private String risorsenec;
 	private int punti;
-	protected Cella[][] celle_fronte;
-	protected Cella[][] celle_retro;
+	private Cella[][] celle_fronte;
+	private Cella[][] celle_retro;
 	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
 	private String ris1Centro, ris2Centro;
@@ -15,81 +15,81 @@ public abstract class Carta {
 
 	
 	/**Creates a gold card
-	 * @param risorse1 
-	 * @param risorse2
-	 * @param risorse3
-	 * @param risorse4
-	 * @param punti
-	 * @param risorsenec
-	 * @param colore
-	 * @param risorse1r
-	 * @param ris2Retro
+	 * @param ris1Fronte: front resource 
+	 * @param ris2Fronte: front resource 
+	 * @param ris3Fronte: front resource 
+	 * @param ris4Fronte: front resource 
+	 * @param punti: cars points 
+	 * @param risorsenec: the necessary resources to play a card 
+	 * @param colore: cards color
+	 * @param ris1Retro: back ressource 
+	 * @param ID: cards identification code 
 	 */
-	public Carta(String risorse1,String risorse2, String risorse3,String risorse4,int punti, 
-			String risorsenec, Colore_carta colore, String risorse1r, int ID)
+	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, 
+			String risorsenec, Colore_carta colore, String ris1Retro, int ID)
 	{
 		this.celle_fronte=new Cella[2][3];
 		this.celle_retro=new Cella[2][3];
-		this.ris1Retro=risorse1r;
-		this.ris1Fronte=risorse1;
-		this.ris2Fronte=risorse2;
-		this.ris3Fronte=risorse3;
-		this.ris4Fronte=risorse4;
+		this.ris1Retro=ris1Retro;
+		this.ris1Fronte=ris1Fronte;
+		this.ris2Fronte=ris2Fronte;
+		this.ris3Fronte=ris3Fronte;
+		this.ris4Fronte=ris4Fronte;
 		this.risorsenec=risorsenec;
 		this.punti=punti;
 		this.colore=colore;
 		this.ID=ID;
 		
-		this.celle_fronte[0][0]=new Cella(0,0,risorse1);
+		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(1,0,risorse2);
+		this.celle_fronte[0][2]=new Cella(1,0,ris2Fronte);
 		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,2,risorse3);
-		this.celle_fronte[1][2]=new Cella(0,2,risorse4);
+		this.celle_fronte[1][0]=new Cella(1,2,ris3Fronte);
+		this.celle_fronte[1][2]=new Cella(0,2,ris4Fronte);
 		
 		this.celle_retro[0][0]=new Cella(0,0,"");
-		this.celle_retro[0][1]=new Cella(0,1,risorse1r);
+		this.celle_retro[0][1]=new Cella(0,1,ris1Retro);
 		this.celle_retro[0][2]=new Cella(1,0,"");
 		this.celle_retro[1][1]=new Cella(1,1,"");
 		this.celle_retro[1][0]=new Cella(1,2,"");
 		this.celle_retro[1][2]=new Cella(0,2,"");
 	}
 	
-	/**Creates a resource card
-	 * @param risorse1 
-	 * @param risorse2
-	 * @param risorse3
-	 * @param risorse4
-	 * @param punti
-	 * @param risorsenec
-	 * @param colore
-	 * @param risorse1r
-	 * @param ris2Retro
-	 */
 	
-	public Carta(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta colore,
-			String risorse1r, int ID)
+	
+	/**Creates a resource card 
+	 * @param ris1Fronte: front resource 
+	 * @param ris2Fronte: front resource 
+	 * @param ris3Fronte: front resource 
+	 * @param ris4Fronte: front resource 
+	 * @param punti: cards points 
+	 * @param colore: cards colors  
+	 * @param ris1Retro: back resource 
+	 * @param ID: cards identification code
+	 */
+	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, Colore_carta colore,
+			String ris1Retro, int ID)
 	{
 		this.celle_fronte=new Cella[2][3];
 		this.celle_retro=new Cella[2][3];
-		this.ris1Retro=risorse1r;
-		this.ris1Fronte=risorse1;
-		this.ris2Fronte=risorse2;
-		this.ris3Fronte=risorse3;
-		this.ris4Fronte=risorse4;
+		this.ris1Retro=ris1Retro;
+		this.ris1Fronte=ris1Fronte;
+		this.ris2Fronte=ris2Fronte;
+		this.ris3Fronte=ris3Fronte;
+		this.ris4Fronte=ris4Fronte;
 		this.punti=punti;
 		this.colore=colore;
 		this.ID=ID;
 		
-		this.celle_fronte[0][0]=new Cella(0,0,risorse1);
+		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(1,0,risorse2);
+		this.celle_fronte[0][2]=new Cella(1,0,ris2Fronte);
 		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,2,risorse3);
-		this.celle_fronte[1][2]=new Cella(0,2,risorse4);
+		this.celle_fronte[1][0]=new Cella(1,2,ris3Fronte);
+		this.celle_fronte[1][2]=new Cella(0,2,ris4Fronte);
 		
 		this.celle_retro[0][0]=new Cella(0,0,"");
-		this.celle_retro[0][1]=new Cella(0,1,risorse1r);
+		this.celle_retro[0][1]=new Cella(0,1,ris1Retro);
 		this.celle_retro[0][2]=new Cella(1,0,"");
 		this.celle_retro[1][1]=new Cella(1,1,ris2Retro);
 		this.celle_retro[1][0]=new Cella(1,2,"");
@@ -97,49 +97,53 @@ public abstract class Carta {
 	}
 
 	
-	/**Creates a starting card
-	 * @param risorse1 
-	 * @param risorse2
-	 * @param risorse3
-	 * @param risorse4
-	 * @param punti
-	 * 
-	 * @param colore
-	 * @param risorse1r
-	 * @param risorse2r
-	 */
+	
 
-	public Carta(String risorse1,String risorse2, String risorse3,String risorse4,
-			String risorse1r, String risorse2r, String risorse3r, String risorse4r, String ris1Centro, String ris2Centro, int ID)
+	/** Creates a starting card 
+	 * @param ris1Fronte: front resource 
+	 * @param ris2Fronte: front resource 
+	 * @param ris3Fronte: front resource 
+	 * @param ris4Fronte: front resource 
+	 * @param ris1Retro: back resource
+	 * @param ris2Retro: back resource
+	 * @param ris3Retro: back resource
+	 * @param ris4Retro: back resource
+	 * @param ris1Centro: center resource 
+	 * @param ris2Centro: center resource
+	 * @param ID:  the cards identification code 
+	 */
+	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,
+			String ris1Retro, String ris2Retro, String ris3Retro, String ris4Retro, String ris1Centro, String ris2Centro, int ID)
 	{
 		this.celle_fronte=new Cella[2][3];
 		this.celle_retro=new Cella[2][3];
-		this.ris1Retro=risorse1r;
-		this.ris2Retro=risorse2r;
-		this.ris3Retro=risorse3r;
-		this.ris4Retro=risorse4r;
+		this.ris1Retro=ris1Retro;
+		this.ris2Retro=ris2Retro;
+		this.ris3Retro=ris3Retro;
+		this.ris4Retro=ris4Retro;
 		
-		this.ris1Fronte=risorse1;
-		this.ris2Fronte=risorse2;
-		this.ris3Fronte=risorse3;
-		this.ris4Fronte=risorse4;
+		this.ris1Fronte=ris1Fronte;
+		this.ris2Fronte=ris2Fronte;
+		this.ris3Fronte=ris3Fronte;
+		this.ris4Fronte=ris4Fronte;
+		
 		this.ris1Centro=ris1Centro;
 		this.ris2Centro=ris2Centro;
 		this.ID=ID;
 		
-		this.celle_fronte[0][0]=new Cella(0,0,risorse1);
+		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(0,2,risorse2);
+		this.celle_fronte[0][2]=new Cella(1,0,ris2Fronte);
 		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,0,risorse3);
-		this.celle_fronte[1][2]=new Cella(0,2,risorse4);
+		this.celle_fronte[1][0]=new Cella(1,2,ris3Fronte);
+		this.celle_fronte[1][2]=new Cella(0,2,ris4Fronte);
 		
-		this.celle_retro[0][0]=new Cella(0,0, risorse1r);
+		this.celle_retro[0][0]=new Cella(0,0, ris1Retro);
 		this.celle_retro[0][1]=new Cella(0,1,ris1Centro);
-		this.celle_retro[0][2]=new Cella(0,2,risorse2r);
-		this.celle_retro[1][0]=new Cella(1,1,risorse3r);
+		this.celle_retro[0][2]=new Cella(1,0,ris2Retro);
 		this.celle_retro[1][1]=new Cella(1,1,ris2Centro);
-		this.celle_retro[1][2]=new Cella(1,2,risorse4r);
+		this.celle_retro[1][0]=new Cella(1,2,ris3Retro);
+		this.celle_retro[1][2]=new Cella(0,2,ris4Retro);
 	}
 	
 	
