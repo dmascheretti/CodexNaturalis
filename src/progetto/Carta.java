@@ -41,6 +41,7 @@ public abstract class Carta {
 		this.colore=colore;
 		this.ID=ID;
 		
+		/*
 		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
 		this.celle_fronte[0][2]=new Cella(0,2,ris2Fronte);
@@ -54,6 +55,7 @@ public abstract class Carta {
 		this.celle_retro[1][1]=new Cella(1,1,"");
 		this.celle_retro[1][0]=new Cella(1,0,"");
 		this.celle_retro[1][2]=new Cella(1,2,"");
+		*/
 	}
 	
 	
@@ -72,8 +74,8 @@ public abstract class Carta {
 			String ris1Retro, int ID)
 	{
 		//da vedere se servono quattro risorse settate a null sul retro
-		this.celle_fronte=new Cella[2][3];
-		this.celle_retro=new Cella[2][3];
+		//this.celle_fronte=new Cella[2][3];
+		//this.celle_retro=new Cella[2][3];
 		this.ris1Retro=ris1Retro;
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
@@ -82,6 +84,8 @@ public abstract class Carta {
 		this.punti=punti;
 		this.colore=colore;
 		this.ID=ID;
+		
+		/*
 		
 		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
@@ -96,6 +100,7 @@ public abstract class Carta {
 		this.celle_retro[1][1]=new Cella(1,1,"");
 		this.celle_retro[1][0]=new Cella(1,0,"");
 		this.celle_retro[1][2]=new Cella(1,2,"");
+		*/
 	}
 
 	
@@ -117,8 +122,8 @@ public abstract class Carta {
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,
 			String ris1Retro, String ris2Retro, String ris3Retro, String ris4Retro, String ris1Centro, String ris2Centro, int ID)
 	{
-		this.celle_fronte=new Cella[2][3];
-		this.celle_retro=new Cella[2][3];
+		//this.celle_fronte=new Cella[2][3];
+		//this.celle_retro=new Cella[2][3];
 		this.ris1Retro=ris1Retro;
 		this.ris2Retro=ris2Retro;
 		this.ris3Retro=ris3Retro;
@@ -132,6 +137,7 @@ public abstract class Carta {
 		this.ris1Centro=ris1Centro;
 		this.ris2Centro=ris2Centro;
 		this.ID=ID;
+		/*
 		
 		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
 		this.celle_fronte[0][1]=new Cella(0,1,"");
@@ -146,6 +152,7 @@ public abstract class Carta {
 		this.celle_retro[1][1]=new Cella(1,1,ris2Centro);
 		this.celle_retro[1][0]=new Cella(1,0,ris3Retro);
 		this.celle_retro[1][2]=new Cella(1,2,ris4Retro);
+		*/
 	}
 	
 	// obiettivo
@@ -163,6 +170,11 @@ public abstract class Carta {
 		System.out.println("\n");
 		System.out.println("punti carta: "+punti);
 		System.out.println("\nrisorse necessarie: "+risorsenec+"\n");
+		System.out.println(ris1Fronte+"\t"+ris2Fronte+"\n"+ris3Fronte+"\t"+ris4Fronte);
+		System.out.println(ris1Retro+"\t"+ris1Centro+"\t"+ris2Retro+"\t"+ris3Retro+"\t"+ris2Centro
+				+ris4Retro);
+		
+		/*
 		System.out.println("|--------------------------|");
 		for(int i=0;i<2;i++) {
 			if(i==1)System.out.println("\n");
@@ -188,7 +200,7 @@ public abstract class Carta {
 					
 				}
 	
-		System.out.println("\n|--------------------------|");
+		System.out.println("\n|--------------------------|");*/
 	}
 
 
