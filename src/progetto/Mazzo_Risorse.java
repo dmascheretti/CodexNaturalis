@@ -6,20 +6,33 @@ import java.util.Collections;
 
 public class Mazzo_Risorse extends Mazzo{
     private ArrayList<Carta_risorsa> mazzo_risorse = new ArrayList<Carta_risorsa>();
-   /* private Carta_risorsa carta_risorsa1=new Carta_risorsa(Regno.ANIMALE.toString(),Regno.FUNGHI.toString(),Regno.NULL.toString(),
-    		Regno.INSETTI.toString(),1,Colore_carta.ROSSO,Regno.INSETTI.toString(),Regno.INSETTI.toString(),01);
+   
+    private Carta_risorsa carta_risorsa21=new Carta_risorsa(Regno.NULL.toString(), "non giocabile", Regno.NULL.toString(), Regno.NULL.toString(),
+    		1, Colore_carta.VIOLA, Regno.ANIMALE.toString(),21);
     
-    private Carta_risorsa carta_risorsa2=new Carta_risorsa(Regno.ANIMALE.toString(),Regno.FUNGHI.getRegno(),Regno.NULL.toString(),
-    		Regno.INSETTI.toString(),1,Colore_carta.ROSSO,Regno.INSETTI.toString(),
-    		Regno.VEGETALE.toString());
+    private Carta_risorsa carta_risorsa22=new Carta_risorsa(Regno.NULL.toString(), Regno.NULL.toString(), "non giocabile", Regno.ANIMALE.toString(),
+    		1, Colore_carta.VIOLA, Regno.ANIMALE.toString(), 22);
     
-    private Carta_risorsa carta_risorsa3=new Carta_risorsa(Regno.ANIMALE.toString(),Regno.FUNGHI.getRegno(),Regno.NULL.toString(),
-    		Regno.INSETTI.toString(),1,Colore_carta.ROSSO,Regno.INSETTI.toString(),
-    		Regno.VEGETALE.toString());
-
-*/
-
-    //DA RIVEDERE IL COSTRUTTORE (RETRO)
+    private Carta_risorsa carta_risorsa23=new Carta_risorsa("non giocabile", Regno.ANIMALE.toString(), Regno.NULL.toString(), Regno.NULL.toString(),
+    		1, Colore_carta.VIOLA, Regno.ANIMALE.toString(), 23);
+    
+    private Carta_risorsa carta_risorsa24=new Carta_risorsa(Regno.NULL.toString(), Regno.NULL.toString(), "non giocabile", Regno.ANIMALE.toString(),
+    		1, Colore_carta.VERDE,Regno.VEGETALE.toString() ,22);
+    
+    private Carta_risorsa carta_risorsa25=new Carta_risorsa(Regno.NULL.toString(), "non giocabile", Regno.NULL.toString(), Regno.ANIMALE.toString(),
+    		1, Colore_carta.BLU, Regno.ANIMALE.toString(), 25);
+    
+    private Carta_risorsa carta_risorsa26=new Carta_risorsa(Regno.FUNGHI.toString(), "non giocabile", Regno.NULL.toString(), Regno.NULL.toString(),
+    		1, Colore_carta.ROSSO, Regno.FUNGHI.toString(), 26);
+    
+    private Carta_risorsa carta_risorsa27=new Carta_risorsa(Regno.NULL.toString(), Regno.NULL.toString(), Regno.VEGETALE.toString(), "non giocabile",
+    		1, Colore_carta.VERDE, Regno.VEGETALE.toString(), 27);
+    
+    private Carta_risorsa carta_risorsa28=new Carta_risorsa("non giocabile", Regno.VEGETALE.toString(), Regno.NULL.toString(), Regno.NULL.toString(),
+    		1, Colore_carta.VERDE, Regno.VEGETALE.toString(), 28);
+    
+    private Carta_risorsa carta_risorsa29=new Carta_risorsa("non giocabile", Regno.NULL.toString(), Regno.FUNGHI.toString(), Regno.NULL.toString(),
+    		1, Colore_carta.ROSSO, Regno.FUNGHI.toString(), 29);
     
     private Carta_risorsa carta_risorsa30=new Carta_risorsa(Regno.ANIM.toString(),"non giocabile",Regno.ANIM.toString(),Regno.NULL.toString(),
     		0,Colore_carta.BLU,Regno.ANIM.toString(),30);
@@ -98,11 +111,16 @@ public class Mazzo_Risorse extends Mazzo{
     
     
     public Mazzo_Risorse() {
-        //Mazzo_Risorse.add(carta_risorsa1);
-        //mazzo_risorse.add(carta_risorsa2);
-        //mazzo_risorse.add(carta_risorsa3);
-    	
-    	
+    
+    	mazzo_risorse.add(carta_risorsa21);
+    	mazzo_risorse.add(carta_risorsa22);
+    	mazzo_risorse.add(carta_risorsa23);
+    	mazzo_risorse.add(carta_risorsa24);
+    	mazzo_risorse.add(carta_risorsa25);
+    	mazzo_risorse.add(carta_risorsa26);
+    	mazzo_risorse.add(carta_risorsa27);
+    	mazzo_risorse.add(carta_risorsa28);
+    	mazzo_risorse.add(carta_risorsa29);
     	mazzo_risorse.add(carta_risorsa30);
     	mazzo_risorse.add(carta_risorsa31);
     	mazzo_risorse.add(carta_risorsa32);
