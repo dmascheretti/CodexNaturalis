@@ -6,7 +6,7 @@ VEGETALE ("Vegetale"),
 ANIMALE ("Animale"),
 FUNGHI ("Funghi"),
 INSETTI ("Insetti"),
-NULL(" "),
+NULL(" "), //l'angolo è vuoto
 POZIONE ("Pozione"),
 PERGAMENA("Pergamnea"),
 PIUMA("Piuma");
