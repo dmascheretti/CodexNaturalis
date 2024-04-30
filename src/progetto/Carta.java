@@ -163,7 +163,7 @@ public abstract class Carta {
 		System.out.println("\n");
 		System.out.println("punti carta: "+punti);
 		System.out.println("\nrisorse necessarie: "+risorsenec+"\n");
-		System.out.println("--------------------------");
+		System.out.println("|--------------------------|");
 		for(int i=0;i<2;i++) {
 			if(i==1)System.out.println("\n");
 			for(int j=0;j<3;j++) {
@@ -175,11 +175,11 @@ public abstract class Carta {
 				}
 			}
 			
-		System.out.println("\n--------------------------");
+		System.out.println("\n|--------------------------|");
 		
 		System.out.println("\n");
 		
-		System.out.println("--------------------------");
+		System.out.println("|--------------------------|");
 		for(int i=0;i<2;i++) {
 			if(i==1)System.out.println("\n");
 			for(int j=0;j<3;j++) {
@@ -188,7 +188,7 @@ public abstract class Carta {
 					
 				}
 	
-		System.out.println("\n--------------------------");
+		System.out.println("\n|--------------------------|");
 	}
 
 
