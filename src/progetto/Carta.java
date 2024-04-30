@@ -167,19 +167,14 @@ public abstract class Carta {
 		for(int i=0;i<2;i++) {
 			if(i==1)System.out.println("\n");
 			for(int j=0;j<3;j++) {
-				if((i==0)&&(j==1)) {
-					System.out.print(celle_fronte[i][j].getPunti()+"\t");
-				}
-				else {
 					if(celle_fronte[i][j].getTipo()=="NULL")
 						System.out.print(" / " );
-					else{				System.out.print(celle_fronte[i][j].getTipo()+"\t");
+					else{System.out.print(celle_fronte[i][j].getTipo()+"\t");
 	 }
 					
 				}
 			}
 			
-		}
 		System.out.println("\n--------------------------");
 		
 		System.out.println("\n");
