@@ -8,19 +8,19 @@ public class Mazzo_oro extends Mazzo{
 	
 private ArrayList<Carta_oro> mazzo_oro = new ArrayList<Carta_oro>();
 
-private Carta_oro carta_oro80=new Carta_oro("",Regno.NULL.toString(),"","",
+private Carta_oro carta_oro80=new Carta_oro(Regno.NULL.toString(),"non giocabile",Regno.NULL.toString(),Regno.NULL.toString(),
 		2,"VVVF", Colore_carta.VERDE,Regno.VEGETALE.toString(),80);
 
-private Carta_oro carta_oro81=new Carta_oro(Regno.NULL.toString(),"","",Regno.PERGAMENA.toString(),
+private Carta_oro carta_oro81=new Carta_oro("non giocabile",Regno.NULL.toString(),Regno.NULL.toString(),Regno.PERGAMENA.toString(),
 		1,"AAV", Colore_carta.BLU,Regno.ANIMALE.toString(),81);
 
-private Carta_oro carta_oro82=new Carta_oro("",Regno.NULL.toString(),Regno.PIUMA.toString(),"",
+private Carta_oro carta_oro82=new Carta_oro(Regno.NULL.toString(),"non giocabile",Regno.PIUMA.toString(),Regno.NULL.toString(),
 		1,"AAF", Colore_carta.BLU, Regno.ANIMALE.toString(),82);
 
-private Carta_oro carta_oro83=new Carta_oro(Regno.NULL.toString(),"","","",
+private Carta_oro carta_oro83=new Carta_oro("non giocabile",Regno.NULL.toString(),Regno.NULL.toString(),Regno.NULL.toString(),
 		2,"AAAV", Colore_carta.BLU, Regno.ANIMALE.toString(),83);
 
-private Carta_oro carta_oro84=new Carta_oro(Regno.NULL.toString(),"","",Regno.NULL.toString(),
+private Carta_oro carta_oro84=new Carta_oro("non giocabile",Regno.NULL.toString(),Regno.NULL.toString(),"non giocabile",
 		5,"AAAAA", Colore_carta.BLU, Regno.ANIMALE.toString(),84);
 
 private Carta_oro carta_oro85=new Carta_oro("","",Regno.NULL.toString(),"",

@@ -11,7 +11,7 @@ public abstract class Carta {
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
 	private String ris1Centro, ris2Centro;
 	private Colore_carta colore;
-	private String obiettivo;
+	protected String obiettivo;
 	protected final int ID;
 
 	
@@ -93,7 +93,7 @@ public abstract class Carta {
 		this.celle_retro[0][0]=new Cella(0,0,"");
 		this.celle_retro[0][1]=new Cella(0,1,ris1Retro);
 		this.celle_retro[0][2]=new Cella(0,2,"");
-		this.celle_retro[1][1]=new Cella(1,1,ris2Retro);
+		this.celle_retro[1][1]=new Cella(1,1,"");
 		this.celle_retro[1][0]=new Cella(1,0,"");
 		this.celle_retro[1][2]=new Cella(1,2,"");
 	}

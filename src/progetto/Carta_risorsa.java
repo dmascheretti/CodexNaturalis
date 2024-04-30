@@ -6,9 +6,9 @@ public class Carta_risorsa extends Carta{
 	private String risorse1,risorse2,risorse3,risorse4;
 	private Colore_carta color;
 
-public Carta_risorsa(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta color, String risorse1r, String risorse2r, int ID)
+public Carta_risorsa(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta color, String risorse1r,int ID)
 {
-	super(risorse1,risorse2, risorse3, risorse4, punti, risorse1r, color, risorse2r,ID);
+	super(risorse1,risorse2, risorse3, risorse4, punti, color,  risorse1r, ID);
 	/*this.celle=new Cella[2][3];
 	this.risorse1=risorse1;
 	this.risorse2=risorse2;
