@@ -2,14 +2,14 @@ package progetto;
 
 public enum Regno {
 	
-VEGETALE ("Vegetale"),
-ANIMALE ("Animale"),
-FUNGHI ("Funghi"),
-INSETTI ("Insetti"),
+VEGE ("Vegetale"),
+ANIM ("Animale"),
+FUNG ("Funghi"),
+INSE ("Insetti"),
 NULL(" "),
-POZIONE ("Pozione"),
-PERGAMENA("Pergamnea"),
-PIUMA("Piuma");
+POZI ("Pozione"),
+PERG("Pergamnea"),
+PIUM("Piuma");
 
 private String regno;
 

@@ -43,8 +43,8 @@ public void giocaCarta(Carta carta) {
 	mano.remove(carta);
 }
 //modificare Carta in Carta_iniziale
-public void giocaCartaIniziale(Carta carta,int i, int j) {
-	tabellone[19][19]=carta;
+public void giocaCarta2(Carta carta,int i, int j) {
+	tabellone[i][j]=carta;
 }
 
 public void getPunteggio(int punti) {
@@ -57,9 +57,13 @@ public int getSomma() {
 
 //da finire (come metodo get carta in Carta)
 public void getTabellone() {
-	for(int i=0;i<40;i++)
-		for(int j=0;j<40;j++) System.out.println(tabellone[i][j]);
+	for(int i=0;i<40;i++) {
+		System.out.println("\n");
+		for(int j=0;j<40;j++) {
+		if(tabellone[i][j]!=null)System.out.println(tabellone[i][j].toString());
+		}
 }
 
+}
 
 }

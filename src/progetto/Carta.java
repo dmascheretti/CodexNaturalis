@@ -214,5 +214,10 @@ public abstract class Carta {
 	public int getID() {
 		return ID;
 	}
+	public String toString() {
+		
+		return ("ID\n"+ID+"\nFRONTE: \n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+"\n\nRETRO:\n"+
+		"[]\t"+ris1Retro+"\t[]");
+	}
 
 	}
