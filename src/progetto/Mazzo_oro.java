@@ -177,9 +177,9 @@ for(int i=0;i<mazzo_oro.size();i++) mazzo_oro.get(i).getCarta();
 public void mescolaMazzo() {
 	Collections.shuffle(mazzo_oro);
 }
-public void rimuoviCarta(Carta_oro carta)
+public void rimuoviCarta()
 {
-	mazzo_oro.remove(carta);
+	mazzo_oro.remove(0);
 }
 
 

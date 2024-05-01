@@ -9,6 +9,7 @@ public class Carta_iniziale extends Carta{
 		super(risorse1, risorse2, risorse3, risorse4, risorse1r, risorse2r, risorse3r, risorse4r, ris1Centro, ris2Centro, ID);
 	}
 
+	/*
 	public void getCarta(){
 		System.out.println("\n");
 		System.out.println("ID CARTA: "+ID);
@@ -36,5 +37,6 @@ public class Carta_iniziale extends Carta{
 		}
 		System.out.println("\n--------------------------");
 	}
+	*/
 	}
 	

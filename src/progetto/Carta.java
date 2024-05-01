@@ -8,6 +8,8 @@ public abstract class Carta {
 	protected Cella[][] celle_fronte;
 	protected Cella[][] celle_retro;
 	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
+	
+
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
 	private String ris1Centro, ris2Centro;
 	private Colore_carta colore;
@@ -163,6 +165,29 @@ public abstract class Carta {
 	}
 
 
+	
+	public String getRis1Fronte() {
+		return ris1Fronte;
+	}
+
+
+
+	public String getRis2Fronte() {
+		return ris2Fronte;
+	}
+
+
+
+	public String getRis3Fronte() {
+		return ris3Fronte;
+	}
+
+
+
+	public String getRis4Fronte() {
+		return ris4Fronte;
+	}
+	
 	/**
 	 * prints card
 	 */
@@ -214,10 +239,11 @@ public abstract class Carta {
 	public int getID() {
 		return ID;
 	}
-	public String toString() {
+	public String printCard() {
 		
-		return ("ID\n"+ID+"\nFRONTE: \n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+"\n\nRETRO:\n"+
-		"[]\t"+ris1Retro+"\t[]");
+		return ("ID: "+ID+" \n"+"RISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
+		+"-----------------------------\n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+
+		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
 	}
 
 	public String printEmpty() {

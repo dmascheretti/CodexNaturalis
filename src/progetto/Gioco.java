@@ -41,104 +41,76 @@ public Gioco() {
 		else if (i==2) this.giocatori[i]=new Giocatore(name,Colore.ROSSO);
 		
 	}
+	
 }
 
 public void Gioca() {
 	
 	mazzo_iniziale.mescolaMazzo();
 	giocatori[0].riempiTabellone(carta_nulla);
-	giocatori[0].getTabellone();
+	//giocatori[0].getTabellone();
 	//mazzo_risorse.mescolaMazzo();
 	mazzo_oro.mescolaMazzo();
 	//mazzo_oro.getMazzo();
-	System.out.println("\n\n\n");
-	giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),0,0);
-	giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),5,0);
-	giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),9,3);
-	System.out.println("NUOVO TABELLONE");
+	System.out.println("\n");
+	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),0,0);
+	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),1,0);
+	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),9,3);
+	//System.out.println("NUOVO TABELLONE");
 	
-	giocatori[0].getTabellone();
+	//giocatori[0].getTabellone();
 	
-	/*
+	
 	for(int i=0;i<giocatori.length;i++) {
-		giocatori[i].pescaCarta(mazzo_iniziale.cartaPescata());
+		giocatori[i].aggiungiaMano(mazzo_iniziale.pescaCarta());
 		mazzo_iniziale.rimuoviCarta();
-		//giocatori[i].pescaCarta(mazzo_oro.pescaCarta());
+		giocatori[i].aggiungiaMano(mazzo_oro.pescaCarta());
+		mazzo_oro.rimuoviCarta();
 		
 		//for(int j=0;j<2;j++)giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
 		
 		}
-	*/
+	
 
-	/*
 	for(int i=0;i<giocatori.length;i++) {
 	System.out.println(giocatori[i].getName().toUpperCase()+" : "+giocatori[i].getSegnalino()); 
 	
 	Scanner sc=new Scanner(System.in);
 	System.out.println(giocatori[i].getName()+" scegli una carta da giocare tra quelle della tua mano: ");
 	giocatori[i].guardaMano();
-	int h;
-	System.out.println("scegli tra 1,2 o 3");
+	int h,x,y;
+	System.out.println("scegli tra 1,2,3 " );
 	do {
 	h=sc.nextInt();
 	}while(h<1||h>3);
 	
-	System.out.println("\f");
-	
-	*/	/*
-	int punti = (giocatori[i].scegliCarta(h-1).getPunteggio());
-	giocatori[i].giocaCarta(giocatori[i].scegliCarta(h-1));
-	System.out.println("PUNTI TOTALI "+ giocatori[i].getName());
-	giocatori[i].getPunteggio(punti);
-	giocatori[i].guardaMano();
 	
 	
-	//pesa carta 
-	Scanner c=new Scanner(System.in);
-	int s;
-	System.out.println("da che mazzo vuoi pescare: 1-mazzo oro\n2-mazzo risorse");
-	do {
-	s=sc.nextInt();
-	sc.nextLine();
-	}while(s!=1 || s!=2);
-	
-		//giocatori[i].pescaCarta(mazzo_oro.pescaCarta());
-		//smazzo_oro.rimuoviCarta(mazzo_oro.cartaPescata());
-
-		giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
-		mazzo_risorse.rimuoviCarta(mazzo_risorse.cartaPescata());
+	do{
+	System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 0 e 40)" );
+	System.out.print("X: ");
+	x=sc.nextInt();
+	System.out.print("Y: ");
+	y=sc.nextInt();
+	System.out.println("\n\n");
+	}while(giocatori[i].checkEmpty(x, y)!=00 && ((x<0 || x>40)||(y<0 || y>40)) && giocatori[i].checkNext(x, y)==false &&
+			giocatori[i].checkCorner(x, y)==false);
 	
 	
-	System.out.println("Il giocatore "+ giocatori[i].getName()+" ha queste carte: ");
-	giocatori[i].guardaMano();
-	System.out.println("Il giocatore "+ giocatori[1].getName()+" ha queste carte: ");
-	giocatori[1].guardaMano();
-	
-	Scanner scn=new Scanner(System.in);
-	System.out.println(giocatori[i].getName()+" scegli una carta da giocare tra quelle della tua mano: ");
-	giocatori[i].guardaMano();
-	int f;
-	System.out.println("scegli tra 1,2 o 3");
-	do {
-	f=scn.nextInt();
-	}while(f<1||f>3);
-	int punti1= (giocatori[i].scegliCarta(h-1).getPunteggio());
-	giocatori[i].giocaCarta(giocatori[i].scegliCarta(h-1));
-	System.out.println("PUNTI TOTALI "+ giocatori[i].getName());
-	giocatori[i].getPunteggio(punti1);
-	giocatori[i].guardaMano();
-	
-	System.out.println(giocatori[i].getSomma()+"\n\n");
-	
-	
-	
+	if(giocatori[i].scegliCarta(h-1).getID()>60 || giocatori[i].scegliCarta(h-1).getID()<21 ) {
+		giocatori[i].giocaCartaTabellone(giocatori[i].scegliCarta(h-1), x,y);
+		giocatori[i].getPunteggio(giocatori[i].scegliCarta(h-1).getPunteggio());
+		
 	}
 	
-	*/
+	
+	System.out.println(giocatori[i].getName()+" da che mazzo vuoi pescare");
 }
+	
 	
 }
 
+}
 
 
 

@@ -38,13 +38,13 @@ public class Mazzo_iniziale {
         Collections.shuffle(mazzo_iniziale);
     }
 
-    public Carta_iniziale pescaCarta() {
+    public Carta_iniziale stampaCartaPescata() {
         System.out.println("Hai pescato:\t\t");
         mazzo_iniziale.get(0).getCarta();
         return mazzo_iniziale.get(0);
     }
 
-    public Carta_iniziale cartaPescata() {
+    public Carta_iniziale pescaCarta() {
         return mazzo_iniziale.get(0);
     }
     

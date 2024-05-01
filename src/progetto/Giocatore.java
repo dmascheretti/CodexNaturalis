@@ -25,13 +25,13 @@ public String getSegnalino() {
 public String getName() {
 	return name;
 }
-public void pescaCarta(Carta carta) {
+public void aggiungiaMano(Carta carta) {
 	mano.add(carta);
 }
 
 public void guardaMano() {
 	for(int i=0;i<mano.size();i++) {
-		mano.get(i).getCarta();	}
+	System.out.print(mano.get(i).printCard())	;}
 }
 
 public Carta scegliCarta(int i) {
@@ -43,7 +43,7 @@ public void giocaCarta(Carta carta) {
 	mano.remove(carta);
 }
 //modificare Carta in Carta_iniziale
-public void giocaCarta2(Carta carta,int i, int j) {
+public void giocaCartaTabellone(Carta carta,int i, int j) {
 	tabellone[i][j]=carta;
 }
 
@@ -51,6 +51,32 @@ public void getPunteggio(int punti) {
 	somma=somma+punti;
 }
 
+public int checkEmpty(int x, int y) {
+	return tabellone[x][y].getID();
+}
+
+public Boolean checkNext(int x, int j) {
+	if(tabellone[x+1][j].getID()==00 && tabellone[x-1][j].getID()==00 && 
+			tabellone[x][j+1].getID()==00 && tabellone[x][j-1].getID()==00) return true;
+	
+	return false;
+	
+	
+}
+
+public Boolean checkCorner(int x, int j) {
+	if((tabellone[x+1][j].getID()!=00 || tabellone[x-1][j].getID()!=00 || 
+			tabellone[x][j+1].getID()!=00 || tabellone[x][j-1].getID()!=00)
+			&&
+			(tabellone[x+1][j+1].getRis1Fronte()!="XXXX" && tabellone[x+1][j-1].getRis3Fronte()!="XXXX" && 
+			tabellone[x-1][j-1].getRis4Fronte()!="XXXX" && tabellone[x-1][j+1].getRis1Fronte()!="XXXX") 
+			)
+			return true;
+	
+	return false;
+	
+	
+}
 public int getSomma() {
 	return (somma);
 }
@@ -66,8 +92,10 @@ public void getTabellone() {
 	for(int i=0;i<40;i++) {
 		System.out.println("\n");
 		for(int j=0;j<40;j++) {
-		if(tabellone[i][j].getID()!=00)System.out.println(tabellone[i][j].toString());
-		else tabellone[i][j].printEmpty();
+		if((tabellone[i][j].getID())!=00)System.out.print(tabellone[i][j].printCard());
+		else {
+			System.out.print(tabellone[i][j].printEmpty());
+		}
 }
 
 }
