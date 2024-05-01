@@ -7,14 +7,16 @@ import java.util.Scanner;
 public class Gioco {
 	
 private Mazzo_oro mazzo_oro;
-private Mazzo_Risorse mazzo_risorse;
+//private Mazzo_Risorse mazzo_risorse;
 private Giocatore[] giocatori;
 private Mazzo_iniziale mazzo_iniziale;
+private Carta_oro carta_nulla=new Carta_oro("    ", "    ", "    ", "    ",
+		0, "    ", Colore_carta.BLU, "    ", 00);
 
 
 
 public Gioco() {
-	this.mazzo_risorse=new Mazzo_Risorse();
+	//this.mazzo_risorse=new Mazzo_Risorse();
 	this.mazzo_oro=new Mazzo_oro();
 	this.mazzo_iniziale=new Mazzo_iniziale();
 	//this.mazzo_obiettivo=new Mazzo_obiettivo();
@@ -44,14 +46,16 @@ public Gioco() {
 public void Gioca() {
 	
 	mazzo_iniziale.mescolaMazzo();
-	mazzo_risorse.mescolaMazzo();
+	giocatori[0].riempiTabellone(carta_nulla);
+	giocatori[0].getTabellone();
+	//mazzo_risorse.mescolaMazzo();
 	mazzo_oro.mescolaMazzo();
 	//mazzo_oro.getMazzo();
 	System.out.println("\n\n\n");
 	giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),0,0);
 	giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),5,0);
 	giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),9,3);
-	
+	System.out.println("NUOVO TABELLONE");
 	
 	giocatori[0].getTabellone();
 	

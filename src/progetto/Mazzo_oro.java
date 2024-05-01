@@ -74,6 +74,7 @@ private Carta_oro carta_oro100=new Carta_oro("non giocabile",Regno.NULL.toString
 
 */
 
+
 private Carta_oro carta_oro80=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.NULL.toString(),Regno.NULL.toString(),
 		2,"VVVF", Colore_carta.VERDE,Regno.VEGE.toString(),80);
 

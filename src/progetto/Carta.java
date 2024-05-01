@@ -220,4 +220,9 @@ public abstract class Carta {
 		"[]\t"+ris1Retro+"\t[]");
 	}
 
+	public String printEmpty() {
+		
+		return ("\n"+"\n\n"+"    "+ "\t\t\t" +"    "+ "\n"+"    "+"\t\t\t"+"    "+"\n\n\n"+
+		"  \t"+"    "+"\t  ");
+	}
 	}

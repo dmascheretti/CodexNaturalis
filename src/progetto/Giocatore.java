@@ -55,15 +55,22 @@ public int getSomma() {
 	return (somma);
 }
 
+public void riempiTabellone(Carta carta) {
+	for(int i=0;i<40;i++)
+		for(int j=0;j<40;j++)
+			tabellone[i][j]=carta;
+}
+
 //da finire (come metodo get carta in Carta)
 public void getTabellone() {
 	for(int i=0;i<40;i++) {
 		System.out.println("\n");
 		for(int j=0;j<40;j++) {
-		if(tabellone[i][j]!=null)System.out.println(tabellone[i][j].toString());
-		}
+		if(tabellone[i][j].getID()!=00)System.out.println(tabellone[i][j].toString());
+		else tabellone[i][j].printEmpty();
 }
 
 }
 
+	}
 }

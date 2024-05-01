@@ -1,4 +1,5 @@
 package progetto;
+/*
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -173,5 +174,6 @@ public class Mazzo_Risorse extends Mazzo{
     public Carta_risorsa cartaPescata() {
         return mazzo_risorse.get(0);
     }
+    
   
-}
+}*/
