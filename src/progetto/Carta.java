@@ -3,15 +3,18 @@ package progetto;
 // 49 carte 
 public abstract class Carta {
 
-	private String risorsenec;
+	protected String risorsenec;
 	private int punti;
 	protected Cella[][] celle_fronte;
 	protected Cella[][] celle_retro;
-	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
+	protected String ris1Fronte;
+	protected String ris2Fronte;
+	protected String ris3Fronte;
+	protected String ris4Fronte;
 	
 
-	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
-	private String ris1Centro, ris2Centro;
+	protected String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
+	protected String ris1Centro, ris2Centro;
 	private Colore_carta colore;
 	protected String obiettivo;
 	protected final int ID;
@@ -233,22 +236,71 @@ public abstract class Carta {
 	 * @return cards points
 	 */
 	public int getPunteggio() {
-		return (celle_fronte[0][1].getPunti());
+		return punti;
 	}
 
 	public int getID() {
 		return ID;
 	}
-	public String printCard() {
+	
+public String printCardF() {
 		
-		return ("ID: "+ID+" \n"+"RISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
+		return ("\nID: "+ID+" \n"+"RISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
 		+"-----------------------------\n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+
-		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
+		"\n-----------------------------");
 	}
+
+public String printCardR() {
+	
+	return ("RETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
+}
 
 	public String printEmpty() {
 		
-		return ("\n"+"\n\n"+"    "+ "\t\t\t" +"    "+ "\n"+"    "+"\t\t\t"+"    "+"\n\n\n"+
-		"  \t"+"    "+"\t  ");
+		return (" "+"  "+"\n "+""+"    "+""
+				+"-----------------------------"+"    " +"    "+"   "+"   "+
+				"-----------------------------\n"+ "-----------------------------" +"   "+
+				"-----------------------------");	}
+
+
+
+	public String printCard() {
+		return null;
+	}
+
+
+
+	public String getRisorsenec() {
+		return risorsenec;
+	}
+
+
+
+	public String getRis1Retro() {
+		return ris1Retro;
+	}
+
+
+
+	public String getRis2Retro() {
+		return ris2Retro;
+	}
+
+
+
+	public String getRis3Retro() {
+		return ris3Retro;
+	}
+
+
+
+	public String getRis4Retro() {
+		return ris4Retro;
+	}
+
+
+
+	public String getRis1Centro() {
+		return ris1Centro;
 	}
 	}

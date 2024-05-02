@@ -15,7 +15,7 @@ public Giocatore(String name, Colore colore) {
 	this.name=name;
 	this.mano= new ArrayList<Carta>();
 	this.segnalino=new Segnalino(colore);
-	this.tabellone=new Carta[40][40];
+	this.tabellone=new Carta[10][10];
 }
 
 public String getSegnalino() {
@@ -41,6 +41,9 @@ public void giocaCarta(Carta carta) {
 	System.out.println("hai piazzato");
 	carta.getCarta();
 	mano.remove(carta);
+}
+public void removeCard() {
+	mano.remove(0);
 }
 //modificare Carta in Carta_iniziale
 public void giocaCartaTabellone(Carta carta,int i, int j) {
@@ -82,16 +85,49 @@ public int getSomma() {
 }
 
 public void riempiTabellone(Carta carta) {
-	for(int i=0;i<40;i++)
-		for(int j=0;j<40;j++)
+	for(int i=0;i<10;i++)
+		for(int j=0;j<10;j++)
 			tabellone[i][j]=carta;
 }
 
 //da finire (come metodo get carta in Carta)
 public void getTabellone() {
-	for(int i=0;i<40;i++) {
-		System.out.println("\n");
-		for(int j=0;j<40;j++) {
+	
+	for(int i=0;i<tabellone.length;i++) {
+		//for(int j=0;j<tabellone[i].length;j+=0) {
+		//if((tabellone[i][j].getID())!=00)
+		for(int a=0;a<tabellone[i].length;a++) System.out.print("ID: "+tabellone[i][a].getID()+"\t\t\t\t");
+		System.out.println("\n\n");
+		for(int a=0;a<tabellone[i].length;a++)System.out.print("FRONTE: \t\t\t");
+		System.out.println("\n\n");
+		for(int a=0;a<tabellone[i].length;a++)System.out.print(tabellone[i][a].getRis1Fronte()+"\t\t"+tabellone[i][a].getRis2Fronte()+"\t\t");
+		System.out.println("\n\n");
+		for(int a=0;a<tabellone[i].length;a++)System.out.print(tabellone[i][a].getRis3Fronte()+"\t\t"+tabellone[i][a].getRis4Fronte()+"\t\t");
+		System.out.println("\n\n");
+		for(int a=0;a<tabellone[i].length;a++)System.out.print("RETRO: \t\t\t\t");
+		System.out.println("\n\n");
+		for (int a=0;a<tabellone[i].length;a++)System.out.print(tabellone[i][a].getRis1Retro()+"\t\t\t\t");
+		
+	
+		//}
+		
+		System.out.println("\n\n");
+		
+		
+}
+	
+	System.out.println("\n");
+	
+
+	
+}
+	
+
+
+public void getTabellone2() {
+	for(int i=0;i<3;i++) {
+		if(i>0)System.out.println("\n");
+		for(int j=0;j<3;j++) {
 		if((tabellone[i][j].getID())!=00)System.out.print(tabellone[i][j].printCard());
 		else {
 			System.out.print(tabellone[i][j].printEmpty());
@@ -101,4 +137,5 @@ public void getTabellone() {
 }
 
 	}
+
 }

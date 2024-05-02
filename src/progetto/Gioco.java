@@ -53,13 +53,9 @@ public void Gioca() {
 	mazzo_oro.mescolaMazzo();
 	//mazzo_oro.getMazzo();
 	System.out.println("\n");
-	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),0,0);
-	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),1,0);
-	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),9,3);
-	//System.out.println("NUOVO TABELLONE");
+	System.out.println("NUOVO TABELLONE");
 	
-	//giocatori[0].getTabellone();
-	
+	giocatori[0].getTabellone();
 	
 	for(int i=0;i<giocatori.length;i++) {
 		giocatori[i].aggiungiaMano(mazzo_iniziale.pescaCarta());
@@ -67,33 +63,48 @@ public void Gioca() {
 		giocatori[i].aggiungiaMano(mazzo_oro.pescaCarta());
 		mazzo_oro.rimuoviCarta();
 		
+		giocatori[i].giocaCartaTabellone(giocatori[i].scegliCarta(0), 5, 5);
+		giocatori[i].removeCard();
+		
 		//for(int j=0;j<2;j++)giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
 		
 		}
 	
+	giocatori[0].getTabellone();
+	
+	
 
 	for(int i=0;i<giocatori.length;i++) {
+	
 	System.out.println(giocatori[i].getName().toUpperCase()+" : "+giocatori[i].getSegnalino()); 
 	
 	Scanner sc=new Scanner(System.in);
 	System.out.println(giocatori[i].getName()+" scegli una carta da giocare tra quelle della tua mano: ");
 	giocatori[i].guardaMano();
-	int h,x,y;
+	int h,x,y,scelta;
 	System.out.println("scegli tra 1,2,3 " );
 	do {
 	h=sc.nextInt();
 	}while(h<1||h>3);
 	
+	//do {
+	System.out.println("vuoi giocare fronte o retro? 0 per fronte, 1 per retro");
+	scelta=sc.nextInt();
+	//}while(scelta!=0 || scelta!=1);
 	
+	if (scelta==1) System.out.println("CARTA SCELTA: "+giocatori[i].scegliCarta(h-1).printCardR());
+	else if(scelta==0)System.out.println("CARTA SCELTA: "+giocatori[i].scegliCarta(h-1).printCardF());	
 	
 	do{
 	System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 0 e 40)" );
+	do {
 	System.out.print("X: ");
 	x=sc.nextInt();
 	System.out.print("Y: ");
 	y=sc.nextInt();
+	}while(x>40 || x<0 ||y >40 || y<0);
 	System.out.println("\n\n");
-	}while(giocatori[i].checkEmpty(x, y)!=00 && ((x<0 || x>40)||(y<0 || y>40)) && giocatori[i].checkNext(x, y)==false &&
+	}while(giocatori[i].checkEmpty(x, y)!=00 && giocatori[i].checkNext(x, y)==false &&
 			giocatori[i].checkCorner(x, y)==false);
 	
 	
@@ -106,10 +117,7 @@ public void Gioca() {
 	
 	System.out.println(giocatori[i].getName()+" da che mazzo vuoi pescare");
 }
-	
-	
 }
-
 }
 
 

@@ -7,9 +7,15 @@ public Carta_oro(String risorse1, String risorse2, String risorse3, String risor
 		super(risorse1, risorse2, risorse3, risorse4, punti, risorsenec, colore, risorse1r, ID);
 	}
 
+
+public String printCard() {
+	
+	return ("\nID: "+ID+"\nRISORSE NECESSARIE: "+risorsenec+"\nFRONTE"
+	+"\n------\n"+ris1Fronte+ "\t" +ris2Fronte+ "\n"+ris3Fronte+"\t"+ris4Fronte+
+	"\n------\n"+ "RETRO:\n------\n" +ris1Retro+"\n------");
 }
 
-
+}
 
 
 
