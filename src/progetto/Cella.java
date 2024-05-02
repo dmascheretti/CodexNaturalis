@@ -1,5 +1,6 @@
 package progetto;
 
+
 public class Cella {
 private int riga;
 private int colonna;

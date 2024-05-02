@@ -1,12 +1,13 @@
-package progetto;
+package carte;
 
-// 49 carte 
+import progetto.Colore_carta;
+
 public abstract class Carta {
 
 	private String risorsenec;
 	private int punti;
-	protected Cella[][] celle_fronte;
-	protected Cella[][] celle_retro;
+	//protected Cella[][] celle_fronte;
+	//protected Cella[][] celle_retro;
 	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
 	
 
@@ -31,8 +32,8 @@ public abstract class Carta {
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, 
 			String risorsenec, Colore_carta colore, String ris1Retro, int ID)
 	{
-		this.celle_fronte=new Cella[2][3];
-		this.celle_retro=new Cella[2][3];
+		//this.celle_fronte=new Cella[2][3];
+		//this.celle_retro=new Cella[2][3];
 		this.ris1Retro=ris1Retro;
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
@@ -232,9 +233,9 @@ public abstract class Carta {
 	/**
 	 * @return cards points
 	 */
-	public int getPunteggio() {
+	/*public int getPunteggio() {
 		return (celle_fronte[0][1].getPunti());
-	}
+	}*/
 
 	public int getID() {
 		return ID;
@@ -251,4 +252,7 @@ public abstract class Carta {
 		return ("\n"+"\n\n"+"    "+ "\t\t\t" +"    "+ "\n"+"    "+"\t\t\t"+"    "+"\n\n\n"+
 		"  \t"+"    "+"\t  ");
 	}
+	public abstract boolean mossaValida(Carta tabellone, int x, int y);
+		
+	
 	}

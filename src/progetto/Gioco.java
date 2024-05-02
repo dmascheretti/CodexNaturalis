@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
+import carte.Carta_oro;
+import mazzi.Mazzo_iniziale;
+import mazzi.Mazzo_oro;
+
 public class Gioco {
 	
 private Mazzo_oro mazzo_oro;
@@ -35,10 +39,10 @@ public Gioco() {
 	for (int i=0;i<n;i++) {
 		System.out.println("Selezione nome giocatore "+(i+1)+": ");
 		String name=sc.next();
-		if(i==randomInt) this.giocatori[i]=new Giocatore(name,Colore.NERO);
-		else if(i==0) this.giocatori[i]=new Giocatore(name,Colore.ROSSO);
-		else if (i==1) this.giocatori[i]=new Giocatore(name,Colore.GIALLO);
-		else if (i==2) this.giocatori[i]=new Giocatore(name,Colore.ROSSO);
+		if(i==randomInt) this.giocatori[i]=new Giocatore(name);
+		else if(i==0) this.giocatori[i]=new Giocatore(name);
+		else if (i==1) this.giocatori[i]=new Giocatore(name);
+		else if (i==2) this.giocatori[i]=new Giocatore(name);
 		
 	}
 	
@@ -73,7 +77,7 @@ public void Gioca() {
 	
 
 	for(int i=0;i<giocatori.length;i++) {
-	System.out.println(giocatori[i].getName().toUpperCase()+" : "+giocatori[i].getSegnalino()); 
+	System.out.println(giocatori[i].getName().toUpperCase()); 
 	
 	Scanner sc=new Scanner(System.in);
 	System.out.println(giocatori[i].getName()+" scegli una carta da giocare tra quelle della tua mano: ");
@@ -99,7 +103,7 @@ public void Gioca() {
 	
 	if(giocatori[i].scegliCarta(h-1).getID()>60 || giocatori[i].scegliCarta(h-1).getID()<21 ) {
 		giocatori[i].giocaCartaTabellone(giocatori[i].scegliCarta(h-1), x,y);
-		giocatori[i].getPunteggio(giocatori[i].scegliCarta(h-1).getPunteggio());
+		//giocatori[i].getPunteggio(giocatori[i].scegliCarta(h-1).getPunteggio());
 		
 	}
 	

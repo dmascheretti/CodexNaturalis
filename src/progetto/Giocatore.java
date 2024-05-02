@@ -2,25 +2,25 @@ package progetto;
 
 import java.util.ArrayList;
 
+import carte.Carta;
+
 public class Giocatore {
 private final String name;
 private ArrayList<Carta> mano;
-private Segnalino segnalino;
+
 private static int somma=0;
 private Carta[][]tabellone;
 
 
 
-public Giocatore(String name, Colore colore) {
+public Giocatore(String name) {
 	this.name=name;
 	this.mano= new ArrayList<Carta>();
-	this.segnalino=new Segnalino(colore);
+	
 	this.tabellone=new Carta[40][40];
 }
 
-public String getSegnalino() {
-	return segnalino.getColore().toString();
-}
+
 
 public String getName() {
 	return name;

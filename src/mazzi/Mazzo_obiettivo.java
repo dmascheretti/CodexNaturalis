@@ -1,6 +1,8 @@
-package progetto;
+package mazzi;
 
 import java.util.ArrayList;
+
+import cartaObiettivo.Carta_obiettivo;
 
 public class Mazzo_obiettivo extends Mazzo{
 	private ArrayList <Carta_obiettivo> mazzo_obiettivo= new ArrayList<Carta_obiettivo>();

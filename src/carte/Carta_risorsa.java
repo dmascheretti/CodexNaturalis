@@ -1,4 +1,7 @@
-package progetto;
+package carte;
+
+import progetto.Cella;
+import progetto.Colore_carta;
 
 public class Carta_risorsa extends Carta{
 	private int punti;
@@ -55,5 +58,13 @@ public void getCarta(){
 	System.out.println("\n");
 	
 
+}
+
+
+
+@Override
+public boolean mossaValida(Carta tabellone, int x, int y) {
+	// TODO Auto-generated method stub
+	return false;
 }
 }

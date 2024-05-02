@@ -1,4 +1,6 @@
-package progetto;
+package cartaObiettivo;
+
+import carte.Carta;
 
 public class Carta_obiettivo extends Carta {
 	
@@ -12,4 +14,10 @@ public class Carta_obiettivo extends Carta {
 		
 
 }
+	@Override
+	public boolean mossaValida(Carta tabellone, int x, int y){
+		
+		return false;
+	}
+	
 }

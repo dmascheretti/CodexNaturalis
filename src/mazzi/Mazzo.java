@@ -1,4 +1,4 @@
-package progetto;
+package mazzi;
 
 public abstract class Mazzo {
 }

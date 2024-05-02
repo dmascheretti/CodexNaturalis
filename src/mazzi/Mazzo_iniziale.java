@@ -1,7 +1,10 @@
-package progetto;
+package mazzi;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import carte.Carta_iniziale;
+import progetto.Regno;
  
 
 public class Mazzo_iniziale {

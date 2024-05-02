@@ -1,7 +1,12 @@
-package progetto;
+package mazzi;
 import java.util.ArrayList;
 
 import java.util.Collections;
+
+import carte.Carta;
+import carte.Carta_oro;
+import progetto.Colore_carta;
+import progetto.Regno;
 
 
 public class Mazzo_oro extends Mazzo{
