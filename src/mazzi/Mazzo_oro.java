@@ -80,67 +80,67 @@ private Carta_oro carta_oro100=new Carta_oro("non giocabile",Regno.NULL.toString
 */
 
 
-private Carta_oro carta_oro80=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.NULL.toString(),Regno.NULL.toString(),
+private Carta_oro carta_oro80=new Carta_oro(Regno.NULL.toString(),"████",Regno.NULL.toString(),Regno.NULL.toString(),
 		2,"VVVF", Colore_carta.VERDE,Regno.VEGE.toString(),80);
 
-private Carta_oro carta_oro81=new Carta_oro("XXXX",Regno.NULL.toString(),Regno.NULL.toString(),Regno.PERG.toString(),
+private Carta_oro carta_oro81=new Carta_oro("████",Regno.NULL.toString(),Regno.NULL.toString(),Regno.PERG.toString(),
 		1,"AAV", Colore_carta.BLU,Regno.ANIM.toString(),81);
 
-private Carta_oro carta_oro82=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.PIUM.toString(),Regno.NULL.toString(),
+private Carta_oro carta_oro82=new Carta_oro(Regno.NULL.toString(),"████",Regno.PIUM.toString(),Regno.NULL.toString(),
 		1,"AAF", Colore_carta.BLU, Regno.ANIM.toString(),82);
 
-private Carta_oro carta_oro83=new Carta_oro("XXXX",Regno.NULL.toString(),Regno.NULL.toString(),Regno.NULL.toString(),
+private Carta_oro carta_oro83=new Carta_oro("████",Regno.NULL.toString(),Regno.NULL.toString(),Regno.NULL.toString(),
 		2,"AAAV", Colore_carta.BLU, Regno.ANIM.toString(),83);
 
-private Carta_oro carta_oro84=new Carta_oro("XXXX",Regno.NULL.toString(),Regno.NULL.toString(),"XXXX",
+private Carta_oro carta_oro84=new Carta_oro("████",Regno.NULL.toString(),Regno.NULL.toString(),"████",
 		5,"AAAAA", Colore_carta.BLU, Regno.ANIM.toString(),84);
 
-private Carta_oro carta_oro85=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),"XXXX",Regno.NULL.toString(),
+private Carta_oro carta_oro85=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),"████",Regno.NULL.toString(),
 		2,"AAAI", Colore_carta.BLU, Regno.ANIM.toString(),85);
 
-private Carta_oro carta_oro86=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.NULL.toString(),Regno.NULL.toString(),
+private Carta_oro carta_oro86=new Carta_oro(Regno.NULL.toString(),"████",Regno.NULL.toString(),Regno.NULL.toString(),
 		2,"AAAF", Colore_carta.BLU, Regno.ANIM.toString(),86);
 
-private Carta_oro carta_oro87=new Carta_oro("XXXX",Regno.NULL.toString(),"XXXX",Regno.PIUM.toString(),
+private Carta_oro carta_oro87=new Carta_oro("████",Regno.NULL.toString(),"████",Regno.PIUM.toString(),
 		3,"AAA", Colore_carta.BLU, Regno.ANIM.toString(),87);
 
-private Carta_oro carta_oro88=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.PERG.toString(),Regno.NULL.toString(),
+private Carta_oro carta_oro88=new Carta_oro(Regno.NULL.toString(),"████",Regno.PERG.toString(),Regno.NULL.toString(),
 		3,"AAA", Colore_carta.BLU, Regno.ANIM.toString(),88);
 
-private Carta_oro carta_oro89=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.PERG.toString(),"XXXX",
+private Carta_oro carta_oro89=new Carta_oro(Regno.NULL.toString(),"████",Regno.PERG.toString(),"████",
 		3,"AAA", Colore_carta.BLU, Regno.ANIM.toString(),89);
 
-private Carta_oro carta_oro90=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),"XXXX", "XXXX",
+private Carta_oro carta_oro90=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),"████", "████",
 		5,"VVVVV", Colore_carta.VERDE, Regno.VEGE.toString(),90);
 
-private Carta_oro carta_oro91=new Carta_oro(Regno.PIUM.toString(),Regno.NULL.toString(),Regno.NULL.toString(),"XXXX",
+private Carta_oro carta_oro91=new Carta_oro(Regno.PIUM.toString(),Regno.NULL.toString(),Regno.NULL.toString(),"████",
 		5,"VVI", Colore_carta.VERDE, Regno.VEGE.toString(),91);
 
-private Carta_oro carta_oro92=new Carta_oro(Regno.PIUM.toString(),Regno.NULL.toString(),"XXXX","XXXX",
+private Carta_oro carta_oro92=new Carta_oro(Regno.PIUM.toString(),Regno.NULL.toString(),"████","████",
 		3,"FFF", Colore_carta.ROSSO, Regno.INSE.toString(),92);
 
-private Carta_oro carta_oro93=new Carta_oro("XXXX",Regno.PERG.toString(),"XXXX",Regno.NULL.toString(),
+private Carta_oro carta_oro93=new Carta_oro("████",Regno.PERG.toString(),"████",Regno.NULL.toString(),
 		3,"FFF", Colore_carta.ROSSO, Regno.INSE.toString(),93);
 
-private Carta_oro carta_oro94=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.POZI.toString(),"XXXX",
+private Carta_oro carta_oro94=new Carta_oro(Regno.NULL.toString(),"████",Regno.POZI.toString(),"████",
 		3,"FFF", Colore_carta.ROSSO, Regno.INSE.toString(),94);
 
-private Carta_oro carta_oro95=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.NULL.toString(),"XXXX",
+private Carta_oro carta_oro95=new Carta_oro(Regno.NULL.toString(),"████",Regno.NULL.toString(),"████",
 		5,"FFFFF", Colore_carta.ROSSO, Regno.INSE.toString(),95);
 
-private Carta_oro carta_oro96=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),Regno.NULL.toString(),"XXXX",
+private Carta_oro carta_oro96=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),Regno.NULL.toString(),"████",
 		2,"FFFV", Colore_carta.ROSSO, Regno.INSE.toString(),96);
 
-private Carta_oro carta_oro97=new Carta_oro(Regno.PERG.toString(),"XXXX",Regno.NULL.toString(),"XXXX",
+private Carta_oro carta_oro97=new Carta_oro(Regno.PERG.toString(),"████",Regno.NULL.toString(),"████",
 		1,"FFI", Colore_carta.ROSSO, Regno.INSE.toString(),97);
 
-private Carta_oro carta_oro98=new Carta_oro(Regno.NULL.toString(),"XXXX",Regno.NULL.toString(),Regno.NULL.toString(),
+private Carta_oro carta_oro98=new Carta_oro(Regno.NULL.toString(),"████",Regno.NULL.toString(),Regno.NULL.toString(),
 		2,"FFFI", Colore_carta.ROSSO, Regno.INSE.toString(),98);
 
-private Carta_oro carta_oro99=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),"XXXX",Regno.NULL.toString(),
+private Carta_oro carta_oro99=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),"████",Regno.NULL.toString(),
 		2,"FFFA", Colore_carta.ROSSO, Regno.INSE.toString(),99);
 
-private Carta_oro carta_oro100=new Carta_oro("XXXX",Regno.NULL.toString(),Regno.NULL.toString(),Regno.PIUM.toString(),
+private Carta_oro carta_oro100=new Carta_oro("████",Regno.NULL.toString(),Regno.NULL.toString(),Regno.PIUM.toString(),
 		1,"FFA", Colore_carta.ROSSO, Regno.INSE.toString(),100);
 
 

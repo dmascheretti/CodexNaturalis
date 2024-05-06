@@ -4,11 +4,22 @@ import progetto.Colore_carta;
 
 public abstract class Carta {
 
+<<<<<<< Updated upstream:src/carte/Carta.java
 	private String risorsenec;
 	private int punti;
 	//protected Cella[][] celle_fronte;
 	//protected Cella[][] celle_retro;
 	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
+=======
+	protected String risorsenec;
+	protected int punti;
+	protected Cella[][] celle_fronte;
+	protected Cella[][] celle_retro;
+	protected String ris1Fronte;
+	protected String ris2Fronte;
+	protected String ris3Fronte;
+	protected String ris4Fronte;
+>>>>>>> Stashed changes:src/progetto/Carta.java
 	
 
 	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
@@ -30,11 +41,17 @@ public abstract class Carta {
 	 * @param ID: cards identification code 
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, 
-			String risorsenec, Colore_carta colore, String ris1Retro, int ID)
+			String risorsenec, Colore_carta colore, String ris1Centro, int ID)
 	{
+<<<<<<< Updated upstream:src/carte/Carta.java
 		//this.celle_fronte=new Cella[2][3];
 		//this.celle_retro=new Cella[2][3];
 		this.ris1Retro=ris1Retro;
+=======
+		this.celle_fronte=new Cella[2][3];
+		this.celle_retro=new Cella[2][3];
+		this.ris1Centro=ris1Centro;
+>>>>>>> Stashed changes:src/progetto/Carta.java
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
 		this.ris3Fronte=ris3Fronte;
@@ -196,7 +213,7 @@ public abstract class Carta {
 		System.out.println("\n");
 		System.out.println("punti carta: "+punti);
 		System.out.println("\nrisorse necessarie: "+risorsenec+"\n");
-		System.out.println(ris1Fronte+"\t"+ris2Fronte+"\n"+ris3Fronte+"\t"+ris4Fronte);
+		System.out.println(ris1Fronte+"\t"+ris2Fronte+"\n\n\n"+ris3Fronte+"\t"+ris4Fronte);
 		System.out.println(ris1Retro+"\t"+ris1Centro+"\t"+ris2Retro+"\t"+ris3Retro+"\t"+ris2Centro
 				+ris4Retro);
 		
@@ -242,17 +259,76 @@ public abstract class Carta {
 	}
 	public String printCard() {
 		
+<<<<<<< Updated upstream:src/carte/Carta.java
 		return ("ID: "+ID+" \n"+"RISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
 		+"-----------------------------\n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+
 		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
 	}
 
+=======
+		return ("\n---------------------╗\n\n"
+				+ris1Fronte+ "\t\t" +ris2Fronte+ "\n\n"+ris3Fronte+"\t\t"+ris4Fronte+"\n\n---------------------╝");
+	}
+
+public String printCardR() {
+	
+	return ("\n---------------------╗\n\n"
+			+"\t" +ris1Centro+ "\n\n"+"    "+"\t\t"+"    "+"\n---------------------╝");
+}
+
+>>>>>>> Stashed changes:src/progetto/Carta.java
 	public String printEmpty() {
 		
 		return ("\n"+"\n\n"+"    "+ "\t\t\t" +"    "+ "\n"+"    "+"\t\t\t"+"    "+"\n\n\n"+
 		"  \t"+"    "+"\t  ");
 	}
+<<<<<<< Updated upstream:src/carte/Carta.java
 	public abstract boolean mossaValida(Carta tabellone, int x, int y);
 		
+=======
+	
+	public void setRis1Fronte(){
+		ris1Fronte="    ";
+	}
+	public void setRis2Fronte(){
+		ris2Fronte="    ";
+	}
+	public void setRis3Fronte(){
+		ris3Fronte="    ";
+	}
+	public void setRis4Fronte(){
+		ris4Fronte="    ";
+	}
+	
+	public void setRis1Centro(){
+		ris1Centro="    ";
+	}
+	
+	public void setRisRetro(){
+		ris1Fronte=ris1Retro;
+		ris2Fronte=ris2Retro;
+		ris2Fronte=ris2Retro;
+		ris2Fronte=ris2Retro;
+		ris1Centro="    ";
+		ris2Centro="    ";
+	}
+	
+	public void setRisRetroIniziale(){
+		ris4Retro="    ";
+		ris4Retro="    ";
+		ris4Retro="    ";
+		ris4Retro="    ";
+		ris1Centro="    ";
+		ris2Centro="    ";
+	}
+	
+	public void setRisFronte(){
+		ris1Fronte="    ";
+		ris2Fronte="    ";
+		ris3Fronte="    ";
+		ris4Fronte="    ";
+	}
+
+>>>>>>> Stashed changes:src/progetto/Carta.java
 	
 	}

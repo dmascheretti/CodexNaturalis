@@ -6,10 +6,10 @@ VEGE ("Vegetale"),
 ANIM ("Animale"),
 FUNG ("Funghi"),
 INSE ("Insetti"),
-NULL(" "),
+NULL (" "),
 POZI ("Pozione"),
-PERG("Pergamnea"),
-PIUM("Piuma");
+PERG ("Pergamena"),
+PIUM ("Piuma");
 
 private String regno;
 
