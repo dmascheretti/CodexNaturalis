@@ -4,26 +4,21 @@ import progetto.Colore_carta;
 
 public abstract class Carta {
 
-<<<<<<< Updated upstream:src/carte/Carta.java
-	private String risorsenec;
-	private int punti;
-	//protected Cella[][] celle_fronte;
-	//protected Cella[][] celle_retro;
-	private String ris1Fronte,ris2Fronte,ris3Fronte,ris4Fronte;
-=======
+
+
 	protected String risorsenec;
 	protected int punti;
-	protected Cella[][] celle_fronte;
-	protected Cella[][] celle_retro;
 	protected String ris1Fronte;
 	protected String ris2Fronte;
 	protected String ris3Fronte;
 	protected String ris4Fronte;
->>>>>>> Stashed changes:src/progetto/Carta.java
-	
 
-	private String ris1Retro,ris2Retro, ris3Retro, ris4Retro;
-	private String ris1Centro, ris2Centro;
+	protected String ris1Retro;
+	protected String ris2Retro;
+	protected String ris3Retro;
+	protected String ris4Retro;
+	protected String ris1Centro;
+	protected String ris2Centro;
 	private Colore_carta colore;
 	protected String obiettivo;
 	protected final int ID;
@@ -43,15 +38,8 @@ public abstract class Carta {
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, 
 			String risorsenec, Colore_carta colore, String ris1Centro, int ID)
 	{
-<<<<<<< Updated upstream:src/carte/Carta.java
-		//this.celle_fronte=new Cella[2][3];
-		//this.celle_retro=new Cella[2][3];
-		this.ris1Retro=ris1Retro;
-=======
-		this.celle_fronte=new Cella[2][3];
-		this.celle_retro=new Cella[2][3];
+
 		this.ris1Centro=ris1Centro;
->>>>>>> Stashed changes:src/progetto/Carta.java
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
 		this.ris3Fronte=ris3Fronte;
@@ -61,21 +49,6 @@ public abstract class Carta {
 		this.colore=colore;
 		this.ID=ID;
 		
-		/*
-		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
-		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(0,2,ris2Fronte);
-		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,0,ris3Fronte);
-		this.celle_fronte[1][2]=new Cella(1,2,ris4Fronte);
-		
-		this.celle_retro[0][0]=new Cella(0,0,"");
-		this.celle_retro[0][1]=new Cella(0,1,ris1Retro);
-		this.celle_retro[0][2]=new Cella(0,2,"");
-		this.celle_retro[1][1]=new Cella(1,1,"");
-		this.celle_retro[1][0]=new Cella(1,0,"");
-		this.celle_retro[1][2]=new Cella(1,2,"");
-		*/
 	}
 	
 	
@@ -91,12 +64,9 @@ public abstract class Carta {
 	 * @param ID: cards identification code
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, Colore_carta colore,
-			String ris1Retro, int ID)
+			String ris1Centro, int ID)
 	{
-		//da vedere se servono quattro risorse settate a null sul retro
-		//this.celle_fronte=new Cella[2][3];
-		//this.celle_retro=new Cella[2][3];
-		this.ris1Retro=ris1Retro;
+		this.ris1Centro=ris1Centro;
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
 		this.ris3Fronte=ris3Fronte;
@@ -105,22 +75,7 @@ public abstract class Carta {
 		this.colore=colore;
 		this.ID=ID;
 		
-		/*
-		
-		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
-		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(0,2,ris2Fronte);
-		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,0,ris3Fronte);
-		this.celle_fronte[1][2]=new Cella(1,2,ris4Fronte);
-		
-		this.celle_retro[0][0]=new Cella(0,0,"");
-		this.celle_retro[0][1]=new Cella(0,1,ris1Retro);
-		this.celle_retro[0][2]=new Cella(0,2,"");
-		this.celle_retro[1][1]=new Cella(1,1,"");
-		this.celle_retro[1][0]=new Cella(1,0,"");
-		this.celle_retro[1][2]=new Cella(1,2,"");
-		*/
+	
 	}
 
 	
@@ -157,22 +112,6 @@ public abstract class Carta {
 		this.ris1Centro=ris1Centro;
 		this.ris2Centro=ris2Centro;
 		this.ID=ID;
-		/*
-		
-		this.celle_fronte[0][0]=new Cella(0,0,ris1Fronte);
-		this.celle_fronte[0][1]=new Cella(0,1,"");
-		this.celle_fronte[0][2]=new Cella(0,2,ris2Fronte);
-		this.celle_fronte[1][1]=new Cella(1,1,"");
-		this.celle_fronte[1][0]=new Cella(1,0,ris3Fronte);
-		this.celle_fronte[1][2]=new Cella(1,2,ris4Fronte);
-		
-		this.celle_retro[0][0]=new Cella(0,0, ris1Retro);
-		this.celle_retro[0][1]=new Cella(0,1,ris1Centro);
-		this.celle_retro[0][2]=new Cella(0,2,ris2Retro);
-		this.celle_retro[1][1]=new Cella(1,1,ris2Centro);
-		this.celle_retro[1][0]=new Cella(1,0,ris3Retro);
-		this.celle_retro[1][2]=new Cella(1,2,ris4Retro);
-		*/
 	}
 	
 	// obiettivo
@@ -204,6 +143,10 @@ public abstract class Carta {
 
 	public String getRis4Fronte() {
 		return ris4Fronte;
+	}
+	
+	public String getRis1Centro() {
+		return ris1Centro;
 	}
 	
 	/**
@@ -250,22 +193,23 @@ public abstract class Carta {
 	/**
 	 * @return cards points
 	 */
-	/*public int getPunteggio() {
-		return (celle_fronte[0][1].getPunti());
-	}*/
+	public int getPunteggio() {
+		return punti;
+	}
 
 	public int getID() {
 		return ID;
 	}
+	
 	public String printCard() {
 		
-<<<<<<< Updated upstream:src/carte/Carta.java
 		return ("ID: "+ID+" \n"+"RISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
 		+"-----------------------------\n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+
 		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
 	}
 
-=======
+	public String printCardF() {
+
 		return ("\n---------------------╗\n\n"
 				+ris1Fronte+ "\t\t" +ris2Fronte+ "\n\n"+ris3Fronte+"\t\t"+ris4Fronte+"\n\n---------------------╝");
 	}
@@ -276,16 +220,14 @@ public String printCardR() {
 			+"\t" +ris1Centro+ "\n\n"+"    "+"\t\t"+"    "+"\n---------------------╝");
 }
 
->>>>>>> Stashed changes:src/progetto/Carta.java
 	public String printEmpty() {
 		
 		return ("\n"+"\n\n"+"    "+ "\t\t\t" +"    "+ "\n"+"    "+"\t\t\t"+"    "+"\n\n\n"+
 		"  \t"+"    "+"\t  ");
 	}
-<<<<<<< Updated upstream:src/carte/Carta.java
+
 	public abstract boolean mossaValida(Carta tabellone, int x, int y);
-		
-=======
+
 	
 	public void setRis1Fronte(){
 		ris1Fronte="    ";
@@ -329,6 +271,5 @@ public String printCardR() {
 		ris4Fronte="    ";
 	}
 
->>>>>>> Stashed changes:src/progetto/Carta.java
-	
+
 	}

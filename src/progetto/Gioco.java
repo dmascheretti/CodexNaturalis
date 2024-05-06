@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import carte.Carta_oro;
+import carte.Carta_risorsa;
 import mazzi.Mazzo_iniziale;
 import mazzi.Mazzo_oro;
 
@@ -43,10 +44,7 @@ public Gioco() {
 	for (int i=0;i<n;i++) {
 		System.out.println("Selezione nome giocatore "+(i+1)+": ");
 		String name=sc.next();
-		if(i==randomInt) this.giocatori[i]=new Giocatore(name);
-		else if(i==0) this.giocatori[i]=new Giocatore(name);
-		else if (i==1) this.giocatori[i]=new Giocatore(name);
-		else if (i==2) this.giocatori[i]=new Giocatore(name);
+		this.giocatori[i]=new Giocatore(name);
 		
 	}
 	
@@ -61,17 +59,8 @@ public void Gioca() {
 	mazzo_oro.mescolaMazzo();
 	//mazzo_oro.getMazzo();
 	System.out.println("\n");
-	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),0,0);
-	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),1,0);
-	//giocatori[0].giocaCarta2(mazzo_oro.pescaCarta(),9,3);
-	//System.out.println("NUOVO TABELLONE");
+
 	
-	//giocatori[0].getTabellone();
-	
-<<<<<<< Updated upstream
-=======
-	
->>>>>>> Stashed changes
 	
 	for(int i=0;i<giocatori.length;i++) {
 		giocatori[i].riempiTabellone(carta_nulla);
@@ -80,34 +69,20 @@ public void Gioca() {
 		giocatori[i].aggiungiaMano(mazzo_oro.pescaCarta());
 		mazzo_oro.rimuoviCarta();
 		
-<<<<<<< Updated upstream
-=======
 		//giocatori[i].giocaCartaTabellone(giocatori[i].scegliCarta(0), 5, 5);
 		//giocatori[i].removeCard();
 		
->>>>>>> Stashed changes
 		//for(int j=0;j<2;j++)giocatori[i].pescaCarta(mazzo_risorse.pescaCarta());
 		
 		}
-	
-<<<<<<< Updated upstream
 
-	for(int i=0;i<giocatori.length;i++) {
-	System.out.println(giocatori[i].getName().toUpperCase()); 
-	
-=======
-	
-	
-	
-
-	for(int i=0;i<giocatori.length;i++) {
+	for(int i1=0;i1<giocatori.length;i1++) {
 		
->>>>>>> Stashed changes
 	Scanner sc=new Scanner(System.in);
-	System.out.println(giocatori[i].getName().toUpperCase()+" : "+giocatori[i].getSegnalino()); 
+	System.out.println(giocatori[i1].getName().toUpperCase()); 
 	int f;
 	
-	System.out.println(giocatori[i].scegliCarta(0).printCard());
+	System.out.println(giocatori[i1].scegliCarta(0).printCard());
 
 	do {
 	
@@ -116,85 +91,95 @@ public void Gioca() {
 	
 	}while(f!=0 && f!=1);
 	
-	if(f==0) giocatori[i].scegliCarta(0).setRisRetroIniziale();
+	if(f==0) giocatori[i1].scegliCarta(0).setRisRetroIniziale();
 	else {
-		giocatori[i].scegliCarta(0).setRisFronte();
-		
+		giocatori[i1].scegliCarta(0).setRisFronte();	
 	}
 	
-	giocatori[i].giocaCartaTabellone(giocatori[i].scegliCarta(0), 5, 5);
-	giocatori[i].removeCard();
+	giocatori[i1].giocaCartaTabellone(giocatori[i1].scegliCarta(0), 5, 5);
+	giocatori[i1].getTabellone();
+	
+	giocatori[i1].removeCard();
 	
 	
 	
-	System.out.println(giocatori[i].getName()+" scegli una carta da giocare tra quelle della tua mano: ");
-	giocatori[i].guardaMano();
+	System.out.println(giocatori[i1].getName()+" scegli una carta da giocare tra quelle della tua mano: ");
+	giocatori[i1].guardaMano();
 	int h,x,y;
 	System.out.println("scegli tra 1,2,3 " );
 	do {
 	h=sc.nextInt();
 	}while(h<1||h>3);
 	
-<<<<<<< Updated upstream
-=======
-	//do {
 	System.out.println("vuoi giocare fronte o retro? 0 per fronte, 1 per retro");
-	scelta=sc.nextInt();
-	if(scelta==0) giocatori[i].scegliCarta(h-1).setRis1Centro();
-	if(scelta==1) {
-		giocatori[i].scegliCarta(h-1).setRisFronte();
+	int scelta = sc.nextInt();
+	if(scelta==0) {
+		giocatori[i1].scegliCarta(h-1).setRis1Centro();
+		System.out.println(giocatori[i1].scegliCarta(h-1).printCardF());
+		
 	}
-	//}while(scelta!=0 || scelta!=1);
->>>>>>> Stashed changes
+	if(scelta==1) {
+		giocatori[i1].scegliCarta(h-1).setRisFronte();
+		System.out.println(giocatori[i1].scegliCarta(h-1).printCardR());
+	}
+		
 	
 	
-	do{
-<<<<<<< Updated upstream
-	System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 0 e 40)" );
-=======
-	System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 0 e 40)");
+do {
 	do {
->>>>>>> Stashed changes
-	System.out.print("X: ");
-	x=sc.nextInt();
-	System.out.print("Y: ");
-	y=sc.nextInt();
-	System.out.println("\n\n");
-<<<<<<< Updated upstream
-	}while(giocatori[i].checkEmpty(x, y)!=00 && ((x<0 || x>40)||(y<0 || y>40)) && giocatori[i].checkNext(x, y)==false &&
-			giocatori[i].checkCorner(x, y)==false);
-=======
-	if(giocatori[i].checkEmpty(x, y)!=00) System.out.println("Questa cella è gia occupata");
-	}while(giocatori[i].checkEmpty(x, y)!=00 && giocatori[i].checkNext(x, y)==false);
+		
+		do{
+	
+		
+			do {
+				System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 0 e 40)");
+				System.out.print("X: ");
+				x=sc.nextInt();
+				System.out.print("Y: ");
+				y=sc.nextInt();
+				System.out.println("\n\n");
+	
+			}while((x<0 || x>10)||(y<0 || y>10)) ;
+	
+				if(giocatori[i1].checkEmpty(x, y)!=00) System.out.println("Questa cella è gia occupata");
+		
+		}while((giocatori[i1].checkEmpty(x, y)!=00));
+		
+			if(giocatori[i1].checkNext(x, y)==false) System.out.println("Non puoi giocare la carta in quella posizione");
+		
+	}while(giocatori[i1].checkNext(x, y)==false);
+	
+}while(giocatori[i1].checkCorner(x,y)==false);
+	//&& ;
 		//non funziona
 			//giocatori[i].checkCorner(x, y)==false);
 	//(giocatori[i].checkEmpty(x, y)!=00) &&
->>>>>>> Stashed changes
+
 	
+System.out.println("INSETTI: "+giocatori[i1].contaInsetti());
 	
-	if(giocatori[i].scegliCarta(h-1).getID()>60 || giocatori[i].scegliCarta(h-1).getID()<21 ) {
-		giocatori[i].giocaCartaTabellone(giocatori[i].scegliCarta(h-1), x,y);
-<<<<<<< Updated upstream
+	if(giocatori[i1].scegliCarta(h-1).getID()>60 || giocatori[i1].scegliCarta(h-1).getID()<21 ) {
+		giocatori[i1].giocaCartaTabellone(giocatori[i1].scegliCarta(h-1), x,y);
+
 		//giocatori[i].getPunteggio(giocatori[i].scegliCarta(h-1).getPunteggio());
-=======
-		giocatori[i].removeCorner(x,y);
-		giocatori[i].getPunteggio(giocatori[i].scegliCarta(h-1).getPunteggio());
->>>>>>> Stashed changes
+
+		giocatori[i1].removeCorner(x,y);
+		giocatori[i1].getPunteggio(giocatori[i1].scegliCarta(h-1).getPunteggio());
+
 		
 	}
 	
-	giocatori[i].getTabellone();
+	giocatori[i1].getTabellone();
+	
 	for(int l=0;l<2;l++) {
 	campo_oro.add(mazzo_oro.pescaCarta());
 	mazzo_oro.rimuoviCarta();
 	//campo_risorsa.add(mazzo_risorsa.pescaCarta());
 	//mazzo_risorsa.rimuoviCarta();
 	
-
-	
 	}
 	
-	System.out.println("INSETTI PRESENTI SUL CAMPO: "+giocatori[i].contaInsetti());
+	System.out.println("INSETTI PRESENTI SUL CAMPO: "+giocatori[i1].contaInsetti());
 	
 	System.out.println("CARTE SUL CAMPO ORO");
 	
@@ -212,7 +197,7 @@ public void Gioca() {
 		for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┴");
 	
 	int carta,pesca;
-	System.out.println(giocatori[i].getName()+" \nda che mazzo vuoi pescare: 1 se vuoi pescare tra dal mazzo oro,"
+	System.out.println(giocatori[i1].getName()+" \nda che mazzo vuoi pescare: 1 se vuoi pescare tra dal mazzo oro,"
 			+ "2 se vuoi pescare dal mazzo risorsa, 3 se vuoi prendere una carta oro scoperta, 4 se vuoi prendere una carta risorsa scoperta");
 	carta=sc.nextInt();
 	System.out.println("CARTE SCOPERTE: \n");
@@ -220,18 +205,18 @@ public void Gioca() {
 	//for(int index=0;index<2;index++) System.out.print(campo_risorsa.get(index).printCard());
 	
 	switch(carta) {
-	case 1:giocatori[i].aggiungiaMano(mazzo_oro.pescaCarta());
-	System.out.println("hai pescato: \n");
-	giocatori[i].guardaCartaMano(2);
-	mazzo_oro.rimuoviCarta();
-	break;
+	case 1:giocatori[i1].aggiungiaMano(mazzo_oro.pescaCarta());
+		System.out.println("hai pescato: \n");
+		giocatori[i1].guardaCartaMano(2);
+		mazzo_oro.rimuoviCarta();
+		break;
 	case 2: System.out.println();
-	break;
+		break;
 	case 3:System.out.println("Scegli la carta che vuoi aggiungere alla tua mano,1 o 2");
 			System.out.println("1:\n"+campo_oro.get(0).printCard());
 			System.out.println("2:\n"+campo_oro.get(1).printCard());
 			pesca=sc.nextInt();
-			giocatori[i].aggiungiaMano(campo_oro.get(pesca-1));
+			giocatori[i1].aggiungiaMano(campo_oro.get(pesca-1));
 			campo_oro.remove(pesca-1);
 			campo_oro.add(mazzo_oro.pescaCarta());
 			mazzo_oro.rimuoviCarta();
@@ -246,12 +231,13 @@ public void Gioca() {
 	default:
 	}
 	
-	giocatori[i].guardaMano();
+	giocatori[i1].guardaMano();
 	
 }
-	
+
 	
 }
+
 
 }
 
