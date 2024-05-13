@@ -1,6 +1,4 @@
-package cartaObiettivo;
-
-import carte.Carta;
+package carte;
 
 public class Carta_obiettivo extends Carta {
 	

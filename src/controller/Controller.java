@@ -97,7 +97,7 @@ public class Controller {
 			
 			}
 			
-			}
+		}
 			
 			
 		
@@ -107,6 +107,10 @@ public class Controller {
 	public int conta(Tabellone tabellone) {
 		return contatore.contaInsetti(tabellone);
 	}
-	}
+	
+	
+	
+	
+}
 	
 
