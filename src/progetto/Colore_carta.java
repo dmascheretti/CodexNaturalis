@@ -1,5 +1,5 @@
 package progetto;
 
 public enum Colore_carta {
-VIOLA, ROSSO, BLU, VERDE
+VIOLA, ROSSO, BLU, VERDE, NULL
 }

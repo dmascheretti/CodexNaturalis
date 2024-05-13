@@ -306,6 +306,17 @@ public String printCardR() {
 	public String getRis2Centro() {
 		return ris2Centro;
 	}
+
+
+
+	public String getColore() {
+		// TODO Auto-generated method stub
+		return colore.toString();
+	}
+	
+	public void setColore() {
+		colore= Colore_carta.NULL;
+	}
 	
 
 	}

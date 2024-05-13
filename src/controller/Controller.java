@@ -108,7 +108,126 @@ public class Controller {
 		return contatore.contaInsetti(tabellone);
 	}
 	
-	
+	/** This method checks the resources......
+	 * @param id
+	 * @param tabellone
+	 * @return points
+	 */
+	public int checkCartaObiettivo(int id, Tabellone tabellone){
+		int punti=0;
+		int piume;
+		int pergamena;
+		int pozione;
+		 switch(id) {
+		
+		case 5: 
+	    punti=0;
+		piume=contatore.contaPiume(tabellone);
+		pozione=contatore.contaPozioni(tabellone);
+		pergamena=contatore.contaPergamene(tabellone);
+		
+		 while(piume!=0 && pozione!=0 && pergamena!=0) {
+			piume--;
+			pozione--;
+			pergamena--;
+			punti+=3;
+		   }
+		return punti;
+		
+		case 6:  
+			punti=0;
+		        for(int i=0;i<20;i++)
+			       for(int j=0;j<20;j++)
+					  if(tabellone.getCella(i, j).getColore()=="VIOLA" ) {
+						if(tabellone.getCella(i+1, j+1).getColore()=="VIOLA" && tabellone.getCella(i+2, j+2).getColore()=="VIOLA" ) {
+						 punti+= 2;
+						    tabellone.getCella(i+2, j+2).setColore();
+						 }
+					  }
+			return punti;
+				       	
+		case 7: 
+			punti=0;
+            for(int i=0;i<20;i++)
+	           for(int j=0;j<20;j++)
+			      if(tabellone.getCella(i, j).getColore()=="VERDE" ) {
+				    if(tabellone.getCella(i+1, j+1).getColore()=="VERDE" && tabellone.getCella(i+2, j+2).getColore()=="VERDE" ) {
+				     punti+= 2;
+				        tabellone.getCella(i+2, j+2).setColore();
+				     }
+				  }
+		    return punti;
+		
+		case 8: 
+			punti=0;
+	        for(int i=0;i<20;i++)
+		       for(int j=0;j<20;j++)
+				      if(tabellone.getCella(i, j).getColore()=="ROSSO" ) {
+					    if(tabellone.getCella(i-1, j+1).getColore()=="ROSSO" && tabellone.getCella(i-2, j+2).getColore()=="ROSSO" ) {
+					     punti+= 2;
+					        tabellone.getCella(i-1, j+1).setColore();
+					     }
+					  }
+			       return punti;
+		case 9:
+		
+		case 10:
+			punti=0;
+	        for(int i=0;i<20;i++)
+		       for(int j=0;j<20;j++)
+				      if(tabellone.getCella(i, j).getColore()=="BLU" ) {
+					    if(tabellone.getCella(i-1, j+1).getColore()=="BLU" && tabellone.getCella(i-2, j+2).getColore()=="BLU" ) {
+					     punti+= 2;
+					        tabellone.getCella(i-1, j+1).setColore();
+					     }
+					  }
+			       return punti;
+		case 11:
+		case 12:
+		case 13:
+		
+		case 14: return contatore.contaAnimali(tabellone)/3*2;
+		
+		case 15: return contatore.contaFunghi(tabellone)/3*2;
+		
+		case 16: return contatore.contaVegetali(tabellone)/3*2;
+		
+		case 17: 
+			punti=0;
+			pergamena=contatore.contaPergamene(tabellone);
+				
+				while(pergamena!=1 || pergamena!=0) {
+					pergamena-=2;
+					punti+=2;
+				  }
+				return punti;
+		
+		case 18: 
+			return contatore.contaInsetti(tabellone)/3*2;
+		
+		case 19: 
+			 punti=0;
+			 pergamena=contatore.contaPergamene(tabellone);
+				
+				while(pergamena!=1 || pergamena!=0) {
+					pergamena-=2;
+					punti+=2;
+				  }
+				return punti;
+		
+		case 20: 
+			 punti=0;
+			 piume=contatore.contaPiume(tabellone);
+				
+				while(piume!=1 || piume!=0) {
+					piume-=2;
+					punti+=2;
+				  }
+				return punti;
+		
+		default: return 0;
+		}
+	}
 	
 	
 }
