@@ -3,13 +3,14 @@ package progetto;
 import java.util.ArrayList;
 
 import carte.Carta;
+import progetto.Tabellone;
 
 public class Giocatore {
 private final String name;
 private ArrayList<Carta> mano;
 
 private static int somma=0;
-private Carta[][]tabellone;
+private Tabellone tabellone;
 
 
 
@@ -17,7 +18,7 @@ public Giocatore(String name) {
 	this.name=name;
 	this.mano= new ArrayList<Carta>();
 	
-	this.tabellone=new Carta[10][10];
+	this.tabellone=new Tabellone();
 }
 
 
@@ -31,14 +32,14 @@ public void aggiungiaMano(Carta carta) {
 
 public void guardaMano() {
 	for(int i=0;i<mano.size();i++) {
-	System.out.print(i+1+"a CARTA: "+mano.get(i).printCard());}
+	System.out.print(i+1+"a CARTA: "+mano.get(i).printCard()+"\n\n");}
 }
 
 public void guardaCartaMano(int i) {
 	System.out.print(i+1+"a CARTA: "+mano.get(i).printCard());
 	}
 
-
+/*
 public void removeCorner(int i, int j) {
 	tabellone[i+1][j+1].setRis1Fronte();
 	tabellone[i-1][j-1].setRis4Fronte();
@@ -47,7 +48,7 @@ public void removeCorner(int i, int j) {
 	
 	
 }
-
+*/
 public Carta scegliCarta(int i) {
 	return mano.get(i);
 }
@@ -61,15 +62,20 @@ public void giocaCarta(Carta carta) {
 public void removeCard() {
 	mano.remove(0);
 }
+
+public void removeCardIndex(int i) {
+	mano.remove(i);
+}
 //modificare Carta in Carta_iniziale
+/*
 public void giocaCartaTabellone(Carta carta,int i, int j) {
 	tabellone[i][j]=carta;
-}
+}*/
 
 public void getPunteggio(int punti) {
 	somma=somma+punti;
 }
-
+/*
 public int checkEmpty(int x, int y) {
 	return tabellone[x][y].getID();
 }
@@ -82,7 +88,8 @@ public Boolean checkNext(int x, int j) {
 	
 	
 }
-
+*/
+/*
 public Boolean checkCorner(int x, int j) {
 	if(tabellone[x+1][j+1].getID()!=00 || tabellone[x-1][j-1].getID()!=00 || 
 			tabellone[x+1][j+1].getID()!=00 || tabellone[x-1][j+1].getID()!=00){
@@ -95,16 +102,21 @@ public Boolean checkCorner(int x, int j) {
 	
 	
 }
+
+*/
 public int getSomma() {
 	return (somma);
 }
-
-public void riempiTabellone(Carta carta) {
-	for(int i=0;i<tabellone.length;i++)
-		for(int j=0;j<tabellone.length;j++)
-			tabellone[i][j]=carta;
+	
+	
+public Tabellone getTabellone1() {
+		
+		return tabellone;
 }
 
+}
+
+/*
 public int contaInsetti() {
 	int insetti=0;
 	for(int i=0;i<tabellone.length;i++)
@@ -129,7 +141,12 @@ public int contaInsetti() {
 	
 	return insetti;
 }
+
+*/
+
+
 //da finire (come metodo get carta in Carta)
+/*
 public void getTabellone() {
 	for(int i=0;i<tabellone.length;i++) {	
 		System.out.println();
@@ -169,19 +186,7 @@ public void getTabellone() {
 		}
 
 	
+*/
 
 
-public void getTabellone2() {
-	for(int i=0;i<10;i++) {
-		if(i>0)System.out.println("\n");
-		for(int j=0;j<10;j++) {
-		if((tabellone[i][j].getID())!=00)System.out.print(tabellone[i][j].printCard());
-		else {
-			System.out.print(tabellone[i][j].printEmpty());
-		}
-}
 
-}
-
-	}
-}

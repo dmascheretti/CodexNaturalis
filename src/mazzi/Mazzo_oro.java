@@ -201,6 +201,10 @@ public void printCarta(Carta carta_oro) {
 		carta_oro.getCarta();
 }
 
+public int getLenght() {
+	return mazzo_oro.size();
+	
+}
 
 }
 

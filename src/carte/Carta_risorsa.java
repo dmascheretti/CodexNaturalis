@@ -9,9 +9,9 @@ public class Carta_risorsa extends Carta{
 	private String risorse1,risorse2,risorse3,risorse4;
 	private Colore_carta color;
 
-public Carta_risorsa(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta color, String risorse1r,int ID)
+public Carta_risorsa(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta color, String risorse1Centro,int ID)
 {
-	super(risorse1,risorse2, risorse3, risorse4, punti, color,  risorse1r, ID);
+	super(risorse1,risorse2, risorse3, risorse4, punti, color,  risorse1Centro, ID);
 	/*this.celle=new Cella[2][3];
 	this.risorse1=risorse1;
 	this.risorse2=risorse2;
@@ -33,6 +33,15 @@ public Carta_risorsa(String risorse1,String risorse2, String risorse3,String ris
 }
 
 
+public String printCard() {
+	
+	return ("\nID: "+ID+"\nPunti: "+punti+"\n"
+			+"\n---------------------╗\n\n"
+	+ris1Fronte+ "\t\t" +ris2Fronte+ "\n\n"+ris3Fronte+"\t\t"+ris4Fronte+
+	"\n\n----------------------\n\n\t"+ris1Centro+"\t\n\n"+
+	"\n----------------------╝\n");
+
+}
 
 public void getCarta(){
 	System.out.println("\n");

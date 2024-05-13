@@ -49,6 +49,12 @@ public abstract class Carta {
 		this.colore=colore;
 		this.ID=ID;
 		
+		this.ris1Retro="    ";
+		this.ris2Retro="    ";
+		this.ris3Retro="    ";
+		this.ris4Retro="    ";
+		this.ris2Centro="    ";
+		
 	}
 	
 	
@@ -74,6 +80,12 @@ public abstract class Carta {
 		this.punti=punti;
 		this.colore=colore;
 		this.ID=ID;
+		
+		this.ris1Retro="    ";
+		this.ris2Retro="    ";
+		this.ris3Retro="    ";
+		this.ris4Retro="    ";
+		this.ris2Centro="    ";
 		
 	
 	}
@@ -145,9 +157,6 @@ public abstract class Carta {
 		return ris4Fronte;
 	}
 	
-	public String getRis1Centro() {
-		return ris1Centro;
-	}
 	
 	/**
 	 * prints card
@@ -155,7 +164,8 @@ public abstract class Carta {
 	public void getCarta(){
 		System.out.println("\n");
 		System.out.println("punti carta: "+punti);
-		System.out.println("\nrisorse necessarie: "+risorsenec+"\n");
+		if(punti>0)System.out.println("\nrisorse necessarie: "+risorsenec+"\n");
+		else System.out.println();
 		System.out.println(ris1Fronte+"\t"+ris2Fronte+"\n\n\n"+ris3Fronte+"\t"+ris4Fronte);
 		System.out.println(ris1Retro+"\t"+ris1Centro+"\t"+ris2Retro+"\t"+ris3Retro+"\t"+ris2Centro
 				+ris4Retro);
@@ -213,6 +223,12 @@ public abstract class Carta {
 		return ("\n---------------------╗\n\n"
 				+ris1Fronte+ "\t\t" +ris2Fronte+ "\n\n"+ris3Fronte+"\t\t"+ris4Fronte+"\n\n---------------------╝");
 	}
+	
+	public String printCardFinal() {
+
+		return ("\n---------------------╗\n\n"
+				+ris1Retro+ "\t"+ris1Centro+"\t" +ris2Retro+ "\n\n"+ris3Retro+"\t"+ris2Centro+"\t"+ris4Retro+"\n\n---------------------╝");
+	}
 
 public String printCardR() {
 	
@@ -229,29 +245,25 @@ public String printCardR() {
 	public abstract boolean mossaValida(Carta tabellone, int x, int y);
 
 	
-	public void setRis1Fronte(){
-		ris1Fronte="    ";
+	public void setRis1Retro(){
+		ris1Retro="    ";
 	}
-	public void setRis2Fronte(){
-		ris2Fronte="    ";
+	public void setRis2Retro(){
+		ris2Retro="    ";
 	}
-	public void setRis3Fronte(){
-		ris3Fronte="    ";
+	public void setRis3Retro(){
+		ris3Retro="    ";
 	}
-	public void setRis4Fronte(){
-		ris4Fronte="    ";
+	public void setRis4Retro(){
+		ris4Retro="    ";
 	}
-	
-	public void setRis1Centro(){
-		ris1Centro="    ";
-	}
+
 	
 	public void setRisRetro(){
 		ris1Fronte=ris1Retro;
 		ris2Fronte=ris2Retro;
 		ris2Fronte=ris2Retro;
 		ris2Fronte=ris2Retro;
-		ris1Centro="    ";
 		ris2Centro="    ";
 	}
 	
@@ -263,13 +275,37 @@ public String printCardR() {
 		ris1Centro="    ";
 		ris2Centro="    ";
 	}
-	
+	//per giocare fronte
 	public void setRisFronte(){
-		ris1Fronte="    ";
-		ris2Fronte="    ";
-		ris3Fronte="    ";
-		ris4Fronte="    ";
+		ris1Retro=ris1Fronte;
+		ris2Retro=ris2Fronte;
+		ris3Retro=ris3Fronte;
+		ris4Retro=ris4Fronte;
+		ris2Centro="    ";
+		ris1Centro="    ";
+
 	}
 
+
+
+	public String getRis1Retro() {
+		return ris1Retro;
+	}
+	public String getRis2Retro() {
+		return ris2Retro;
+	}
+	public String getRis3Retro() {
+		return ris3Retro;
+	}
+	public String getRis4Retro() {
+		return ris4Retro;
+	}
+	public String getRis1Centro() {
+		return ris1Centro;
+	}
+	public String getRis2Centro() {
+		return ris2Centro;
+	}
+	
 
 	}
