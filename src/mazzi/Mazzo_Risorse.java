@@ -41,8 +41,8 @@ public class Mazzo_Risorse extends Mazzo{
     private Carta_risorsa carta_risorsa30=new Carta_risorsa(Regno.ANIM.toString(),"████",Regno.ANIM.toString(),Regno.NULL.toString(),
     		0,Colore_carta.BLU,Regno.ANIM.toString(),30);
 
-    private Carta_risorsa carta_risorsa31=new Carta_risorsa(Regno.FUNG.toString(),Regno.FUNG.toString(),"████",Regno.NULL.toString(),0,
-    		Colore_carta.ROSSO,Regno.FUNG.toString(),31);
+    private Carta_risorsa carta_risorsa31=new Carta_risorsa(Regno.FUNG.toString(),Regno.FUNG.toString(),"████",Regno.NULL.toString(),
+    		0,Colore_carta.ROSSO,Regno.FUNG.toString(),31);
 
     private Carta_risorsa carta_risorsa32=new Carta_risorsa("████",Regno.FUNG.toString(),Regno.NULL.toString(),Regno.FUNG.toString(),0,
     		Colore_carta.ROSSO,Regno.FUNG.toString(),32);
