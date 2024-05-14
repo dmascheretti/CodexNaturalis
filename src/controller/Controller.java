@@ -58,6 +58,8 @@ public class Controller {
 	*/
 	public Boolean mossaValida(int id, Tabellone tabellone) {
 		switch(id) {
+		case 79: if(contatore.contaAnimali(tabellone)>2) return true;
+				else return false;
 		case 80: if(contatore.contaVegetali(tabellone)>2 && contatore.contaFunghi(tabellone)>0) return true;
 				else return false;		
 		case 81: if(contatore.contaAnimali(tabellone)>1 && contatore.contaVegetali(tabellone)>0) return true;
