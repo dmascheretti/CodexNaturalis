@@ -48,7 +48,7 @@ public class Contatori {
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Retro()==Regno.FUNG.toString()) funghi++;
+				if(tabellone.getCella(i,j).getRis2Retro()==Regno.FUNG.toString()) funghi++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
@@ -76,7 +76,7 @@ public class Contatori {
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Retro()==Regno.VEGE.toString()) vegetali++;
+				if(tabellone.getCella(i,j).getRis2Retro()==Regno.VEGE.toString()) vegetali++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
@@ -105,7 +105,7 @@ public class Contatori {
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Retro()==Regno.ANIM.toString()) animali++;
+				if(tabellone.getCella(i,j).getRis2Retro()==Regno.ANIM.toString()) animali++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)

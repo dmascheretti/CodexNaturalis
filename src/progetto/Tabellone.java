@@ -151,6 +151,9 @@ public class Tabellone {
 				
 			//System.out.println("\n\n");
 			System.out.print("\n     ");
+			
+			//for (int a=0;a<tabellone[i].length;a++)System.out.print(tabellone[i][a].getColore());
+			//System.out.println("\n\n");
 
 			for (int a=0;a<tabellone[i].length;a++)System.out.print(tabellone[i][a].getRis1Retro()+"     "+tabellone[i][a].getRis1Centro()+"     "+tabellone[i][a].getRis2Retro()+"          ");
 			System.out.println("\n\n");

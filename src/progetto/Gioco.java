@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import carte.Carta_obiettivo;
 import carte.Carta_oro;
 import carte.Carta_risorsa;
 import mazzi.Mazzo_Risorse;
 import mazzi.Mazzo_iniziale;
 import mazzi.Mazzo_oro;
+import mazzi.Mazzo_obiettivo;
 import controller.Controller;
 
 public class Gioco {
@@ -18,10 +20,12 @@ private Controller controller;
 private Mazzo_Risorse mazzo_risorse;
 private Giocatore[] giocatori;
 private Mazzo_iniziale mazzo_iniziale;
+private Mazzo_obiettivo mazzo_obiettivo;
 
 
 private static ArrayList<Carta_oro> campo_oro=new ArrayList<Carta_oro>();
 private static ArrayList<Carta_risorsa> campo_risorsa=new ArrayList<Carta_risorsa>();
+private static ArrayList <Carta_obiettivo> carte_obiettivo=new ArrayList<Carta_obiettivo>();
 
 
 
@@ -29,6 +33,7 @@ public Gioco() {
 	this.mazzo_risorse=new Mazzo_Risorse();
 	this.mazzo_oro=new Mazzo_oro();
 	this.mazzo_iniziale=new Mazzo_iniziale();
+	this.mazzo_obiettivo=new Mazzo_obiettivo();
 	this.controller=new Controller();
 	//this.mazzo_obiettivo=new Mazzo_obiettivo();
 	Scanner sc=new Scanner(System.in);
@@ -56,6 +61,7 @@ public void Gioca() {
 	mazzo_risorse.mescolaMazzo();
 	mazzo_oro.mescolaMazzo();
 	mazzo_iniziale.mescolaMazzo();
+	mazzo_obiettivo.mescolaMazzo();
 	System.out.println("\n");
 	int scelta;
 
@@ -66,6 +72,8 @@ public void Gioca() {
 		mazzo_iniziale.rimuoviCarta();
 		giocatori[i].aggiungiaMano(mazzo_oro.pescaCarta());
 		mazzo_oro.rimuoviCarta();
+		giocatori[i].aggiungiaObiettivo(mazzo_obiettivo.pescaCarta());
+		mazzo_obiettivo.rimuoviCarta();
 		
 		for(int j=0;j<2;j++) {
 			giocatori[i].aggiungiaMano(mazzo_risorse.pescaCarta());
@@ -97,6 +105,9 @@ public void Gioca() {
 		campo_risorsa.add((Carta_risorsa) mazzo_risorse.pescaCarta());
 		mazzo_risorse.rimuoviCarta();
 		
+	    carte_obiettivo.add((Carta_obiettivo)mazzo_obiettivo.pescaCarta());
+		mazzo_obiettivo.rimuoviCarta();
+		
 		}
 	
 		
@@ -105,9 +116,13 @@ public void Gioca() {
 	int turno=1;
 	int h,x,y;
 	do {
+		System.out.print("----------------\n\n");
+		System.out.print("TURNO NUMERO "+turno+"\n\n");
+		System.out.print("----------------");
 		
-		System.out.println("\n\n\nTURNO NUMERO "+turno);
 		System.out.println("\n\n\n");
+		
+		for(int i=0;i<carte_obiettivo.size();i++) carte_obiettivo.get(i).getCarta();
 	
 		
 	for(int i1=0;i1<giocatori.length;i1++) {
@@ -141,10 +156,12 @@ public void Gioca() {
 		
 	}
 	if(scelta==1) {
+		block=true;
+		giocatori[i1].scegliCarta(h-1).setPunti();
 		System.out.println(giocatori[i1].scegliCarta(h-1).printCardFinal());
 	}
 	}while(block==false);
-			//contatore.contaInsetti(giocatori[i1].getTabellone1()));
+			System.out.println("INSETTI SUL CAMPO "+controller.conta(giocatori[i1].getTabellone1()));
 	//}while(!block);
 	
 
@@ -182,7 +199,6 @@ do {
 }while(controller.checkCorner(x,y,giocatori[i1].getTabellone1())==false);
 
 
-
 	// {
 		giocatori[i1].getTabellone1().setCella(x, y,giocatori[i1].scegliCarta(h-1));
 		giocatori[i1].getTabellone1().removeCorner(x, y);
@@ -204,6 +220,7 @@ do {
 	giocatori[i1].getTabellone1().getTabelloneX();
 	
 	
+
 	
 	
 	
@@ -211,24 +228,23 @@ do {
 	System.out.println("PUNTEGGIO GIOCATORE "+giocatori[i1].getName()+" : "+giocatori[i1].getSomma());
 	
 	
-	//System.out.println("NUMERO INSETTI: "+controller.conta(giocatori[i1].getTabellone1()));
-	
+	System.out.println("NUMERO INSETTI: "+controller.conta(giocatori[i1].getTabellone1()));
 	
 	System.out.println("\nCARTE SUL CAMPO ORO");
 	
 	for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┬");
 	System.out.print("\n\n");
-	for(int d=0;d<campo_oro.size();d++)System.out.print(" "+campo_risorsa.get(d).getID()+"                     ");
+	for(int d=0;d<campo_oro.size();d++)System.out.print(" "+campo_oro.get(d).getID()+"                     ");
 	System.out.println("\n\n");
-	for(int d=0;d<campo_oro.size();d++)System.out.print(campo_risorsa.get(d).getRis1Fronte()+"\t    \t"+campo_oro.get(d).getRis2Fronte()+"\t  ");
+	for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getRis1Fronte()+"\t    \t"+campo_oro.get(d).getRis2Fronte()+"\t  ");
 	System.out.println("\n\n");
-	for(int d=0;d<campo_oro.size();d++)System.out.print(campo_risorsa.get(d).getRis3Fronte()+"\t    \t"+campo_risorsa.get(d).getRis4Fronte()+"\t  ");
+	for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getRis3Fronte()+"\t    \t"+campo_oro.get(d).getRis4Fronte()+"\t  ");
 	System.out.println("\n");
 	for(int d=0;d<campo_oro.size();d++) System.out.print("------------------------");
 	System.out.print("\n\n");
-	for(int d=0;d<campo_oro.size();d++)System.out.print("    \t"+campo_risorsa.get(d).getRis1Centro()+"\t      ");
+	for(int d=0;d<campo_oro.size();d++)System.out.print("    \t"+campo_oro.get(d).getRis1Centro()+"\t      ");
 	System.out.println("\n\n");
-	for(int d=0;d<campo_risorsa.size();d++)System.out.print("    \t    \t    \t  ");
+	for(int d=0;d<campo_oro.size();d++)System.out.print("    \t    \t    \t  ");
 	System.out.println("\n");
 	for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┴");
 		
@@ -289,9 +305,8 @@ do {
 			giocatori[i1].aggiungiaMano(campo_risorsa.get(pesca-1));
 			campo_risorsa.remove(pesca-1);
 			campo_risorsa.add((Carta_risorsa) mazzo_risorse.pescaCarta());
-			mazzo_risorse.rimuoviCarta();
-		
-		break;
+			mazzo_risorse.rimuoviCarta();	
+			break;
 	
 	default: break;
 	}
@@ -299,8 +314,17 @@ do {
 	turno++;
 	for(int p=0;p<giocatori.length;p++) if (giocatori[p].getSomma()>20) win=true;
 	
-	}while(win==false);
+	
+	
+	}while(win==false || mazzo_oro.getLenght()<1 || mazzo_risorse.getLenght()<1);
+	
+	
+	for(int i=0;i<giocatori.length;i++)
+		for(int j=0;j<2;j++) giocatori[i].getPunteggio(controller.getObiettivo(carte_obiettivo.get(j).getID(), giocatori[i].getTabellone1()));
 	
 }
+
+
+
 }
 

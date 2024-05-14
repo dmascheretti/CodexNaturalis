@@ -124,6 +124,7 @@ public abstract class Carta {
 		this.ris1Centro=ris1Centro;
 		this.ris2Centro=ris2Centro;
 		this.ID=ID;
+		this.colore=Colore_carta.NULL;
 	}
 	
 	// obiettivo
@@ -206,6 +207,12 @@ public abstract class Carta {
 	public int getPunteggio() {
 		return punti;
 	}
+	public String getColore() {
+		return colore.toString();	}
+	
+	public void setColore() {
+		colore=Colore_carta.NULL;
+	}
 
 	public int getID() {
 		return ID;
@@ -258,6 +265,9 @@ public String printCardR() {
 		ris4Retro="    ";
 	}
 
+	public void setPunti() {
+		punti=0;
+	}
 	
 	public void setRisRetro(){
 		ris1Fronte=ris1Retro;

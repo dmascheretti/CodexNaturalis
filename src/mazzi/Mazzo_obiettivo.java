@@ -1,8 +1,10 @@
 package mazzi;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-import cartaObiettivo.Carta_obiettivo;
+import carte.Carta_obiettivo;
+import carte.Carta_oro;
 
 public class Mazzo_obiettivo extends Mazzo{
 	private ArrayList <Carta_obiettivo> mazzo_obiettivo= new ArrayList<Carta_obiettivo>();
@@ -46,5 +48,22 @@ public class Mazzo_obiettivo extends Mazzo{
 		mazzo_obiettivo.add(carta_obiettivo18);
 		mazzo_obiettivo.add(carta_obiettivo19);
 		mazzo_obiettivo.add(carta_obiettivo20);
+	}
+	
+	public void mescolaMazzo() {
+		Collections.shuffle(mazzo_obiettivo);
+	}
+	public void rimuoviCarta()
+	{
+		mazzo_obiettivo.remove(0);
+	}
+
+
+	public Carta_obiettivo pescaCarta()
+	{
+		//System.out.println("Hai pescato:\t\t");
+		//mazzo_oro.get(0).getCarta1();
+		//mazzo_oro.remove(mazzo_oro.get(0));
+		return mazzo_obiettivo.get(0);
 	}
 }

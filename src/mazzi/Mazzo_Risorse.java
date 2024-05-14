@@ -174,5 +174,9 @@ public class Mazzo_Risorse extends Mazzo{
         return mazzo_risorse.get(0);
     }
 
+    public int getLenght() {
+    	return mazzo_risorse.size();
+    	
+    }
   
 }

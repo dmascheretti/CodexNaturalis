@@ -131,7 +131,7 @@ private Carta_oro carta_oro95=new Carta_oro(Regno.NULL.toString(),"████"
 private Carta_oro carta_oro96=new Carta_oro(Regno.NULL.toString(),Regno.NULL.toString(),Regno.NULL.toString(),"████",
 		2,"FFFV", Colore_carta.ROSSO, Regno.INSE.toString(),96);
 
-private Carta_oro carta_oro97=new Carta_oro(Regno.PERG.toString(),"████",Regno.NULL.toString(),"████",
+private Carta_oro carta_oro97=new Carta_oro(Regno.PERG.toString(),Regno.NULL.toString(),Regno.NULL.toString(),"████",
 		1,"FFI", Colore_carta.ROSSO, Regno.INSE.toString(),97);
 
 private Carta_oro carta_oro98=new Carta_oro(Regno.NULL.toString(),"████",Regno.NULL.toString(),Regno.NULL.toString(),

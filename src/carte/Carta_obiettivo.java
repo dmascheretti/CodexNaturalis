@@ -1,6 +1,4 @@
-package cartaObiettivo;
-
-import carte.Carta;
+package carte;
 
 public class Carta_obiettivo extends Carta {
 	
@@ -10,7 +8,7 @@ public class Carta_obiettivo extends Carta {
 	
 	public void getCarta()
 {
-		System.out.println("ID "+ID+"obiettivo: "+obiettivo+" punti ");
+		System.out.println("ID "+ID+"\nobiettivo: "+obiettivo+" punti "+punti+ "\n");
 		
 
 }
