@@ -4,8 +4,6 @@ import progetto.Colore_carta;
 
 public abstract class Carta {
 
-
-
 	protected String risorsenec;
 	protected int punti;
 	protected String ris1Fronte;
@@ -17,27 +15,28 @@ public abstract class Carta {
 	protected String ris2Retro;
 	protected String ris3Retro;
 	protected String ris4Retro;
+	
 	protected String ris1Centro;
 	protected String ris2Centro;
+	
 	private Colore_carta colore;
 	protected String obiettivo;
 	protected final int ID;
 
 	
-	/**Creates a gold card
-	 * @param ris1Fronte: front resource 
-	 * @param ris2Fronte: front resource 
-	 * @param ris3Fronte: front resource 
-	 * @param ris4Fronte: front resource 
-	 * @param punti: cars points 
-	 * @param risorsenec: the necessary resources to play a card 
-	 * @param colore: cards color
-	 * @param ris1Retro: back resource 
-	 * @param ID: cards identification code 
+	/**Constructor method that creates a gold card
+	 * @param ris1Fronte front resource 
+	 * @param ris2Fronte front resource 
+	 * @param ris3Fronte front resource 
+	 * @param ris4Fronte front resource 
+	 * @param punti card's points 
+	 * @param risorsenec the necessary resources to play a card 
+	 * @param colore card's color
+	 * @param ris1Retro back resource 
+	 * @param ID card identification code 
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, 
-			String risorsenec, Colore_carta colore, String ris1Centro, int ID)
-	{
+			String risorsenec, Colore_carta colore, String ris1Centro, int ID) {
 
 		this.ris1Centro=ris1Centro;
 		this.ris1Fronte=ris1Fronte;
@@ -54,24 +53,21 @@ public abstract class Carta {
 		this.ris3Retro="    ";
 		this.ris4Retro="    ";
 		this.ris2Centro="    ";
-		
 	}
 	
-	
-	
-	/**Creates a resource card 
-	 * @param ris1Fronte: front resource 
-	 * @param ris2Fronte: front resource 
-	 * @param ris3Fronte: front resource 
-	 * @param ris4Fronte: front resource 
-	 * @param punti: cards points 
-	 * @param colore: cards colors  
-	 * @param ris1Retro: back resource 
-	 * @param ID: cards identification code
+	/**Constructor method that creates a resource card 
+	 * @param ris1Fronte front resource 
+	 * @param ris2Fronte front resource 
+	 * @param ris3Fronte front resource 
+	 * @param ris4Fronte front resource 
+	 * @param punti card's points 
+	 * @param colore card's colors  
+	 * @param ris1Retro back resource 
+	 * @param ID card identification code
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, Colore_carta colore,
-			String ris1Centro, int ID)
-	{
+			String ris1Centro, int ID) {
+		
 		this.ris1Centro=ris1Centro;
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
@@ -86,29 +82,23 @@ public abstract class Carta {
 		this.ris3Retro="    ";
 		this.ris4Retro="    ";
 		this.ris2Centro="    ";
-		
-	
 	}
 
-	
-	
-
-	/** Creates a starting card 
-	 * @param ris1Fronte: front resource 
-	 * @param ris2Fronte: front resource 
-	 * @param ris3Fronte: front resource 
-	 * @param ris4Fronte: front resource 
-	 * @param ris1Retro: back resource
-	 * @param ris2Retro: back resource
-	 * @param ris3Retro: back resource
-	 * @param ris4Retro: back resource
-	 * @param ris1Centro: center resource 
-	 * @param ris2Centro: center resource
-	 * @param ID:  the cards identification code 
+	/** Constructor method that creates a starting card
+	 * @param ris1Fronte front resource 
+	 * @param ris2Fronte front resource 
+	 * @param ris3Fronte front resource 
+	 * @param ris4Fronte front resource 
+	 * @param ris1Retro back resource
+	 * @param ris2Retro back resource
+	 * @param ris3Retro back resource
+	 * @param ris4Retro back resource
+	 * @param ris1Centro center resource 
+	 * @param ris2Centro center resource
+	 * @param ID the card identification code 
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,
-			String ris1Retro, String ris2Retro, String ris3Retro, String ris4Retro, String ris1Centro, String ris2Centro, int ID)
-	{
+			String ris1Retro, String ris2Retro, String ris3Retro, String ris4Retro, String ris1Centro, String ris2Centro, int ID) {
 		//this.celle_fronte=new Cella[2][3];
 		//this.celle_retro=new Cella[2][3];
 		this.ris1Retro=ris1Retro;
@@ -126,7 +116,11 @@ public abstract class Carta {
 		this.ID=ID;
 	}
 	
-	// obiettivo
+	/**Constructor method that creates a goal card
+	 * @param ID the card identification code 
+	 * @param punti card's points
+	 * @param obiettivo card's goal
+	 */
 	public Carta(int ID, int punti, String obiettivo) {
 		this.ID=ID; 
 		this.punti=punti;

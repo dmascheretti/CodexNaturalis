@@ -99,18 +99,15 @@ public class Controller {
 			
 		}
 			
-			
-		
-		
-	
-	
+				
 	public int conta(Tabellone tabellone) {
 		return contatore.contaInsetti(tabellone);
 	}
 	
-	/** This method checks the resources......
-	 * @param id
-	 * @param tabellone
+	/** This method checks the resources in each players' manuscript in order to assign the points of the 16 goal cards.
+	 * 
+	 * @param id of the card
+	 * @param tabellone the (spatial) matrix in which the player can place resource and gold cards
 	 * @return points
 	 */
 	public int checkCartaObiettivo(int id, Tabellone tabellone){
@@ -118,7 +115,8 @@ public class Controller {
 		int piume;
 		int pergamena;
 		int pozione;
-		 switch(id) {
+		 
+		switch(id) {
 		
 		case 5: 
 	    punti=0;
@@ -170,6 +168,16 @@ public class Controller {
 					  }
 			       return punti;
 		case 9:
+			punti=0;
+			 for(int i=0;i<20;i++)
+			       for(int j=0;j<20;j++)
+					      if(tabellone.getCella(i, j).getColore()=="ROSSO" ) {
+						    if(tabellone.getCella(i+1, j).getColore()=="ROSSO" && tabellone.getCella(i+2, j+1).getColore()=="VERDE" ) {
+						     punti+= 2;
+						        //tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
+						     }
+						  }
+				       return punti;
 		
 		case 10:
 			punti=0;
@@ -183,8 +191,39 @@ public class Controller {
 					  }
 			       return punti;
 		case 11:
+			punti=0;
+			 for(int i=0;i<20;i++)
+			       for(int j=0;j<20;j++)
+					      if(tabellone.getCella(i, j).getColore()=="VIOLA" ) {
+						    if(tabellone.getCella(i-1, j).getColore()=="VIOLA" && tabellone.getCella(i-2, j-1).getColore()=="BLU" ) {
+						     punti+= 2;
+						       // tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
+						     }
+						  }
+				       return punti;
+			
 		case 12:
+			punti=0;
+			 for(int i=0;i<20;i++)
+			       for(int j=0;j<20;j++)
+					      if(tabellone.getCella(i, j).getColore()=="BLU" ) {
+						    if(tabellone.getCella(i-1, j).getColore()=="BLU" && tabellone.getCella(i-2, j+1).getColore()=="ROSSO" ) {
+						     punti+= 2;
+						       // tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
+						     }
+						  }
+				       return punti;
 		case 13:
+			punti=0;
+			 for(int i=0;i<20;i++)
+			       for(int j=0;j<20;j++)
+					      if(tabellone.getCella(i, j).getColore()=="VERDE" ) {
+						    if(tabellone.getCella(i+1, j).getColore()=="VERDE" && tabellone.getCella(i+2, j-1).getColore()=="VIOLA" ) {
+						     punti+= 2;
+						       // tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
+						     }
+						  }
+				       return punti;
 		
 		case 14: return contatore.contaAnimali(tabellone)/3*2;
 		
