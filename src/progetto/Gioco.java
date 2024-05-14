@@ -319,12 +319,14 @@ do {
 	}while(win==false || mazzo_oro.getLenght()<1 || mazzo_risorse.getLenght()<1);
 	
 	
-	for(int i=0;i<giocatori.length;i++)
-		for(int j=0;j<2;j++) giocatori[i].getPunteggio(controller.getObiettivo(carte_obiettivo.get(j).getID(), giocatori[i].getTabellone1()));
+	for(int i=0;i<giocatori.length;i++) {
+		for(int j=0;j<2;j++) giocatori[i].getPunteggio(controller.checkCartaObiettivo(carte_obiettivo.get(j).getID(), giocatori[i].getTabellone1()));
+		giocatori[i].getPunteggio(controller.checkCartaObiettivo(giocatori[i].getObiettivo().getID(),giocatori[i].getTabellone1()));
 	
 }
 
 
 
+}
 }
 

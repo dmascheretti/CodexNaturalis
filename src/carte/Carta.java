@@ -202,7 +202,8 @@ public abstract class Carta {
 		return punti;
 	}
 	public String getColore() {
-		return colore.toString();	}
+		return colore.toString();	
+		}
 	
 	public void setColore() {
 		colore=Colore_carta.NULL;
@@ -312,15 +313,5 @@ public String printCardR() {
 	}
 
 
-
-	public String getColore() {
-		// TODO Auto-generated method stub
-		return colore.toString();
-	}
-	
-	public void setColore() {
-		colore= Colore_carta.NULL;
-	}
-	
 
 	}

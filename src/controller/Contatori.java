@@ -134,7 +134,7 @@ public class Contatori {
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Retro()==Regno.PIUM.toString()) piuma++;
+				if(tabellone.getCella(i,j).getRis2Retro()==Regno.PIUM.toString()) piuma++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
@@ -163,7 +163,7 @@ public class Contatori {
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Retro()==Regno.POZI.toString()) pozione++;
+				if(tabellone.getCella(i,j).getRis2Retro()==Regno.POZI.toString()) pozione++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
@@ -192,7 +192,7 @@ public class Contatori {
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Retro()==Regno.PERG.toString()) pergamena++;
+				if(tabellone.getCella(i,j).getRis2Retro()==Regno.PERG.toString()) pergamena++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)

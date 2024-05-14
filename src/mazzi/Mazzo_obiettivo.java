@@ -1,7 +1,9 @@
 package mazzi;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import carte.Carta_iniziale;
 import carte.Carta_obiettivo;
 
 public class Mazzo_obiettivo extends Mazzo{
@@ -47,4 +49,25 @@ public class Mazzo_obiettivo extends Mazzo{
 		mazzo_obiettivo.add(carta_obiettivo19);
 		mazzo_obiettivo.add(carta_obiettivo20);
 	}
+
+public void getMazzo() {
+    for (int i = 0; i < mazzo_obiettivo.size(); i++)
+    	mazzo_obiettivo.get(i).getCarta();
+}
+
+public void mescolaMazzo() {
+    Collections.shuffle(mazzo_obiettivo);
+}
+
+
+public Carta_obiettivo pescaCarta() {
+    return mazzo_obiettivo.get(0);
+}
+
+public void rimuoviCarta() {
+	mazzo_obiettivo.remove(0);
+}
+
+
+
 }

@@ -56,29 +56,53 @@ public class Controller {
 	}
 	
 	*/
-	//da finire
 	public Boolean mossaValida(int id, Tabellone tabellone) {
 		switch(id) {
-		case 80: if(contatore.contaVegetali(tabellone)>3 && contatore.contaFunghi(tabellone)>1) return true;
+		case 80: if(contatore.contaVegetali(tabellone)>2 && contatore.contaFunghi(tabellone)>0) return true;
 				else return false;		
-		case 81: if(contatore.contaAnimali(tabellone)>2 && contatore.contaVegetali(tabellone)>1) return true;
+		case 81: if(contatore.contaAnimali(tabellone)>1 && contatore.contaVegetali(tabellone)>0) return true;
 				else return false;
-		case 82: if(contatore.contaAnimali(tabellone)>2 && contatore.contaFunghi(tabellone)>1) return true;
+		case 82: if(contatore.contaAnimali(tabellone)>1 && contatore.contaFunghi(tabellone)>0) return true;
 				else return false;
-		case 83: if(contatore.contaAnimali(tabellone)>3 && contatore.contaVegetali(tabellone)>1) return true;
+		case 83: if(contatore.contaAnimali(tabellone)>2 && contatore.contaVegetali(tabellone)>0) return true;
 				else return false;
-		case 84: if(contatore.contaAnimali(tabellone)>5) return true;
+		case 84: if(contatore.contaAnimali(tabellone)>4) return true;
 				else return false;
-		case 85: if(contatore.contaAnimali(tabellone)>3 && contatore.contaInsetti(tabellone)>1) return true;
+		case 85: if(contatore.contaAnimali(tabellone)>2 && contatore.contaInsetti(tabellone)>0) return true;
 				else return false;
-		case 86: if(contatore.contaInsetti(tabellone)>4)return true;
-				//return false;
-		case 87:if(contatore.contaInsetti(tabellone)>4) return true;
-				//return false;
+		case 86: if(contatore.contaAnimali(tabellone)>2 && contatore.contaFunghi(tabellone)>0)return true;
+				else return false;
+		case 87:if(contatore.contaAnimali(tabellone)>2) return true;
+				else return false;
+		case 88: if(contatore.contaAnimali(tabellone)>2) return true;
+				else return false;
+		case 89: if (contatore.contaAnimali(tabellone)>2)return true;
+				else return false;
+		case 90:if (contatore.contaVegetali(tabellone)>4) return true;
+				else return false;
+		case 91: if(contatore.contaVegetali(tabellone)>1 && contatore.contaInsetti(tabellone)>0) return true;
+				else return false;
+		case 92: if(contatore.contaFunghi(tabellone)>2) return true;
+				else return false;
+		case 93: if(contatore.contaFunghi(tabellone)>2) return true;
+				else return false;
+		case 94: if(contatore.contaFunghi(tabellone)>2) return true;
+				else return false;
+		case 95: if(contatore.contaFunghi(tabellone)>4) return true;
+				else return false;
+		case 96: if(contatore.contaFunghi(tabellone)>1 && contatore.contaVegetali(tabellone)>0) return true;
+				else return false;
+		case 97: if(contatore.contaFunghi(tabellone)>1 && contatore.contaInsetti(tabellone)>1)return true;
+				else return false;
+		case 98: if(contatore.contaFunghi(tabellone)>2 && contatore.contaAnimali(tabellone)>0)return true;
+				else return false;
+		case 99: if (contatore.contaFunghi(tabellone)>2 && contatore.contaAnimali(tabellone)>0) return true;
+				else return false;
+		case 100: if (contatore.contaFunghi(tabellone)>1 && contatore.contaAnimali(tabellone)>0) return true;
+				else return false;
 		default: return true;
-			
+			}
 		}
-	}
 		
 		public int getPunti(int id, Tabellone tabellone, int x, int y) {
 			

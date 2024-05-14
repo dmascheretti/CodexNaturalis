@@ -61,6 +61,10 @@ public void getPunteggio(int punti) {
 	somma=somma+punti;
 }
 
+public Carta_obiettivo getObiettivo()
+{
+	return cartaObiettivo.get(0);
+}
 public int getSomma() {
 	return (somma);
 }
