@@ -200,7 +200,6 @@ public class Controller {
 					      if(tabellone.getCella(i, j).getColore()=="ROSSO" ) {
 						    if(tabellone.getCella(i+1, j).getColore()=="ROSSO" && tabellone.getCella(i+2, j+1).getColore()=="VERDE" ) {
 						     punti+= 2;
-						        //tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
 						     }
 						  }
 				       return punti;
@@ -223,7 +222,6 @@ public class Controller {
 					      if(tabellone.getCella(i, j).getColore()=="VIOLA" ) {
 						    if(tabellone.getCella(i-1, j).getColore()=="VIOLA" && tabellone.getCella(i-2, j-1).getColore()=="BLU" ) {
 						     punti+= 2;
-						       // tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
 						     }
 						  }
 				       return punti;
@@ -235,7 +233,6 @@ public class Controller {
 					      if(tabellone.getCella(i, j).getColore()=="BLU" ) {
 						    if(tabellone.getCella(i-1, j).getColore()=="BLU" && tabellone.getCella(i-2, j+1).getColore()=="ROSSO" ) {
 						     punti+= 2;
-						       // tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
 						     }
 						  }
 				       return punti;
@@ -246,7 +243,6 @@ public class Controller {
 					      if(tabellone.getCella(i, j).getColore()=="VERDE" ) {
 						    if(tabellone.getCella(i+1, j).getColore()=="VERDE" && tabellone.getCella(i+2, j-1).getColore()=="VIOLA" ) {
 						     punti+= 2;
-						       // tabellone.getCella(i+2, j+1).setColore();  //DA VEDERE 
 						     }
 						  }
 				       return punti;
