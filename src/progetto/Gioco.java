@@ -215,7 +215,7 @@ public void Gioca() throws InterruptedException, IOException {
 		System.out.println("\nCARTA OBIETTIVO DEL GIOCATORE "+giocatori[giocatore].getName().toUpperCase());
 		giocatori[giocatore].getObiettivo().getCarta();
 		TimeUnit.SECONDS.sleep(4);
-		
+		System.out.println("STAMPA TABELLONE DI "+giocatori[giocatore].getName());
 		giocatori[giocatore].getTabellone().printTabellone();
 	
 		TimeUnit.SECONDS.sleep(3);
@@ -348,6 +348,8 @@ int carta_pescata = 0;
 	
 	Carta carta_nuova = giocatori[giocatore].scelta(carta_pescata, mazzo_oro, mazzo_risorse, campo_oro, campo_risorsa);
 	giocatori[giocatore].aggiungiaMano(carta_nuova);
+	System.out.println("\nHAI PESCATO: \n");
+	System.out.println(carta_nuova.printCard());
 	
 	if(giocatori[giocatore].getSomma()>19 && (giocatore!=giocatori.length-1)) System.out.println("HAI RAGGIUNTO 20 PUNTI, ASPETTA CHE FINISCA IL TURNO");
 	if(!win) System.out.println("\n\nCAMBIO TURNO...\n");
