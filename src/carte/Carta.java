@@ -1,5 +1,7 @@
 package carte;
 
+import java.util.ArrayList;
+
 import progetto.Colore_carta;
 
 public abstract class Carta {
@@ -19,7 +21,7 @@ public abstract class Carta {
 	protected String ris1Centro;
 	protected String ris2Centro;
 	
-	private Colore_carta colore;
+	protected Colore_carta colore;
 	protected String obiettivo;
 	protected final int ID;
 
@@ -82,6 +84,7 @@ public abstract class Carta {
 		this.ris3Retro="    ";
 		this.ris4Retro="    ";
 		this.ris2Centro="    ";
+		
 	}
 
 	/** Constructor method that creates a starting card
@@ -208,6 +211,10 @@ public abstract class Carta {
 	public void setColore() {
 		colore=Colore_carta.NULL;
 	}
+	
+	public String getRisorse() {
+		return risorsenec;
+	}
 
 	public int getID() {
 		return ID;
@@ -215,7 +222,7 @@ public abstract class Carta {
 	
 	public String printCard() {
 		
-		return ("ID: "+ID+" \n"+"RISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
+		return ("ID: "+ID+" \n"+"COLORE "+colore.toString()+"\nRISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
 		+"-----------------------------\n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+
 		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
 	}
@@ -260,9 +267,11 @@ public String printCardR() {
 		ris4Retro="    ";
 	}
 
+	
 	public void setPunti() {
 		punti=0;
 	}
+	
 	
 	public void setRisRetro(){
 		ris1Fronte=ris1Retro;
@@ -312,6 +321,7 @@ public String printCardR() {
 		return ris2Centro;
 	}
 
-
-
+	
+	
+	
 	}

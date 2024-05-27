@@ -34,11 +34,12 @@ public class Mazzo_iniziale extends Mazzo {
 
     
    
-    
+   
     public void getMazzo() {
         for (int i = 0; i < mazzo_iniziale.size(); i++)
             mazzo_iniziale.get(i).getCarta();
     }
+    
 
     public void mescolaMazzo() {
         Collections.shuffle(mazzo_iniziale);
@@ -57,6 +58,7 @@ public class Mazzo_iniziale extends Mazzo {
     public void rimuoviCarta() {
     	mazzo_iniziale.remove(0);
     }
+
     
 
 

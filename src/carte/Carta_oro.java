@@ -17,7 +17,7 @@ public boolean mossaValida(Carta tabellone, int x, int y) {
 
 public String printCard() {
 	
-	return ("\nID: "+ID+"\nPunti: "+punti+" se possiedi queste risorse: "+risorsenec
+	return ("\nID: "+ID+"\nPunti: "+punti+" se possiedi queste risorse: "+risorsenec+"\nCOLORE CARTA "+colore
 			+"\n---------------------╗\n\n"
 	+ris1Fronte+ "\t\t" +ris2Fronte+ "\n\n"+ris3Fronte+"\t\t"+ris4Fronte+
 	"\n\n----------------------\n\n\t"+ris1Centro+"\t\n"+

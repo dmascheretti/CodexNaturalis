@@ -5,30 +5,15 @@ import java.util.Collections;
 
 import carte.Carta;
 public abstract class Mazzo {
+
+
 	
-	//private ArrayList<Carta> mazzo= new ArrayList<Carta>();
+	public abstract void getMazzo();
 
-	/*
-	public void getMazzo() {
- 
-		for (int i = 0; i < mazzo.size(); i++)
-            mazzo.get(i).getCarta();
-    }
-
-    public void mescolaMazzo() {
-        Collections.shuffle(mazzo);
-    }
-
-    public void rimuoviCarta()
-    {
-    	mazzo.remove(0);
-    }
-
+    public abstract void mescolaMazzo();
     
-    public Carta pescaCarta() {
- 
-        return mazzo.get(0);
-}
 
-    */
+    public abstract void rimuoviCarta();
+    
+    public abstract Carta pescaCarta();
     }

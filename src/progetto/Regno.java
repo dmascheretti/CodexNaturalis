@@ -6,8 +6,8 @@ VEGE ("Vegetale"),
 ANIM ("Animale"),
 FUNG ("Funghi"),
 INSE ("Insetti"),
-NULL (" "),
-POZI ("Pozione"),
+NULL ("    "),
+INCH ("Inchiostro"),
 PERG ("Pergamena"),
 PIUM ("Piuma");
 

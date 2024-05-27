@@ -5,7 +5,6 @@ import progetto.Tabellone;
 
 public class Contatori {
 	
-	///private Tabellone tabellone;
 
 	public Contatori() {
 		
@@ -155,33 +154,33 @@ public class Contatori {
 		return piuma;
 	}
 	
-	public int contaPozioni(Tabellone tabellone) {
-		int pozione=0;
+	public int contaInchiostro(Tabellone tabellone) {
+		int inchiostro=0;
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Retro()==Regno.POZI.toString()) pozione++;
+				if(tabellone.getCella(i,j).getRis1Retro()==Regno.INCH.toString()) inchiostro++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis2Retro()==Regno.POZI.toString()) pozione++;
+				if(tabellone.getCella(i,j).getRis2Retro()==Regno.INCH.toString()) inchiostro++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis3Retro()==Regno.POZI.toString()) pozione++;
+				if(tabellone.getCella(i,j).getRis3Retro()==Regno.INCH.toString()) inchiostro++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis4Retro()==Regno.POZI.toString()) pozione++;
+				if(tabellone.getCella(i,j).getRis4Retro()==Regno.INCH.toString()) inchiostro++;
 		
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis1Centro()==Regno.POZI.toString()) pozione++;
+				if(tabellone.getCella(i,j).getRis1Centro()==Regno.INCH.toString()) inchiostro++;
 				
 		for(int i=0;i<20;i++)
 			for(int j=0;j<20;j++)
-				if(tabellone.getCella(i,j).getRis2Centro()==Regno.POZI.toString()) pozione++;
+				if(tabellone.getCella(i,j).getRis2Centro()==Regno.INCH.toString()) inchiostro++;
 		
-		return pozione;
+		return inchiostro;
 	}
 	
 	public int contaPergamene(Tabellone tabellone) {

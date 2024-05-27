@@ -1,12 +1,19 @@
 package controller;
 
+
+
 import carte.Carta;
-import progetto.Regno;
+
+import progetto.Colore_carta;
+import progetto.Giocatore;
+
+
 import progetto.Tabellone;
-import controller.Contatori;
+
 public class Controller {
 	
 	private Contatori contatore;
+	public int l=21;
 	
 	public Controller() {
 		this.contatore=new Contatori();
@@ -17,14 +24,24 @@ public class Controller {
 		if(tabellone.getCella(i-1, j-1).getID()!=00 || tabellone.getCella(i-1, j+1).getID()!=00 || 
 				tabellone.getCella(i+1, j+1).getID()!=00 || tabellone.getCella(i+1,j-1).getID()!=00){
 				
-				if(tabellone.getCella(i+1, j+1).getRis2Retro()!="████"|| tabellone.getCella(i+1, j-1).getRis3Retro()!="████" ||
-						tabellone.getCella(i-1, j-1).getRis4Retro()!="████" || tabellone.getCella(i-1, j+1).getRis1Retro()!="████") 
+			if(tabellone.getCella(i+1, j+1).getRis1Retro()!="████" && tabellone.getCella(i+1, j-1).getRis2Retro()!="████" &&
+					tabellone.getCella(i-1, j-1).getRis4Retro()!="████" && tabellone.getCella(i-1, j+1).getRis3Retro()!="████")
 				return true;
 		}
 		return false;
 		
 		
 	}
+	
+	public void classifica(Giocatore [] giocatori) {
+		for(int cl=0;cl<giocatori.length;cl++) {
+		System.out.println("\n"+giocatori[cl].getName()+" HA TOTALIZZATO "+giocatori[cl].getSomma()+"PUNTI");
+		}
+	}
+	
+	
+	
+	
 	
 	
 	public int checkEmpty(int x, int y, Tabellone tabellone) {
@@ -41,21 +58,6 @@ public class Controller {
 	}
 	
 	
-	/*
-	public Boolean checkCorner(int i, int j) {
-		if(tabellone.getCella(i-1, j-1).getID()!=00 || tabellone.getCella(i-1, j+1).getID()!=00 || 
-				tabellone.getCella(i+1, j+1).getID()!=00 || tabellone.getCella(i+1,j-1).getID()!=00){
-				
-				if(tabellone.getCella(i+1, j+1).getRis2Retro()!="████"|| tabellone.getCella(i+1, j-1).getRis3Retro()!="████" ||
-						tabellone.getCella(i-1, j-1).getRis4Retro()!="████" || tabellone.getCella(i-1, j+1).getRis1Retro()!="████") 
-				return true;
-		}
-		return false;
-		
-		
-	}
-	
-	*/
 	public Boolean mossaValida(int id, Tabellone tabellone) {
 		switch(id) {
 		case 79: if(contatore.contaAnimali(tabellone)>2) return true;
@@ -94,9 +96,9 @@ public class Controller {
 				else return false;
 		case 96: if(contatore.contaFunghi(tabellone)>1 && contatore.contaVegetali(tabellone)>0) return true;
 				else return false;
-		case 97: if(contatore.contaFunghi(tabellone)>1 && contatore.contaInsetti(tabellone)>1)return true;
+		case 97: if(contatore.contaFunghi(tabellone)>1 && contatore.contaInsetti(tabellone)>0)return true;
 				else return false;
-		case 98: if(contatore.contaFunghi(tabellone)>2 && contatore.contaAnimali(tabellone)>0)return true;
+		case 98: if(contatore.contaFunghi(tabellone)>2 && contatore.contaInsetti(tabellone)>0)return true;
 				else return false;
 		case 99: if (contatore.contaFunghi(tabellone)>2 && contatore.contaAnimali(tabellone)>0) return true;
 				else return false;
@@ -106,25 +108,69 @@ public class Controller {
 			}
 		}
 		
-		public int getPunti(int id, Tabellone tabellone, int x, int y) {
+		public int getPunti(Carta carta, Tabellone tabellone, int x, int y) {
+			switch(carta.getID()) {
 			
-			switch(id) {
-			//esempio 2 animali, 2 punti
-			case 80: return (contatore.contaAnimali(tabellone)/2);
-			//esempio ogni angolo coperto 2 punti
-			case 81: int conta=0;
+				//1 punto per ogni piuma 
+			case 60:return (contatore.contaPiume(tabellone));
+				//1 punto per pozione
+			case 61:return (contatore.contaInchiostro(tabellone));
+				//1 punto per pozione
+			case 62:return (contatore.contaInchiostro(tabellone));
+				//esempio ogni angolo coperto 2 punti
+			case 63: return contaAngoli(tabellone,x,y);
+				//1 punto per pergamena		
+			case 64:return (contatore.contaPergamene(tabellone));
+				
+				//esempio ogni angolo coperto 2 punti
+			case 65: return contaAngoli(tabellone,x,y);
+				
+				//esempio ogni angolo coperto 2 punti
+			case 66: return contaAngoli(tabellone,x,y);
+				//1 punto per pergamena
+			case 67:return (contatore.contaPergamene(tabellone));
+				//1 punto per pozione
+			case 68:return (contatore.contaInchiostro(tabellone));
+				//esempio ogni angolo coperto 2 punti
+			case 69: return contaAngoli(tabellone,x,y);
+				//1 punto per pozione
+			case 70:return (contatore.contaInchiostro(tabellone));
+				//esempio ogni angolo coperto 2 punti
+			case 71: return contaAngoli(tabellone,x,y);
+
+			case 80: return contaAngoli(tabellone, x, y);
+			case 81: return contatore.contaPergamene(tabellone);
+			case 82: return contatore.contaPiume(tabellone);
+			case 83: return contaAngoli(tabellone, x, y);
 			
-			for(int i=-1;i<2;i+=2)
-				for(int j=-1;j<2;j+=2)
-			if(tabellone.getCella(x+i, y+j).getID()!=0) conta++;
-			return conta;
+			case 84: return 5;
+			case 85:  return contaAngoli(tabellone, x, y);
+		
+			case 86:return contaAngoli(tabellone, x, y);
 			
-			default: return 0;
+			case 87: return carta.getPunteggio();
+			case 88: return carta.getPunteggio();
+			case 89: return carta.getPunteggio();
+			case 90: return carta.getPunteggio();
+			case 91: return contatore.contaInsetti(tabellone)+1;
+			case 92: return carta.getPunteggio();
+			case 93: return carta.getPunteggio();
+			case 94: return carta.getPunteggio();
+			case 95: return carta.getPunteggio();
+			case 96: return contaAngoli(tabellone, x, y);
+			case 97: return contatore.contaPergamene(tabellone);
 			
+			case 98: return contaAngoli(tabellone, x, y);
+				
+			case 99: return contaAngoli(tabellone, x, y);
+			case 100: return contatore.contaAnimali(tabellone);
+	
+			default: return carta.getPunteggio();
 			}
 			
 		}
 			
+	
 				
 	public int conta(Tabellone tabellone) {
 		return contatore.contaInsetti(tabellone);
@@ -140,19 +186,19 @@ public class Controller {
 		int punti=0;
 		int piume;
 		int pergamena;
-		int pozione;
+		int inchiostro;
 		 
 		switch(id) {
 		
 		case 5: 
 	    punti=0;
 		piume=contatore.contaPiume(tabellone);
-		pozione=contatore.contaPozioni(tabellone);
+		inchiostro=contatore.contaInchiostro(tabellone);
 		pergamena=contatore.contaPergamene(tabellone);
 		
-		 while(piume!=0 && pozione!=0 && pergamena!=0) {
+		 while(piume!=0 && inchiostro!=0 && pergamena!=0) {
 			piume--;
-			pozione--;
+			inchiostro--;
 			pergamena--;
 			punti+=3;
 		   }
@@ -160,105 +206,125 @@ public class Controller {
 		
 		case 6:  
 			punti=0;
-		        for(int i=0;i<20;i++)
-			       for(int j=0;j<20;j++)
-					  if(tabellone.getCella(i, j).getColore()=="VIOLA" ) {
-						if(tabellone.getCella(i+1, j+1).getColore()=="VIOLA" && tabellone.getCella(i+2, j+2).getColore()=="VIOLA" ) {
+		        for(int i=0;i<l;i++) {
+			       for(int j=0;j<l;j++) {
+					  if(tabellone.getCella(i, j).getColore()==Colore_carta.VIOLA.toString()) {
+						if(tabellone.getCella(i+1, j+1).getColore()==Colore_carta.VIOLA.toString() && tabellone.getCella(i+2, j+2).getColore()==Colore_carta.VIOLA.toString() ) {
 						 punti+= 2;
 						    tabellone.getCella(i+2, j+2).setColore();
 						 }
 					  }
+			       }
+		        }
 			return punti;
 				       	
 		case 7: 
 			punti=0;
-            for(int i=0;i<20;i++)
-	           for(int j=0;j<20;j++)
-			      if(tabellone.getCella(i, j).getColore()=="VERDE" ) {
-				    if(tabellone.getCella(i+1, j+1).getColore()=="VERDE" && tabellone.getCella(i+2, j+2).getColore()=="VERDE" ) {
+            for(int i=0;i<l;i++) {
+	           for(int j=0;j<l;j++) {
+			      if(tabellone.getCella(i, j).getColore()==Colore_carta.VERDE.toString() ) {
+				    if(tabellone.getCella(i+1, j+1).getColore()==Colore_carta.VERDE.toString() && tabellone.getCella(i+2, j+2).getColore()==Colore_carta.VERDE.toString()) {
 				     punti+= 2;
 				        tabellone.getCella(i+2, j+2).setColore();
 				     }
 				  }
+	           }
+            }
 		    return punti;
 		
 		case 8: 
 			punti=0;
-	        for(int i=0;i<20;i++)
-		       for(int j=0;j<20;j++)
+	        for(int i=0;i<l;i++) {
+		       for(int j=0;j<l;j++) {
 				      if(tabellone.getCella(i, j).getColore()=="ROSSO" ) {
-					    if(tabellone.getCella(i-1, j+1).getColore()=="ROSSO" && tabellone.getCella(i-2, j+2).getColore()=="ROSSO" ) {
+					    if(tabellone.getCella(i-1, j+1).getColore()=="ROSSO") {
+					    		if(tabellone.getCella(i-2, j+2).getColore()=="ROSSO" ) {
 					     punti+= 2;
 					        tabellone.getCella(i-1, j+1).setColore();
 					     }
 					  }
+		       }
+	        }
+	        }
 			       return punti;
 		case 9:
 			punti=0;
-			 for(int i=0;i<20;i++)
-			       for(int j=0;j<20;j++)
+			 for(int i=0;i<l;i++) {
+			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="ROSSO" ) {
 						    if(tabellone.getCella(i+1, j).getColore()=="ROSSO" && tabellone.getCella(i+2, j+1).getColore()=="VERDE" ) {
 						     punti+= 2;
 						     }
 						  }
+			       }
+			 }
 				       return punti;
 		
 		case 10:
 			punti=0;
-	        for(int i=0;i<20;i++)
-		       for(int j=0;j<20;j++)
+	        for(int i=0;i<l;i++) {
+		       for(int j=0;j<l;j++) {
 				      if(tabellone.getCella(i, j).getColore()=="BLU" ) {
 					    if(tabellone.getCella(i-1, j+1).getColore()=="BLU" && tabellone.getCella(i-2, j+2).getColore()=="BLU" ) {
 					     punti+= 2;
 					        tabellone.getCella(i-1, j+1).setColore();
 					     }
 					  }
+		       }
+	        }
 			       return punti;
 		case 11:
 			punti=0;
-			 for(int i=0;i<20;i++)
-			       for(int j=0;j<20;j++)
+			 for(int i=0;i<l;i++) {
+			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="VIOLA" ) {
 						    if(tabellone.getCella(i-1, j).getColore()=="VIOLA" && tabellone.getCella(i-2, j-1).getColore()=="BLU" ) {
 						     punti+= 2;
 						     }
 						  }
+			       }
+			 }
 				       return punti;
 			
 		case 12:
 			punti=0;
-			 for(int i=0;i<20;i++)
-			       for(int j=0;j<20;j++)
+			 for(int i=0;i<l;i++) {
+			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="BLU" ) {
 						    if(tabellone.getCella(i-1, j).getColore()=="BLU" && tabellone.getCella(i-2, j+1).getColore()=="ROSSO" ) {
 						     punti+= 2;
 						     }
 						  }
+		}
+	}
 				       return punti;
 		case 13:
 			punti=0;
-			 for(int i=0;i<20;i++)
-			       for(int j=0;j<20;j++)
+			 for(int i=0;i<l;i++) {
+			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="VERDE" ) {
-						    if(tabellone.getCella(i+1, j).getColore()=="VERDE" && tabellone.getCella(i+2, j-1).getColore()=="VIOLA" ) {
+						    if(tabellone.getCella(i+1, j).getColore()=="VERDE"){
+						    		if(tabellone.getCella(i+2, j-1).getColore()=="VIOLA" ) {
 						     punti+= 2;
 						     }
 						  }
+			       }
+			    }
+			 }
 				       return punti;
+				       
+		case 14: return (contatore.contaAnimali(tabellone)/3*2);
 		
-		case 14: return contatore.contaAnimali(tabellone)/3*2;
+		case 15: return (contatore.contaFunghi(tabellone)/3*2);
 		
-		case 15: return contatore.contaFunghi(tabellone)/3*2;
-		
-		case 16: return contatore.contaVegetali(tabellone)/3*2;
+		case 16: return (contatore.contaVegetali(tabellone)/3*2);
 		
 		case 17: 
 			punti=0;
-			pergamena=contatore.contaPergamene(tabellone);
+			inchiostro=contatore.contaInchiostro(tabellone);
 				
-				while(pergamena!=1 || pergamena!=0) {
-					pergamena-=2;
+				while(inchiostro>1) {
+					inchiostro-=2;
 					punti+=2;
 				  }
 				return punti;
@@ -266,11 +332,14 @@ public class Controller {
 		case 18: 
 			return contatore.contaInsetti(tabellone)/3*2;
 		
+			
+			
+			
 		case 19: 
 			 punti=0;
 			 pergamena=contatore.contaPergamene(tabellone);
 				
-				while(pergamena!=1 || pergamena!=0) {
+				while(pergamena>1) {
 					pergamena-=2;
 					punti+=2;
 				  }
@@ -280,7 +349,7 @@ public class Controller {
 			 punti=0;
 			 piume=contatore.contaPiume(tabellone);
 				
-				while(piume!=1 || piume!=0) {
+				while(piume>1) {
 					piume-=2;
 					punti+=2;
 				  }
@@ -290,7 +359,36 @@ public class Controller {
 		}
 	}
 	
+
+	public int contaAngoli(Tabellone tabellone, int x, int y)
+{
+		int conta=0;
+		for(int i=-1; i<2;i=i+2) {
+			for(int j=-1; j<2; j=j+1) {
+				if(tabellone.getCella(x+i, y+j).getID()!=00) conta=conta+2;
+			}
+		}
+		
+		System.out.println("QUESTO PIAZZAMENTO TI DA "+conta+ " PUNTI");
 	
+		return conta;
+			
+		
 }
+	public Boolean checkWin(Giocatore[] giocatori) {
+	boolean win=false;
+	for(int current=0;current<giocatori.length;current++){ 
+		{if (giocatori[current].getSomma()>19) {
+			win=true;
+		
+		}
+		}
+	}
+	return win;
+	}
+}
+
 	
+	
+
 
