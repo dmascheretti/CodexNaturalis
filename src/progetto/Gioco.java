@@ -1,6 +1,5 @@
 package progetto;
 
-import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -76,8 +75,8 @@ public Gioco() throws NameAssignedException {
 	for (int i=0;i<n;i++) {
 		System.out.println("\nSelezione nome giocatore "+(i+1)+" ");
 		String name=sc2.nextLine();
-		if(i==0) this.giocatori[i]=new Giocatore(name);
-		else this.giocatori[i]=new Giocatore(name);
+		this.giocatori[i]=new Giocatore(name);
+		
 	 }
 	errore=true;
 	}catch(NameAssignedException e) {
@@ -123,7 +122,7 @@ public void Gioca() throws InterruptedException, IOException {
 			mazzo_obiettivo.pescaCartaIndex(obiettivo).getCarta();
 		}
 		
-		Boolean blocca=true;
+		Boolean blocca=false;
 		scelta_obiettivo=0;
 		while (!blocca || scelta_obiettivo<1|| scelta_obiettivo>2 ) {
 	        try {
@@ -148,12 +147,19 @@ public void Gioca() throws InterruptedException, IOException {
 			
 			System.out.println(giocatori[i].scegliCarta(0).printCard());
 
-			do {
+			blocca=false;
 			
-				System.out.println("vuoi giocare la carta iniziale fronte o retro, 0 per fronte, 1 per retro (la carta verra automaticamente piazzate al centro del tabellone)".toUpperCase());
-				scelta_iniziale=sc.nextInt();
-			
-			}while(scelta_iniziale!=fronte && scelta_iniziale!=retro);
+			while (!blocca || scelta_iniziale!=fronte && scelta_iniziale!=retro ) {
+		        try {
+		            System.out.print("\nvuoi giocare la carta iniziale fronte o retro, 0 per fronte, 1 per retro (la carta verra automaticamente piazzate al centro del tabellone)".toUpperCase()+"\n");
+		            scelta_iniziale = sc.nextInt();
+		            blocca = true; 
+		        } catch (InputMismatchException e) {
+		            System.out.println("Errore");
+		            sc.nextLine();
+		  
+		        }
+			}
 			
 			if(scelta_iniziale==fronte) giocatori[i].scegliCarta(0).setRisFronte();
 			
@@ -208,7 +214,7 @@ public void Gioca() throws InterruptedException, IOException {
 		System.out.println("PUNTI: "+giocatori[giocatore].getSomma());
 		System.out.println("\nCARTA OBIETTIVO DEL GIOCATORE "+giocatori[giocatore].getName().toUpperCase());
 		giocatori[giocatore].getObiettivo().getCarta();
-		TimeUnit.SECONDS.sleep(6);
+		TimeUnit.SECONDS.sleep(4);
 		
 		giocatori[giocatore].getTabellone().printTabellone();
 	
@@ -218,15 +224,23 @@ public void Gioca() throws InterruptedException, IOException {
 	do {
 		block=true;
 		System.out.println(giocatori[giocatore].getName()+" scegli una carta da giocare tra quelle della tua mano: ".toUpperCase());
-		TimeUnit.SECONDS.sleep(5);
+		TimeUnit.SECONDS.sleep(4);
 		giocatori[giocatore].guardaMano();
 		
 		
-		System.out.println("scegli tra 1,2,3 " );
-		do {
-			h=sc.nextInt();
-			if(h!=1 && h!=2 && h!=3) System.out.println("hai inserito un numero errato, scegli tra 1,2,3");
-		}while(h!=1 && h!=2 && h!=3);
+Boolean blocca=false;
+		
+		while (!blocca || h!=1 && h!=2 && h!=3) {
+	        try {
+	            System.out.print("\nscegli tra 1, 2 oppure 3".toUpperCase()+"\n");
+	            h = sc.nextInt();
+	            blocca = true; 
+	        } catch (InputMismatchException e) {
+	            System.out.println("Errore");
+	            sc.nextLine();
+	  
+	        }
+		}
 		
 		do {
 		System.out.println("vuoi giocare fronte o retro? 0 per fronte, 1 per retro");
@@ -252,13 +266,14 @@ public void Gioca() throws InterruptedException, IOException {
 		}
 	}while(block==false);
 	
+	
 
 	
 	do {
-					x=0;
-					y=0;
-					System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 1 e 19)");
-					boolean blocca=false;
+			x=0;
+			y=0;
+			System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 1 e 19)");
+				boolean blocca=false;
 					while (!blocca || x<size-(size-1) || x>size ) {
 				        try {
 				        	System.out.print("X: ");
@@ -315,7 +330,7 @@ public void Gioca() throws InterruptedException, IOException {
 	
 	
 
-	int carta_pescata = 0;
+int carta_pescata = 0;
 	
 	boolean blocca=false;
 	while (!blocca) {
@@ -330,8 +345,6 @@ public void Gioca() throws InterruptedException, IOException {
   
         }
 	}
-	
-
 	
 	Carta carta_nuova = giocatori[giocatore].scelta(carta_pescata, mazzo_oro, mazzo_risorse, campo_oro, campo_risorsa);
 	giocatori[giocatore].aggiungiaMano(carta_nuova);
