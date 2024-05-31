@@ -4,7 +4,6 @@ import progetto.Colore_carta;
 
 public class Carta_risorsa extends Carta{
 	private int punti;
-	private String risorse1,risorse2,risorse3,risorse4;
 	private Colore_carta color;
 
 public Carta_risorsa(String risorse1,String risorse2, String risorse3,String risorse4,int punti, Colore_carta color, String risorse1Centro,int ID)

@@ -3,6 +3,7 @@ package mazzi;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import carte.Carta;
 import carte.Carta_iniziale;
 import progetto.Regno;
  
@@ -45,11 +46,6 @@ public class Mazzo_iniziale extends Mazzo {
         Collections.shuffle(mazzo_iniziale);
     }
 
-    public Carta_iniziale stampaCartaPescata() {
-        System.out.println("Hai pescato:\t\t");
-        mazzo_iniziale.get(0).getCarta();
-        return mazzo_iniziale.get(0);
-    }
 
     public Carta_iniziale pescaCarta() {
         return mazzo_iniziale.get(0);
@@ -58,6 +54,33 @@ public class Mazzo_iniziale extends Mazzo {
     public void rimuoviCarta() {
     	mazzo_iniziale.remove(0);
     }
+
+
+
+
+	@Override
+	public Carta getRetro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	@Override
+	public int getLenght() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
+	@Override
+	public void printCarta(Carta carta) {
+		// TODO Auto-generated method stub
+		
+	}
 
     
 

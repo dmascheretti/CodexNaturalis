@@ -1,6 +1,5 @@
 package carte;
 
-import java.util.ArrayList;
 
 import progetto.Colore_carta;
 

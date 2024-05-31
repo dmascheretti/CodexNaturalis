@@ -8,7 +8,7 @@ public class Carta_obiettivo extends Carta {
 	
 	public void getCarta()
 {
-		System.out.println("ID "+ID+"\nobiettivo: "+obiettivo+"\npunti "+punti+ "\n");
+		System.out.println("ID "+ID+"\nobiettivo: "+obiettivo+"\npunti->"+punti+ "\n");
 		
 
 }

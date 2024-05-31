@@ -3,6 +3,7 @@ package mazzi;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import carte.Carta;
 import carte.Carta_risorsa;
 import progetto.Colore_carta;
 import progetto.Regno;
@@ -178,11 +179,14 @@ public class Mazzo_risorse extends Mazzo{
 
 
 
-	public void getMazzo() {
+	public void printMazzo() {
         for (int i = 0; i < mazzo_risorse.size(); i++)
             System.out.println(mazzo_risorse.get(i).getPunti());
     }
 
+	public void getMazzo() {
+		for(int i=0;i<mazzo_risorse.size();i++) mazzo_risorse.get(i);
+	}
     public void mescolaMazzo() {
         Collections.shuffle(mazzo_risorse);
     }
@@ -202,5 +206,20 @@ public class Mazzo_risorse extends Mazzo{
     	return mazzo_risorse.size();
     	
     }
+
+
+
+	public Carta getRetro() {
+		// TODO Auto-generated method stub
+		return mazzo_risorse.get(0);
+	}
+
+
+
+	@Override
+	public void printCarta(Carta carta) {
+		// TODO Auto-generated method stub
+		
+	}
   
 }

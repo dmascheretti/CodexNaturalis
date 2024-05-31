@@ -2,7 +2,6 @@ package progetto;
 
 import java.io.IOException;
 
-import javax.naming.NameAlreadyBoundException;
 
 import exception.NameAssignedException;
 
