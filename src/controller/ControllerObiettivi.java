@@ -88,7 +88,7 @@ public class ControllerObiettivi {
 			 for(int i=0;i<l;i++) {
 			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="ROSSO" ) {
-						    if(tabellone.getCella(i+2, j).getColore()=="ROSSO" && tabellone.getCella(i+2, j+1).getColore()=="VERDE" ) {
+						    if(tabellone.getCella(i+2, j).getColore()=="ROSSO" && tabellone.getCella(i+3, j+1).getColore()=="VERDE" ) {
 						     punti+= 2;
 						     }
 						  }
@@ -114,7 +114,7 @@ public class ControllerObiettivi {
 			 for(int i=0;i<l;i++) {
 			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="VIOLA" ) {
-						    if(tabellone.getCella(i-2, j).getColore()=="VIOLA" && tabellone.getCella(i-2, j-1).getColore()=="BLU" ) {
+						    if(tabellone.getCella(i-2, j).getColore()=="VIOLA" && tabellone.getCella(i-3, j-1).getColore()=="BLU" ) {
 						     punti+= 2;
 						     }
 						  }
@@ -127,7 +127,7 @@ public class ControllerObiettivi {
 			 for(int i=0;i<l;i++) {
 			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="BLU" ) {
-						    if(tabellone.getCella(i-2, j).getColore()=="BLU" && tabellone.getCella(i-2, j+1).getColore()=="ROSSO" ) {
+						    if(tabellone.getCella(i-2, j).getColore()=="BLU" && tabellone.getCella(i-3, j+1).getColore()=="ROSSO" ) {
 						     punti+= 2;
 						     }
 						  }
@@ -139,8 +139,8 @@ public class ControllerObiettivi {
 			 for(int i=0;i<l;i++) {
 			       for(int j=0;j<l;j++) {
 					      if(tabellone.getCella(i, j).getColore()=="VERDE" ) {
-						    if(tabellone.getCella(i+1, j).getColore()=="VERDE"){
-						    		if(tabellone.getCella(i+2, j-1).getColore()=="VIOLA" ) {
+						    if(tabellone.getCella(i+2, j).getColore()=="VERDE"){
+						    		if(tabellone.getCella(i+3, j-1).getColore()=="VIOLA" ) {
 						     punti+= 2;
 						     }
 						  }
