@@ -213,7 +213,7 @@ public abstract class Carta {
 public String printCardR() {
 	
 	return ("\n---------------------╗\n\n"
-			+"\t" +ris1Centro+ "\n\n"+"    "+"\t\t"+"    "+"\n---------------------╝");
+			+"\t" +ris1Centro+ "\n\n"+"    "+"\t\t"+"    "+"\n\n---------------------╝");
 }
 
 	public String printEmpty() {

@@ -3,6 +3,7 @@ package progetto;
 import java.util.ArrayList;
 
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.Set;
 
 import carte.Carta;
@@ -218,6 +219,7 @@ public Carta scelta(int carta_pescata,  Mazzo_oro mazzo_oro, Mazzo_risorse mazzo
 			default: return null;
 			}
 		}
+
 	
 	
 }

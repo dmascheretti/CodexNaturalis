@@ -11,7 +11,6 @@ import mazzi.Mazzo_risorse;
 import mazzi.Mazzo_iniziale;
 import mazzi.Mazzo_oro;
 import mazzi.Mazzo_obiettivo;
-import controller.Contatori;
 import controller.Controller;
 import controller.ControllerObiettivi;
 import exception.NameAssignedException;
@@ -26,7 +25,7 @@ public class Gioco {
 	private Mazzo_obiettivo mazzo_obiettivo;
 	private Campo_gioco campo_gioco;
 	private ControllerObiettivi controller_obiettivi;
-	private Contatori contatore;
+	private Stampa stampa;
 
 
 
@@ -45,7 +44,7 @@ public class Gioco {
 		this.controller=new Controller();
 		this.campo_gioco=new Campo_gioco();
 		this.controller_obiettivi=new ControllerObiettivi();
-		this.contatore=new Contatori();
+		this.stampa=new Stampa();
 
 
 		System.out.println("CODEX NATURALIS");
@@ -69,20 +68,26 @@ public class Gioco {
 		Scanner sc2=new Scanner(System.in);
 
 		this.giocatori=new Giocatore[n];
-		System.out.println("\nIL PRIMO GIOCATORE INSERITO SARA COLUI CHE PARTE");
+		System.out.println("\nIL PRIMO GIOCATORE INSERITO SARA COLUI CHE INIZIA IL TURNO");
 
 		Boolean errore=false;
-		while(!errore) {
+		while(!errore ) {
 			try	{
 				for (int i=0;i<n;i++) {
-					System.out.println("\nSelezione nome giocatore "+(i+1)+" ");
-					String name=sc2.nextLine();
+					String name;;
+					do {
+						
+					System.out.println("\nSelezione nome giocatore "+(i+1)+", il nome non può essere vuoto ");
+					name=sc2.nextLine();
+					
+					}while(name.isBlank());
+					
 					this.giocatori[i]=new Giocatore(name);
 
 				}
 				errore=true;
 			}catch(NameAssignedException e) {
-				System.out.println("Errore: inserisci due nomi diversi!");
+				System.out.println("Errore: inserisci due nomi diversi (cambia il primo nome)");
 			}
 
 
@@ -196,34 +201,14 @@ public class Gioco {
 		int turno=1;
 		int h= 0,x = 0,y = 0;
 		do {
-			if(turno<10) {
-				System.out.print("\n\n----------------┐\n");
-				System.out.print("                |\n");
-				System.out.print("                |\n");
-				System.out.print("TURNO NUMERO "+turno+"  |\n");
-				System.out.print("                |\n");
-				System.out.print("                |\n");
-				System.out.print("----------------┘\n\n\n"); 
-			}
-			else {
-				System.out.print("\n\n----------------┐\n");
-				System.out.print("                |\n");
-				System.out.print("                |\n");
-				System.out.print("TURNO NUMERO "+turno+" |\n");
-				System.out.print("                |\n");
-				System.out.print("                |\n");
-				System.out.print("----------------┘\n\n\n");
-			}
-
-
-
+			
+			stampa.stampaTurno(turno);
+			
 			for(int p=0; p< giocatori.length; p++) System.out.println("PUNTEGGIO GIOCATORE "+giocatori[p].getName()
 					+": "+giocatori[p].getSomma());
-
-			System.out.println("\n\n\nCARTE OBIETTIVO COMUNI: ");
-
-			for(int i=0;i<campo_gioco.returnObiettivo().size();i++) campo_gioco.returnObiettivo().get(i).getCarta();
-			System.out.println();
+			
+			
+			stampa.stampaObiettivo(campo_gioco);
 
 
 
@@ -243,22 +228,9 @@ public class Gioco {
 
 					}
 				}
-				//sc.nextLine();
-				TimeUnit.SECONDS.sleep(2);
-				//sc.nextLine();
-				System.out.println("PUNTI: "+giocatori[giocatore].getSomma());
-				System.out.println("\nCARTA OBIETTIVO DEL GIOCATORE "+giocatori[giocatore].getName().toUpperCase());
-				giocatori[giocatore].getObiettivo().getCarta();
-				System.out.println();
-				TimeUnit.SECONDS.sleep(3);
-				System.out.println("STAMPA TABELLONE DI "+giocatori[giocatore].getName());
-				TimeUnit.SECONDS.sleep(2);
-				giocatori[giocatore].getTabellone().printTabellone();
-				System.out.println();
-				giocatori[giocatore].conta();
+				
+				stampa.stampaGiocatore(giocatori[giocatore]);
 
-				TimeUnit.SECONDS.sleep(2);
-				System.out.println("TURNO: "+giocatori[giocatore].getName().toUpperCase());
 
 				//CHOOSE CARD FROM PLAYER HAND
 
@@ -363,6 +335,8 @@ public class Gioco {
 					//CHECKING THE POSSIBILITY TO PLAY THE CARD 
 				}while(giocatori[giocatore].getTabellone().checkCorner(x,y)==false || giocatori[giocatore].getTabellone().checkNext(x, y)==false
 						||giocatori[giocatore].getTabellone().checkEmpty(x, y)!=0);
+				
+				
 				giocatori[giocatore].getTabellone().removeCorner(x, y);
 
 				giocatori[giocatore].getTabellone().setCella(x, y,giocatori[giocatore].scegliCarta(h-1));
@@ -376,6 +350,7 @@ public class Gioco {
 					giocatori[giocatore].getPunteggio(controller.getPunti(giocatori[giocatore].scegliCarta(h-1),giocatori[giocatore].getTabellone(),
 							x, y));
 				}
+				
 				giocatori[giocatore].removeCardIndex(h-1);
 
 				System.out.println("PIAZZAMENTO CARTA IN CORSO...");
@@ -384,10 +359,14 @@ public class Gioco {
 				//TimeUnit.SECONDS.sleep(3);
 				giocatori[giocatore].getTabellone().printTabellone();
 
-				System.out.println("CARTA ORO");
+				System.out.println("PUNTEGGIO DOPO PIAZZAMENTO: "+giocatori[giocatore].getSomma());
+				
+				TimeUnit.SECONDS.sleep(3);
+				System.out.println("-----MAZZI-----");
+				System.out.println("\nCARTA ORO\n");
 				System.out.println(mazzo_oro.getRetro().printCardR());
 
-				System.out.println("CARTA RISORSA ");
+				System.out.println("\n\nCARTA RISORSA \n");
 				System.out.println(mazzo_risorse.getRetro().printCardR());
 				System.out.println();
 
@@ -419,7 +398,7 @@ public class Gioco {
 				System.out.println(carta_nuova.printCard());
 
 				if(giocatori[giocatore].getSomma()>19 && (giocatore!=giocatori.length-1)) System.out.println("HAI RAGGIUNTO 20 PUNTI, ASPETTA CHE FINISCA IL TURNO");
-				if(!win) System.out.println("\n\nCAMBIO TURNO...\n");
+				else System.out.println("\n\nCAMBIO TURNO...\n");
 
 
 			}

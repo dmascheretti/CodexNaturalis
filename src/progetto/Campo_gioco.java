@@ -34,10 +34,13 @@ public Campo_gioco() {
 	
 		public void stampaCartaCampo() {
 			
-			System.out.println("\n\n| | | | | | | | | | | | | | | | | | | \n\n\n"); System.out.println("\nCARTE SUL CAMPO ORO");
+			System.out.println("\n\n\n\n"); 
+			System.out.println("\n\n-----CARTE SUL CAMPO ORO-----");
 			
 			for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┬");
 			System.out.print("\n\n");
+			for(int d=0;d<campo_oro.size();d++)System.out.print("COLORE:"+campo_oro.get(d).getColore()+"               ");
+			System.out.println("\n\n");
 			for(int d=0;d<campo_oro.size();d++)System.out.print("PUNTI:"+campo_oro.get(d).getPunteggio()+"                  ");
 			System.out.println("\n\n");
 			for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getID()+"                       ");
@@ -56,12 +59,14 @@ public Campo_gioco() {
 				
 				
 				
-			System.out.println("\nCARTE SUL CAMPO RISORSA\n");
+			System.out.println("\n\n-----CARTE SUL CAMPO RISORSA-----\n");
 
 				
 				for(int d=0;d<campo_risorsa.size();d++) System.out.print("-----------------------┬");
 				System.out.print("\n\n");
 				for(int d=0;d<campo_risorsa.size();d++)System.out.print("PUNTI:"+campo_risorsa.get(d).getPunteggio()+"                  ");
+				System.out.println("\n\n");
+				for(int d=0;d<campo_risorsa.size();d++)System.out.print("COLORE:"+campo_oro.get(d).getColore()+"               ");
 				System.out.println("\n\n");
 				for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getID()+"                       ");
 				System.out.println("\n\n");
