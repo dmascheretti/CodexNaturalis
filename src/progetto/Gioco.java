@@ -114,7 +114,7 @@ public class Gioco {
 
 		for(int i=0;i<giocatori.length;i++) {
 
-			System.out.println("\nTURNO DEL GIOCATORE "+giocatori[i].getName().toUpperCase()+", PREMI UN TASTO PER CONTUINUARE");
+			System.out.println("\nTURNO DEL GIOCATORE "+giocatori[i].getName().toUpperCase()+", PREMI INVIO PER CONTUINUARE");
 			sc.nextLine();
 			//sc.nextLine();
 			TimeUnit.SECONDS.sleep(1);
