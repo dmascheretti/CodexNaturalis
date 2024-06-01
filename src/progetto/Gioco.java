@@ -50,16 +50,17 @@ public class Gioco {
 		System.out.println("CODEX NATURALIS");
 		
 		System.out.println("\n\nSPIEGAZIONE RISORSE:\n-FUNG=FUNGO\n-INSE=INSETTO\n-ANIM=ANIMALE\n-VEGE=VEGETALE\n-NULL=SPAZIO VUOTO COPRIBILE"
-				+ "\n-████=SPAZIO NON COPRIBILE\n-INCH=INCHIOSTRO\n-PERG=PERGAMENA\n-PIUM=PIUMA\n\nImportante: nelle risorse necessarie "
+				+ "\n-████=SPAZIO NON COPRIBILE\n-INCH=INCHIOSTRO\n-PERG=PERGAMENA\n-PIUM=PIUMA\n\nImportante!!! Nelle risorse necessarie "
 				+ "delle carte oro la lettera I corrsisponde alla risorsa 'Insetto'");
 
 		Scanner sc=new Scanner(System.in);
 		int inizio=1;
 		while(inizio!=0) {
-		System.out.println("\n\nPREMI 0 PER INIZIARE UNA NUOVA PARTITA");
+		System.out.println("\n\nPREMI 0 PER INIZIARE UNA NUOVA PARTITA, 1 PER TERMINARE");
 		inizio=sc.nextInt();
+		if(inizio==1) Runtime.getRuntime().exit(inizio);
 		}
-	
+		
 		int n=0;
 		Boolean blocca=false;
 

@@ -44,7 +44,7 @@ public class Mazzo_oro extends Mazzo{
 			2,"FAA (PUNTI PER ANGOLO COPERTO)", Colore_carta.BLU,Regno.ANIM.toString(),69);
 	
 	private Carta_oro carta_oro70=new Carta_oro(Regno.NULL.toString(),Regno.PIUM.toString(),Regno.INCH.toString(),"████",
-			1,"IIF (I=insetto, 1 PUNTO PER INCHIOSTRO)", Colore_carta.VERDE,Regno.VEGE.toString(),70);
+			1,"IIF (1 PUNTO PER INCHIOSTRO)", Colore_carta.VERDE,Regno.VEGE.toString(),70);
 	
 	private Carta_oro carta_oro71=new Carta_oro(Regno.NULL.toString(),Regno.INCH.toString(),Regno.NULL.toString(),Regno.NULL.toString(),
 			2,"VFF (PUNTI PER ANGOLO COPERTO)", Colore_carta.VERDE,Regno.VEGE.toString(),71);
