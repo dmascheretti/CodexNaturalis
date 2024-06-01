@@ -18,11 +18,7 @@ public class Carta_iniziale extends Carta{
 		"\n----------------------╝\n");
 	}
 
-	@Override
-	public boolean mossaValida(Carta tabellone, int x, int y) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 	
 	
 	

@@ -94,11 +94,7 @@ public Giocatore(String name) throws NameAssignedException {
 	public void aggiungiaObiettivo(Carta_obiettivo carta) {
 		cartaObiettivo.add(carta);
 	}
-	
-	public void setTabellone(Tabellone tabellone) {
-		this.tabellone=tabellone;
-	}
-		
+
 
 /**
  * Print player's hand cards

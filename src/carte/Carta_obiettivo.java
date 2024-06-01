@@ -12,10 +12,5 @@ public class Carta_obiettivo extends Carta {
 		
 
 }
-	@Override
-	public boolean mossaValida(Carta tabellone, int x, int y){
-		
-		return false;
-	}
 	
 }

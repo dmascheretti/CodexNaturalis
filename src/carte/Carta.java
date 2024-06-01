@@ -198,11 +198,6 @@ public abstract class Carta {
 		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
 	}
 
-	public String printCardF() {
-
-		return ("\n---------------------╗\n\n"
-				+ris1Fronte+ "\t\t" +ris2Fronte+ "\n\n"+ris3Fronte+"\t\t"+ris4Fronte+"\n\n---------------------╝");
-	}
 	
 	public String printCardFinal() {
 
@@ -216,15 +211,6 @@ public String printCardR() {
 			+"\t" +ris1Centro+ "\n\n"+"    "+"\t\t"+"    "+"\n\n---------------------╝");
 }
 
-	public String printEmpty() {
-		
-		return ("\n"+"\n\n"+"    "+ "\t\t\t" +"    "+ "\n"+"    "+"\t\t\t"+"    "+"\n\n\n"+
-		"  \t"+"    "+"\t  ");
-	}
-
-	public abstract boolean mossaValida(Carta tabellone, int x, int y);
-
-	
 	public void setRis1Retro(){
 		ris1Retro="    ";
 	}
@@ -244,22 +230,7 @@ public String printCardR() {
 	}
 	
 	
-	public void setRisRetro(){
-		ris1Fronte=ris1Retro;
-		ris2Fronte=ris2Retro;
-		ris2Fronte=ris2Retro;
-		ris2Fronte=ris2Retro;
-		ris2Centro="    ";
-	}
-	
-	public void setRisRetroIniziale(){
-		ris4Retro="    ";
-		ris4Retro="    ";
-		ris4Retro="    ";
-		ris4Retro="    ";
-		ris1Centro="    ";
-		ris2Centro="    ";
-	}
+
 	//per giocare fronte
 	public void setRisFronte(){
 		ris1Retro=ris1Fronte;

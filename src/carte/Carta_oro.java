@@ -9,11 +9,6 @@ public Carta_oro(String risorse1, String risorse2, String risorse3, String risor
 		super(risorse1, risorse2, risorse3, risorse4, punti, risorsenec, colore, risorse1r, ID);
 	}
 
-@Override
-public boolean mossaValida(Carta tabellone, int x, int y) {
-	// TODO Auto-generated method stub
-	return false;
-}
 
 public String printCard() {
 	

@@ -18,20 +18,7 @@ public class Controller {
 		this.contatore=new Contatori();
 
 	}
-	/*
 
-	public Boolean checkCorner(int i, int j, Tabellone tabellone) {
-		if(tabellone.getCella(i-1, j-1).getID()!=00 || tabellone.getCella(i-1, j+1).getID()!=00 || 
-				tabellone.getCella(i+1, j+1).getID()!=00 || tabellone.getCella(i+1,j-1).getID()!=00){
-
-			if(tabellone.getCella(i+1, j+1).getRis1Retro()!="████" && tabellone.getCella(i+1, j-1).getRis2Retro()!="████" &&
-					tabellone.getCella(i-1, j-1).getRis4Retro()!="████" && tabellone.getCella(i-1, j+1).getRis3Retro()!="████")
-				return true;
-		}
-		return false;
-
-	}
-	*/
 
 	public void classifica(Giocatore [] giocatori) {
 		for(int cl=0;cl<giocatori.length;cl++) {
@@ -39,26 +26,6 @@ public class Controller {
 		}
 	}
 
-
-
-
-
-/*
-	public int checkEmpty(int x, int y, Tabellone tabellone) {
-		return tabellone.getCella(x,y).getID();
-	}
-	*/
-/*
-	public Boolean checkNext(int x, int j, Tabellone tabellone) {
-		if((tabellone.getCella(x+1, j).getID()==00) && (tabellone.getCella(x, j-1).getID()==00) &&
-				(tabellone.getCella(x-1, j).getID()==00) && (tabellone.getCella(x, j+1).getID()==00)) return true;
-
-		else return false;
-
-
-	}
-
-*/
 
 	public Boolean mossaValida(int id, Tabellone tabellone) {
 
@@ -182,15 +149,13 @@ public class Controller {
 		case 71: return contaAngoli(tabellone,x,y);
 
 		case 80: return contaAngoli(tabellone, x, y);
-		case 81: return contatore.contaPergamene(tabellone);
-		case 82: return contatore.contaPiume(tabellone);
+		case 81: return (contatore.contaPergamene(tabellone));
+		case 82: return (contatore.contaPiume(tabellone));
 		case 83: return contaAngoli(tabellone, x, y);
-
-		case 84: return 5;
 		case 85:  return contaAngoli(tabellone, x, y);
 
 		case 86:return contaAngoli(tabellone, x, y);
-		case 91: return contatore.contaInsetti(tabellone)+1;
+		case 91: return contatore.contaPiume(tabellone);
 		case 96: return contaAngoli(tabellone, x, y);
 		case 97: return contatore.contaPergamene(tabellone);
 
