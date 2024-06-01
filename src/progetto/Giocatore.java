@@ -3,7 +3,6 @@ package progetto;
 import java.util.ArrayList;
 
 import java.util.HashSet;
-import java.util.InputMismatchException;
 import java.util.Set;
 
 import carte.Carta;
@@ -16,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 import carte.Carta_oro;
 import carte.Carta_risorsa;
 import controller.Contatori;
-import controller.Controller;
 import mazzi.Mazzo_oro;
 import mazzi.Mazzo_risorse;
 
@@ -36,7 +34,7 @@ private ArrayList<Carta_obiettivo> cartaObiettivo;
 private int somma=0;
 private Tabellone tabellone;
 private Contatori contatore;
-private Controller controller;
+
 
 
 
@@ -58,7 +56,6 @@ public Giocatore(String name) throws NameAssignedException {
 		this.tabellone=new Tabellone();
 		NOMI_ASSEGNATI.add(name);
 		this.contatore=new Contatori();
-		this.controller=new Controller();
 }
 
 	public String getName() {
