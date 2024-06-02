@@ -263,7 +263,7 @@ public class Gioco {
 
 				block=true;
 				System.out.println(giocatori[giocatore].getName()+" scegli una carta da giocare tra quelle della tua mano: ".toUpperCase());
-				TimeUnit.SECONDS.sleep(3);
+				TimeUnit.SECONDS.sleep(2);
 				giocatori[giocatore].guardaMano();
 
 

@@ -81,6 +81,7 @@ public class Campo_gioco {
 			if(campo_risorsa.get(d).getColore()!="BLU")System.out.print("COLORE:"+campo_risorsa.get(d).getColore()+"             ");
 			else System.out.print("COLORE:"+campo_risorsa.get(d).getColore()+"               ");
 		}
+		System.out.println("\n\n");
 		for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getRis1Fronte()+"\t    \t"+campo_oro.get(d).getRis2Fronte()+"\t  ");
 		System.out.println("\n\n");
 		for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getRis3Fronte()+"\t    \t"+campo_risorsa.get(d).getRis4Fronte()+"\t  ");
