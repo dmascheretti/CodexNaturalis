@@ -15,9 +15,9 @@ public class Mazzo_obiettivo extends Mazzo{
 	private Carta_obiettivo carta_obiettivo8= new Carta_obiettivo(8, 2, "\nROSSO\n\tROSSO\n\t\tROSSO\n");
 	private Carta_obiettivo carta_obiettivo9= new Carta_obiettivo(9, 3, "\nROSSO\nROSSO\n\tVERDE\n");
 	private Carta_obiettivo carta_obiettivo10= new Carta_obiettivo(10, 2, "\n\t\tBLU\n\tBLU\nBLU\n");
-	private Carta_obiettivo carta_obiettivo11= new Carta_obiettivo(11, 3, "\nBLU\n\tVIOLA\n\tVIOLA\n");
-	private Carta_obiettivo carta_obiettivo12= new Carta_obiettivo(12, 3, "\n\tROSSO\nBLU\nBLU\n");
-	private Carta_obiettivo carta_obiettivo13= new Carta_obiettivo(13, 3, "\n\tVERDE\n\tVERDE\nVIOLA\n");
+	private Carta_obiettivo carta_obiettivo11= new Carta_obiettivo(11, 3, "\nBLU\n\n\tVIOLA\n\tVIOLA\n");
+	private Carta_obiettivo carta_obiettivo12= new Carta_obiettivo(12, 3, "\n\tROSSO\nBLU\n\nBLU\n");
+	private Carta_obiettivo carta_obiettivo13= new Carta_obiettivo(13, 3, "\n\tVERDE\n\n\tVERDE\nVIOLA\n");
 	private Carta_obiettivo carta_obiettivo14= new Carta_obiettivo(14, 2, "animale, animale ,animale\n".toUpperCase());
 	private Carta_obiettivo carta_obiettivo15= new Carta_obiettivo(15, 2, "fungo, fungo, fungo\n".toUpperCase());
 	private Carta_obiettivo carta_obiettivo16= new Carta_obiettivo(16, 2, "vegetale, vegetale, vegetale\n".toUpperCase());
