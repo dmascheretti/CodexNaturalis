@@ -432,9 +432,13 @@ public class Gioco {
 				giocatori[giocatore].aggiungiaMano(carta_nuova); //ADD CARD TO PLAYER HAND
 				System.out.println("\nHAI PESCATO: \n");
 				System.out.println(carta_nuova.printCard());
-
-				if(giocatori[giocatore].getSomma()>19 && (giocatore!=giocatori.length-1)) System.out.println("HAI RAGGIUNTO 20 PUNTI, ASPETTA CHE FINISCA IL TURNO");
-				else System.out.println("\n\nCAMBIO TURNO...\n");
+				
+				Boolean fineturno=true;
+				if(giocatori[giocatore].getSomma()>19 && (giocatore!=giocatori.length-1)) {
+					System.out.println("HAI RAGGIUNTO 20 PUNTI, ASPETTA CHE FINISCA IL TURNO");
+					fineturno=false;
+				}
+				if(fineturno!=false) System.out.println("\n\nCAMBIO TURNO...\n");
 
 
 			}
