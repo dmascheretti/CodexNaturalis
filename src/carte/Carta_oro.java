@@ -20,6 +20,10 @@ public String printCard() {
 
 }
 
+public String getRisNec() {
+	return risorsenec;
+}
+
 }
 
 

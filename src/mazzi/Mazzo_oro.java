@@ -29,7 +29,7 @@ public class Mazzo_oro extends Mazzo{
 			1,"VVI (1 PUNTO PER PERGAMENA)", Colore_carta.VERDE,Regno.VEGE.toString(),64);
 	
 	private Carta_oro carta_oro65=new Carta_oro(Regno.NULL.toString(),Regno.INCH.toString(),Regno.ANIM.toString(),Regno.FUNG.toString(),
-			2,"AIV (PUNTI PER ANGOLO COPERTO, i=inchiostro)", Colore_carta.ROSSO,Regno.FUNG.toString(),65);
+			2,"AIV (PUNTI PER ANGOLO COPERTO)", Colore_carta.ROSSO,Regno.FUNG.toString(),65);
 	
 	private Carta_oro carta_oro66=new Carta_oro("████",Regno.INCH.toString(),Regno.INSE.toString(),"████",
 			2,"III (PUNTI PER ANGOLO COPERTO)", Colore_carta.ROSSO,Regno.FUNG.toString(),66);

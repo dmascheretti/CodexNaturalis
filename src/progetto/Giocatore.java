@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import carte.Carta_oro;
 import carte.Carta_risorsa;
 import controller.Contatori;
+import controller.Controller;
 import mazzi.Mazzo_oro;
 import mazzi.Mazzo_risorse;
 
@@ -34,6 +35,7 @@ private ArrayList<Carta_obiettivo> cartaObiettivo;
 private int somma=0;
 private Tabellone tabellone;
 private Contatori contatore;
+private Controller controller;
 
 
 
@@ -56,6 +58,7 @@ public Giocatore(String name) throws NameAssignedException {
 		this.tabellone=new Tabellone();
 		NOMI_ASSEGNATI.add(name);
 		this.contatore=new Contatori();
+		this.controller=new Controller();
 }
 
 	public String getName() {
@@ -82,6 +85,10 @@ public Giocatore(String name) throws NameAssignedException {
 		System.out.println("INCHIOSTRO:"+contatore.contaInchiostro(tabellone));
 		
 		
+	}
+	
+	public Boolean controlla(int id) {
+		return controller.mossaValida(id, tabellone);
 	}
 
 	/**

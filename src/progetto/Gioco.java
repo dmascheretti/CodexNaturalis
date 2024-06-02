@@ -47,9 +47,9 @@ public class Gioco {
 		this.stampa=new Stampa();
 
 
-		System.out.println("CODEX NATURALIS");
+		System.out.println("CODEX NATURALIS\n");
 		
-		System.out.println("\n\nSPIEGAZIONE RISORSE:\n-FUNG=FUNGO\n-INSE=INSETTO\n-ANIM=ANIMALE\n-VEGE=VEGETALE\n-NULL=SPAZIO VUOTO COPRIBILE"
+		System.out.println("\n\nSPIEGAZIONE RISORSE:\n\n-FUNG=FUNGO\n-INSE=INSETTO\n-ANIM=ANIMALE\n-VEGE=VEGETALE\n-NULL=SPAZIO VUOTO COPRIBILE"
 				+ "\n-████=SPAZIO NON COPRIBILE\n-INCH=INCHIOSTRO\n-PERG=PERGAMENA\n-PIUM=PIUMA\n\nImportante!!! Nelle risorse necessarie "
 				+ "delle carte oro la lettera I corrsisponde alla risorsa 'Insetto'");
 
@@ -116,7 +116,7 @@ public class Gioco {
 	 * @throws IOException
 	 */
 	public void Gioca() throws InterruptedException, IOException {
-		int size=5;
+		int size=5; //initial size of tabellone
 		mazzo_iniziale.mescolaMazzo();
 		mazzo_risorse.mescolaMazzo();
 		mazzo_oro.mescolaMazzo();
@@ -286,7 +286,10 @@ public class Gioco {
 					}
 
 					if(scelta==fronte) {
-						block=controller.mossaValida(giocatori[giocatore].scegliCarta(h-1).getID(), giocatori[giocatore].getTabellone());
+						
+						//block=controller.mossaValida(giocatori[giocatore].scegliCarta(h-1).getID(), giocatori[giocatore].getTabellone());
+						
+						block=giocatori[giocatore].controlla(giocatori[giocatore].scegliCarta(h-1).getID());
 
 						if(block==false) System.out.println("\nnon puoi piazzare questa carta, non hai le risorse necessarie\n".toUpperCase());
 						else {giocatori[giocatore].scegliCarta(h-1).setRisFronte();
@@ -373,14 +376,17 @@ public class Gioco {
 				System.out.println("PUNTEGGIO DOPO PIAZZAMENTO: "+giocatori[giocatore].getSomma());
 				
 				TimeUnit.SECONDS.sleep(3);
-				System.out.println("-----MAZZI-----");
-				System.out.println("\nCARTA ORO\n");
+				System.out.println("\n-----MAZZI-----");
+				TimeUnit.SECONDS.sleep(1);
+				System.out.println("\nMAZZO ORO\n");
 				System.out.println(mazzo_oro.getRetro().printCardR());
 
-				System.out.println("\n\nCARTA RISORSA \n");
+				System.out.println("\n\nMAZZO RISORSE \n");
 				System.out.println(mazzo_risorse.getRetro().printCardR());
 				System.out.println();
 
+				TimeUnit.SECONDS.sleep(2);
+				
 				campo_gioco.stampaCartaCampo();
 
 
@@ -417,7 +423,7 @@ public class Gioco {
 
 
 			win=controller.checkWin(giocatori);
-			if(mazzo_oro.getLenght()<giocatori.length || mazzo_risorse.getLenght()<giocatori.length) System.out.println("FINE PARTITE, CARTE TERMINATE"); ;
+			if(mazzo_oro.getLenght()<giocatori.length || mazzo_risorse.getLenght()<giocatori.length) System.out.println("FINE PARTITE, CARTE TERMINATE");
 
 		}while(win==false || mazzo_oro.getLenght()<giocatori.length || mazzo_risorse.getLenght()<giocatori.length);
 
@@ -435,7 +441,7 @@ public class Gioco {
 			giocatori[i].getPunteggio(controller_obiettivi.checkCartaObiettivo(giocatori[i].getObiettivo().getID(),giocatori[i].getTabellone()));
 
 		}
-		//RETURN RANKING, PLAYERS-POINTS
+		//RETURN RANKING, PLAYERS-POINTS AND WINNER
 
 		controller.classifica(giocatori);
 
