@@ -352,6 +352,12 @@ public class Gioco {
 				
 				
 				giocatori[giocatore].getTabellone().removeCorner(x, y);
+				
+				if(scelta==fronte) {
+
+					giocatori[giocatore].getPunteggio(controller.getPunti(giocatori[giocatore].scegliCarta(h-1),giocatori[giocatore].getTabellone(),
+							x, y));
+				}
 
 				giocatori[giocatore].getTabellone().setCella(x, y,giocatori[giocatore].scegliCarta(h-1));
 
@@ -359,11 +365,7 @@ public class Gioco {
 				//giocatori[giocatore].getTabellone().setCella(x, y,giocatori[giocatore].scegliCarta(h-1));
 
 
-				if(scelta==fronte) {
-
-					giocatori[giocatore].getPunteggio(controller.getPunti(giocatori[giocatore].scegliCarta(h-1),giocatori[giocatore].getTabellone(),
-							x, y));
-				}
+				
 				
 				giocatori[giocatore].removeCardIndex(h-1);
 

@@ -200,8 +200,7 @@ public Carta scelta(int carta_pescata,  Mazzo_oro mazzo_oro, Mazzo_risorse mazzo
 				
 			case 3: System.out.println("1:\n"+campo_oro.get(0).printCard());
 					System.out.println("2:\n"+campo_oro.get(1).printCard());
-					System.out.println("Scegli la carta che vuoi aggiungere alla tua mano, 1 o 2");
-				
+			
 					blocca=false;
 
 					while (!blocca || carta_scelta!=1 && carta_scelta!=2) {
