@@ -1,63 +1,54 @@
 package progetto;
 
-import java.util.ArrayList;
-
-import carte.Carta_oro;
-import carte.Carta_risorsa;
+import java.util.concurrent.TimeUnit;
 
 public class Stampa {
 
 	
-	
-	
-public void stampaCartaCampo(ArrayList <Carta_oro> campo_oro, ArrayList <Carta_risorsa> campo_risorsa) {
+	public void stampaObiettivo(Campo_gioco campo_gioco) {
 		
-		System.out.println("\n\n| | | | | | | | | | | | | | | | | | | \n\n\n");
-		System.out.println("\nCARTE SUL CAMPO ORO");
-		
-		for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┬");
-		System.out.print("\n\n");
-		for(int d=0;d<campo_oro.size();d++)System.out.print("PUNTI:"+campo_oro.get(d).getPunteggio()+"                  ");
-		System.out.println("\n\n");
-		for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getID()+"                       ");
-		System.out.println("\n\n");
-		for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getRis1Fronte()+"\t    \t"+campo_oro.get(d).getRis2Fronte()+"\t  ");
-		System.out.println("\n\n");
-		for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getRis3Fronte()+"\t    \t"+campo_oro.get(d).getRis4Fronte()+"\t  ");
-		System.out.println("\n");
-		for(int d=0;d<campo_oro.size();d++) System.out.print("------------------------");
-		System.out.print("\n\n");
-		for(int d=0;d<campo_oro.size();d++)System.out.print("    \t"+campo_oro.get(d).getRis1Centro()+"\t      ");
-		System.out.println("\n\n");
-		for(int d=0;d<campo_oro.size();d++)System.out.print("    \t    \t    \t  ");
-		System.out.println("\n");
-		for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┴");
-			
-			
-			
-		System.out.println("\nCARTE SUL CAMPO RISORSA\n");
+		System.out.println("\n\n\nCARTE OBIETTIVO COMUNI: ");
 
-			
-			for(int d=0;d<campo_risorsa.size();d++) System.out.print("-----------------------┬");
-			System.out.print("\n\n");
-			for(int d=0;d<campo_risorsa.size();d++)System.out.print("PUNTI:"+campo_risorsa.get(d).getPunteggio()+"                  ");
-			System.out.println("\n\n");
-			for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getID()+"                       ");
-			System.out.println("\n\n");
-			for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getRis1Fronte()+"\t    \t"+campo_oro.get(d).getRis2Fronte()+"\t  ");
-			System.out.println("\n\n");
-			for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getRis3Fronte()+"\t    \t"+campo_risorsa.get(d).getRis4Fronte()+"\t  ");
-			System.out.println("\n");
-			for(int d=0;d<campo_risorsa.size();d++) System.out.print("------------------------");
-			System.out.print("\n\n");
-			for(int d=0;d<campo_risorsa.size();d++)System.out.print("    \t"+campo_risorsa.get(d).getRis1Centro()+"\t      ");
-			System.out.println("\n\n");
-			for(int d=0;d<campo_risorsa.size();d++)System.out.print("    \t    \t    \t  ");
-			System.out.println("\n");
-			for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┴");
-			
+		for(int i=0;i<campo_gioco.returnObiettivo().size();i++) campo_gioco.returnObiettivo().get(i).getCarta();
+		System.out.println();
+
+	}
+	
+	public void stampaTurno(int turno) {
+		if(turno<10) {
+			System.out.print("\n\n----------------┐\n");
+			System.out.print("                |\n");
+			System.out.print("                |\n");
+			System.out.print("TURNO NUMERO "+turno+"  |\n");
+			System.out.print("                |\n");
+			System.out.print("                |\n");
+			System.out.print("----------------┘\n\n\n"); 
+		}
+		else {
+			System.out.print("\n\n----------------┐\n");
+			System.out.print("                |\n");
+			System.out.print("                |\n");
+			System.out.print("TURNO NUMERO "+turno+" |\n");
+			System.out.print("                |\n");
+			System.out.print("                |\n");
+			System.out.print("----------------┘\n\n\n");
+		}
+	}
+	
+	public void stampaGiocatore(Giocatore giocatore) throws InterruptedException {
 		
-		
-		
+		TimeUnit.SECONDS.sleep(2);
+		System.out.println("PUNTI: "+giocatore.getSomma());
+		System.out.println("\nCARTA OBIETTIVO DEL GIOCATORE "+giocatore.getName().toUpperCase());
+		giocatore.getObiettivo().getCarta();
+		System.out.println();
+		TimeUnit.SECONDS.sleep(3);
+		System.out.println("TABELLONE DI "+giocatore.getName());
+		TimeUnit.SECONDS.sleep(2);
+		giocatore.getTabellone().printTabellone();
+		System.out.println();
+		giocatore.conta();
+		TimeUnit.SECONDS.sleep(2);
+		System.out.println("TURNO: "+giocatore.getName().toUpperCase());
 	}
 }
