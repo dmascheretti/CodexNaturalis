@@ -46,8 +46,6 @@ public class Campo_gioco {
 		System.out.println("\n\n");
 		for(int d=0;d<campo_oro.size();d++)System.out.print("COLORE:"+campo_oro.get(d).getColore()+"              ");
 		System.out.println("\n\n");
-		for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getID()+"                       ");
-		System.out.println("\n\n");
 		for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getRis1Fronte()+"\t    \t"+campo_oro.get(d).getRis2Fronte()+"\t  ");
 		System.out.println("\n\n");
 		for(int d=0;d<campo_oro.size();d++)System.out.print(campo_oro.get(d).getRis3Fronte()+"\t    \t"+campo_oro.get(d).getRis4Fronte()+"\t  ");
@@ -60,7 +58,7 @@ public class Campo_gioco {
 		System.out.println("\n");
 		for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┴");
 		System.out.println();
-		for(int d=0;d<campo_oro.size();d++)System.out.print("RISORSE NECESSARIE CARTA "+(d+1)+" : "+campo_oro.get(d).getRisNec()+"\n");
+		for(int d=0;d<campo_oro.size();d++)System.out.print("\nRISORSE NECESSARIE CARTA "+(d+1)+" : "+campo_oro.get(d).getRisNec()+"\n");
 
 		System.out.println("\n\n");
 
@@ -77,8 +75,6 @@ public class Campo_gioco {
 		for(int d=0;d<campo_risorsa.size();d++)System.out.print("PUNTI:"+campo_risorsa.get(d).getPunteggio()+"                  ");
 		System.out.println("\n\n");
 		for(int d=0;d<campo_risorsa.size();d++)System.out.print("COLORE:"+campo_oro.get(d).getColore()+"              ");
-		System.out.println("\n\n");
-		for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getID()+"                       ");
 		System.out.println("\n\n");
 		for(int d=0;d<campo_risorsa.size();d++)System.out.print(campo_risorsa.get(d).getRis1Fronte()+"\t    \t"+campo_oro.get(d).getRis2Fronte()+"\t  ");
 		System.out.println("\n\n");

@@ -3,6 +3,7 @@ package progetto;
 import java.util.ArrayList;
 
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.Set;
 
 import carte.Carta;
@@ -185,6 +186,7 @@ public Carta scelta(int carta_pescata,  Mazzo_oro mazzo_oro, Mazzo_risorse mazzo
 		ArrayList<Carta_oro> campo_oro, ArrayList<Carta_risorsa> campo_risorsa){
 		int carta_scelta=0;
 		Carta carta=null;
+		Boolean blocca=false;
 		Scanner sc = new Scanner(System.in);
 			switch(carta_pescata) {
 			
@@ -198,8 +200,22 @@ public Carta scelta(int carta_pescata,  Mazzo_oro mazzo_oro, Mazzo_risorse mazzo
 				
 			case 3: System.out.println("1:\n"+campo_oro.get(0).printCard());
 					System.out.println("2:\n"+campo_oro.get(1).printCard());
-					System.out.println("Scegli la carta che vuoi aggiungere alla tua mano,1 o 2");
-					carta_scelta=sc.nextInt();
+					System.out.println("Scegli la carta che vuoi aggiungere alla tua mano, 1 o 2");
+				
+					blocca=false;
+
+					while (!blocca || carta_scelta!=1 && carta_scelta!=2) {
+						try {
+							System.out.println("Scegli la carta che vuoi aggiungere alla tua mano, 1 o 2");
+							carta_scelta=sc.nextInt();
+							blocca = true; 
+						} catch (InputMismatchException e) {
+							System.out.println("Errore");
+							sc.nextLine();
+
+						}
+					}
+					 
 					carta=campo_oro.get(carta_scelta-1);
 					campo_oro.remove(carta_scelta-1);
 					campo_oro.add((Carta_oro) mazzo_oro.pescaCarta());
@@ -208,8 +224,19 @@ public Carta scelta(int carta_pescata,  Mazzo_oro mazzo_oro, Mazzo_risorse mazzo
 					
 			case 4: System.out.println("1:\n"+campo_risorsa.get(0).printCard());
 				    System.out.println("2:\n"+campo_risorsa.get(1).printCard());
-				    System.out.println("Scegli la carta che vuoi aggiungere alla tua mano,1 o 2");
-				    carta_scelta=sc.nextInt();
+				    blocca=false;
+
+					while (!blocca || carta_scelta!=1 && carta_scelta!=2) {
+						try {
+							System.out.println("Scegli la carta che vuoi aggiungere alla tua mano,1 o 2");
+							carta_scelta=sc.nextInt();
+							blocca = true; 
+						} catch (InputMismatchException e) {
+							System.out.println("Errore");
+							sc.nextLine();
+
+						}
+					}
 					carta=campo_risorsa.get(carta_scelta-1);
 					campo_risorsa.remove(carta_scelta-1);
 					campo_risorsa.add((Carta_risorsa) mazzo_risorse.pescaCarta());
