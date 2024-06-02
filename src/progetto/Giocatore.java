@@ -66,6 +66,7 @@ public Giocatore(String name) throws NameAssignedException {
 		return name;
 	}
 	
+	
 	/**
 	 * Add card to player's hand
 	 * @param carta

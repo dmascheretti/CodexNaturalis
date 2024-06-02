@@ -128,6 +128,8 @@ public class Gioco {
 
 		Scanner sc=new Scanner(System.in);
 
+		
+		
 		for(int i=0;i<giocatori.length;i++) {
 
 			System.out.println("\nTURNO DEL GIOCATORE "+giocatori[i].getName().toUpperCase()+", PREMI INVIO PER CONTUINUARE");
@@ -135,6 +137,8 @@ public class Gioco {
 			//sc.nextLine();
 			TimeUnit.SECONDS.sleep(1);
 
+			//GIVING CARD TO EACH PLAYER
+			
 			giocatori[i].aggiungiaMano(mazzo_iniziale.pescaCarta());
 			mazzo_iniziale.rimuoviCarta();
 			giocatori[i].aggiungiaMano(mazzo_oro.pescaCarta());
@@ -144,6 +148,11 @@ public class Gioco {
 				giocatori[i].aggiungiaMano(mazzo_risorse.pescaCarta());
 				mazzo_risorse.rimuoviCarta();
 			}
+			
+			//END GIVING CARD TO EACH PLAYER
+			
+		
+			
 			//CHOOSING A GOAL CARD EACH PLAYER
 
 			System.out.println("\nSCEGLI UNA CARTA OBIETTIVO TRA: \n");
@@ -197,13 +206,16 @@ public class Gioco {
 
 			if(scelta_iniziale==fronte) giocatori[i].scegliCarta(0).setRisFronte();
 
+			//PLACING STARTING CARD IN TABELLONE
+			
 			giocatori[i].getTabellone().setCella((size/2), (size/2), giocatori[i].scegliCarta(0));
-			giocatori[i].removeCard();
+			giocatori[i].removeCard(); //REMOVING STARTING CARD FROM HAND
 			sc.nextLine();
 			TimeUnit.SECONDS.sleep(2);
-		}//fine for
+		}//FINE FOR
 
-
+		//ADD CARDS TO CAMPO GIOCO
+		
 		campo_gioco.riempi(mazzo_oro, mazzo_risorse, mazzo_obiettivo);
 
 
@@ -226,6 +238,7 @@ public class Gioco {
 			//SWITCHING TURN
 
 			for(int giocatore=0;giocatore<giocatori.length;giocatore++) {
+				
 				boolean blocca=false;
 				int start=0;
 				while (!blocca || start!=0) {
@@ -239,6 +252,8 @@ public class Gioco {
 
 					}
 				}
+				
+				//PRINT ALL THE INFORMATIONS ABOUT THE PLAYER 
 				
 				stampa.stampaGiocatore(giocatori[giocatore]);
 
@@ -286,8 +301,8 @@ public class Gioco {
 					}
 
 					if(scelta==fronte) {
-						
-						//block=controller.mossaValida(giocatori[giocatore].scegliCarta(h-1).getID(), giocatori[giocatore].getTabellone());
+					
+						//CHECK THE NECESSARY RESOURCES
 						
 						block=giocatori[giocatore].controlla(giocatori[giocatore].scegliCarta(h-1).getID());
 
@@ -300,7 +315,7 @@ public class Gioco {
 
 					}
 					if(scelta==retro) {
-						giocatori[giocatore].scegliCarta(h-1).setPunti();
+						giocatori[giocatore].scegliCarta(h-1).setPunti(); //IF PLAY RETRO CARD, POINTS=0
 						System.out.println(giocatori[giocatore].scegliCarta(h-1).printCardFinal());
 					}
 				}while(block==false);
@@ -347,6 +362,7 @@ public class Gioco {
 							giocatori[giocatore].getTabellone().checkCorner(x,y)==false) System.out.println("NON PUOI PIAZZARE LA CARTA IN QUESTA POSIZIONE");
 
 					//CHECKING THE POSSIBILITY TO PLAY THE CARD 
+					
 				}while(giocatori[giocatore].getTabellone().checkCorner(x,y)==false || giocatori[giocatore].getTabellone().checkNext(x, y)==false
 						||giocatori[giocatore].getTabellone().checkEmpty(x, y)!=0);
 				
@@ -359,15 +375,14 @@ public class Gioco {
 							x, y));
 				}
 
-				giocatori[giocatore].getTabellone().setCella(x, y,giocatori[giocatore].scegliCarta(h-1));
+				giocatori[giocatore].getTabellone().setCella(x, y,giocatori[giocatore].scegliCarta(h-1)); //PLACING CARD
 
 
-				//giocatori[giocatore].getTabellone().setCella(x, y,giocatori[giocatore].scegliCarta(h-1));
 
 
 				
 				
-				giocatori[giocatore].removeCardIndex(h-1);
+				giocatori[giocatore].removeCardIndex(h-1); //REMOVING CARD FROM HAND
 
 				System.out.println("PIAZZAMENTO CARTA IN CORSO...");
 				TimeUnit.SECONDS.sleep(3);
@@ -376,6 +391,8 @@ public class Gioco {
 				giocatori[giocatore].getTabellone().printTabellone();
 
 				System.out.println("PUNTEGGIO DOPO PIAZZAMENTO: "+giocatori[giocatore].getSomma());
+				
+				//PRINT THE TABLE 
 				
 				TimeUnit.SECONDS.sleep(3);
 				System.out.println("\n-----MAZZI-----");
@@ -394,7 +411,7 @@ public class Gioco {
 
 				int carta_pescata = 0;
 
-				//PICK A CARD
+				//PICK A CARD FROM THE TABLE
 
 				//boolean blocca=false;
 				blocca=false;
@@ -412,7 +429,7 @@ public class Gioco {
 				}
 
 				Carta carta_nuova = giocatori[giocatore].scelta(carta_pescata, mazzo_oro, mazzo_risorse, campo_gioco.returnOro(),campo_gioco.returnRisorse());
-				giocatori[giocatore].aggiungiaMano(carta_nuova);
+				giocatori[giocatore].aggiungiaMano(carta_nuova); //ADD CARD TO PLAYER HAND
 				System.out.println("\nHAI PESCATO: \n");
 				System.out.println(carta_nuova.printCard());
 
@@ -421,21 +438,21 @@ public class Gioco {
 
 
 			}
-			turno++;
+			turno++; //NEXT TURN
 
 
-			win=controller.checkWin(giocatori);
-			if(mazzo_oro.getLenght()<giocatori.length || mazzo_risorse.getLenght()<giocatori.length) System.out.println("FINE PARTITE, CARTE TERMINATE");
+			win=controller.checkWin(giocatori); //CHECK IF SOMEONE REACHED 20 POINTS
+			if(mazzo_oro.getLenght()<giocatori.length || mazzo_risorse.getLenght()<giocatori.length) System.out.println("FINE PARTITE, CARTE TERMINATE"); //CHECK IF THERE ARE ENOUGH CARDS
 
 		}while(win==false || mazzo_oro.getLenght()<giocatori.length || mazzo_risorse.getLenght()<giocatori.length);
 
 		sc.close();
 
-		System.out.println("FINE GIOCO, CONTEGGIO PUNTI OBIETTIVO, ATTENDI LA CLASSIFICA");
+		System.out.println("FINE GIOCO, CONTEGGIO PUNTI OBIETTIVO, ATTENDI LA CLASSIFICA");//END GAME
 
 		TimeUnit.SECONDS.sleep(4);
 
-		//ADDING FINAL POINTS 
+		//ADDING FINAL POINTS (GOALS)
 
 		for(int i=0;i<giocatori.length;i++) {
 			for(int j=0;j<2;j++) giocatori[i].getPunteggio(controller_obiettivi.checkCartaObiettivo(campo_gioco.returnObiettivo().get(j).getID(), giocatori[i].getTabellone()));
