@@ -162,7 +162,7 @@ public class Controller {
 		case 98: return contaAngoli(tabellone, x, y);
 
 		case 99: return contaAngoli(tabellone, x, y);
-		case 100: return (contatore.contaPiuma(tabellone)+1);
+		case 100: return (contatore.contaPiume(tabellone)+1);
 
 		default: return carta.getPunteggio();
 		}
