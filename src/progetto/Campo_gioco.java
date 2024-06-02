@@ -64,7 +64,7 @@ public class Campo_gioco {
 
 		TimeUnit.SECONDS.sleep(1);
 
-		System.out.println("\n\n-----CARTE SUL CAMPO RISORSA-----\n");
+		System.out.println("-----CARTE SUL CAMPO RISORSA-----\n");
 
 		TimeUnit.SECONDS.sleep(1);
 

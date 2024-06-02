@@ -43,7 +43,7 @@ public class Stampa {
 		giocatore.getObiettivo().getCarta();
 		System.out.println();
 		TimeUnit.SECONDS.sleep(3);
-		System.out.println("STAMPA TABELLONE DI "+giocatore.getName());
+		System.out.println("TABELLONE DI "+giocatore.getName());
 		TimeUnit.SECONDS.sleep(2);
 		giocatore.getTabellone().printTabellone();
 		System.out.println();
