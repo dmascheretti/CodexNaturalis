@@ -131,6 +131,9 @@ public abstract class Carta {
 	}
 
 
+	/**
+	 * @return the front resource
+	 */
 	
 	public String getRis1Fronte() {
 		return ris1Fronte;
@@ -179,6 +182,8 @@ public abstract class Carta {
 		return colore.toString();	
 		}
 	
+	/**This method sets the color to null 
+	 */
 	public void setColore() {
 		colore=Colore_carta.NULL;
 	}
@@ -190,7 +195,10 @@ public abstract class Carta {
 	public int getID() {
 		return ID;
 	}
-	
+	/**
+	 * Print card
+	 * @return card in String
+	 */
 	public String printCard() {
 		
 		return ("ID: "+ID+" \n"+"COLORE "+colore.toString()+"\nRISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
@@ -198,12 +206,19 @@ public abstract class Carta {
 		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
 	}
 
-	
+	/**This method prints the final version of the card
+	 * @return
+	 */
 	public String printCardFinal() {
 
 		return ("\n---------------------╗\n\n"
 				+ris1Retro+ "\t"+ris1Centro+"\t" +ris2Retro+ "\n\n"+ris3Retro+"\t"+ris2Centro+"\t"+ris4Retro+"\n\n---------------------╝");
 	}
+	
+	/**
+	**This method prints the back of a card
+	 * @return the back of the card with its resources
+	 */
 
 public String printCardR() {
 	
@@ -224,14 +239,18 @@ public String printCardR() {
 		ris4Retro="    ";
 	}
 
-	
+	/**
+	 * Set point to 0 when you play retir-card
+	 */
 	public void setPunti() {
 		punti=0;
 	}
 	
 	
 
-	//per giocare fronte
+	/**
+	 * Set retro resource=front resource (when you play front card)
+	 * 	 */
 	public void setRisFronte(){
 		ris1Retro=ris1Fronte;
 		ris2Retro=ris2Fronte;
@@ -243,22 +262,47 @@ public String printCardR() {
 	}
 
 
+	/**
+	 * @return the back resource 
+	 */
 
 	public String getRis1Retro() {
 		return ris1Retro;
 	}
+
+	/**
+	 * @return the back resource 
+	 */
+
 	public String getRis2Retro() {
 		return ris2Retro;
 	}
+
+	/**
+	 * @return the back resource 
+	 */
+
 	public String getRis3Retro() {
 		return ris3Retro;
 	}
+
+	/**
+	 * @return the back resource 
+	 */
+
 	public String getRis4Retro() {
 		return ris4Retro;
 	}
+
+	/**
+	 * @return the center resource
+	 */
 	public String getRis1Centro() {
 		return ris1Centro;
 	}
+	/**
+	 * @return the center resource
+	 */
 	public String getRis2Centro() {
 		return ris2Centro;
 	}

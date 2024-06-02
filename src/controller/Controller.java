@@ -122,15 +122,15 @@ public class Controller {
 		switch(carta.getID()) {
 
 		//1 punto per ogni piuma 
-		case 60:return (contatore.contaPiume(tabellone));
+		case 60:return (contatore.contaPiume(tabellone)+1);
 		//1 punto per pozione
-		case 61:return (contatore.contaInchiostro(tabellone));
+		case 61:return (contatore.contaInchiostro(tabellone)+1);
 		//1 punto per pozione
-		case 62:return (contatore.contaInchiostro(tabellone));
+		case 62:return (contatore.contaInchiostro(tabellone)+1);
 		//esempio ogni angolo coperto 2 punti
 		case 63: return contaAngoli(tabellone,x,y);
 		//1 punto per pergamena		
-		case 64:return (contatore.contaPergamene(tabellone));
+		case 64:return (contatore.contaPergamene(tabellone)+1);
 
 		//esempio ogni angolo coperto 2 punti
 		case 65: return contaAngoli(tabellone,x,y);
@@ -138,31 +138,31 @@ public class Controller {
 		//esempio ogni angolo coperto 2 punti
 		case 66: return contaAngoli(tabellone,x,y);
 		//1 punto per pergamena
-		case 67:return (contatore.contaPergamene(tabellone));
+		case 67:return (contatore.contaPergamene(tabellone)+1);
 		//1 punto per pozione
-		case 68:return (contatore.contaInchiostro(tabellone));
+		case 68:return (contatore.contaInchiostro(tabellone)+1);
 		//esempio ogni angolo coperto 2 punti
 		case 69: return contaAngoli(tabellone,x,y);
 		//1 punto per pozione
-		case 70:return (contatore.contaInchiostro(tabellone));
+		case 70:return (contatore.contaInchiostro(tabellone)+1);
 		//esempio ogni angolo coperto 2 punti
 		case 71: return contaAngoli(tabellone,x,y);
 
 		case 80: return contaAngoli(tabellone, x, y);
-		case 81: return (contatore.contaPergamene(tabellone));
-		case 82: return (contatore.contaPiume(tabellone));
+		case 81: return (contatore.contaPergamene(tabellone)+1);
+		case 82: return (contatore.contaPiume(tabellone)+1);
 		case 83: return contaAngoli(tabellone, x, y);
 		case 85:  return contaAngoli(tabellone, x, y);
 
 		case 86:return contaAngoli(tabellone, x, y);
-		case 91: return contatore.contaPiume(tabellone);
+		case 91: return (contatore.contaPiume(tabellone)+1);
 		case 96: return contaAngoli(tabellone, x, y);
-		case 97: return contatore.contaPergamene(tabellone);
+		case 97: return (contatore.contaPergamene(tabellone)+1);
 
 		case 98: return contaAngoli(tabellone, x, y);
 
 		case 99: return contaAngoli(tabellone, x, y);
-		case 100: return contatore.contaAnimali(tabellone);
+		case 100: return (contatore.contaPiuma(tabellone)+1);
 
 		default: return carta.getPunteggio();
 		}
