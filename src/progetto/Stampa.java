@@ -35,6 +35,11 @@ public class Stampa {
 		}
 	}
 	
+	/**
+	 * 
+	 * Print informations about player
+	 
+	 */
 	public void stampaGiocatore(Giocatore giocatore) throws InterruptedException {
 		
 		TimeUnit.SECONDS.sleep(2);
