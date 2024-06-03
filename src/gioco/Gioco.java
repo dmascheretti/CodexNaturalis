@@ -125,6 +125,7 @@ public class Gioco {
 
 		int scelta,scelta_obiettivo=0;
 		int scelta_iniziale=0, fronte=0, retro=1;
+		Boolean fineturno=true;
 
 		Scanner sc=new Scanner(System.in);
 
@@ -431,7 +432,7 @@ public class Gioco {
 				System.out.println("\nHAI PESCATO: \n");
 				System.out.println(carta_nuova.printCard());
 
-				Boolean fineturno=true;
+				
 				if(giocatori[giocatore].getSomma()>19 && (giocatore!=giocatori.length-1)) {
 					System.out.println("HAI RAGGIUNTO 20 PUNTI, ASPETTA CHE FINISCA IL TURNO");
 					fineturno=false;
