@@ -422,7 +422,7 @@ public class Gioco {
 
 				//boolean blocca=false;
 				blocca=false;
-				while (!blocca) {
+				while (!blocca || carta_pescata!=1 && carta_pescata!=2 && carta_pescata!=3 && carta_pescata!=4) {
 					try {
 						System.out.println("\n\n"+giocatori[giocatore].getName()+": da che mazzo vuoi pescare:\n1-PESCA DAL MAZZO ORO\n"
 								+ "2-PESCA DAL MAZZO RISORSE\n3-PRENDI UNA CARTA ORO SCOPERTA\n4-PRENDI UNA CARTA RISORSA SCOPERTA");
