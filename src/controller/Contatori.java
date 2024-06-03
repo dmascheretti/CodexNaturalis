@@ -1,7 +1,7 @@
 package controller;
 
-import progetto.Regno;
-import progetto.Tabellone;
+import carte.Regno;
+import gioco.Tabellone;
 
 public class Contatori {
 
@@ -13,7 +13,10 @@ public class Contatori {
 		
 	}
 	
-	
+	/**
+	* @param tabellone
+	 * @return Total insects
+	 */
 
 	public int contaInsetti(Tabellone tabellone) {
 		l=tabellone.getSize();
@@ -45,6 +48,12 @@ public class Contatori {
 		return insetti;
 }
 	
+	
+	/**
+	 * @param tabellone
+	 * @return total mushroom
+	 */
+
 	public int contaFunghi(Tabellone tabellone) {
 		l=tabellone.getSize();
 		int funghi=0;
@@ -75,6 +84,10 @@ public class Contatori {
 		return funghi;
 }
 	
+	/**
+	 * @param tabellone
+	 * @return The total number of plants
+	 */
 
 	public int contaVegetali(Tabellone tabellone) {
 		l=tabellone.getSize();
@@ -106,7 +119,11 @@ public class Contatori {
 		return vegetali;
 }
 	
-	
+	/**
+	 * @param tabellone
+	 * @return the total number of animal
+	 */
+
 	public int contaAnimali(Tabellone tabellone) {
 		l=tabellone.getSize();
 		int animali=0;
@@ -137,7 +154,11 @@ public class Contatori {
 		return animali;
 }
 	
-	
+	/**
+	 * @param tabellone
+	 * @return Total feathers
+	 */
+
 	public int contaPiume(Tabellone tabellone) {
 		l=tabellone.getSize();
 		int piume=0;
@@ -168,6 +189,11 @@ public class Contatori {
 		return piume;
 }
 	
+	/**
+	 * @param tabellone
+	 * @return the total number of inks
+	 */
+
 	public int contaInchiostro(Tabellone tabellone) {
 		l=tabellone.getSize();
 		int inchiostro=0;
@@ -198,7 +224,11 @@ public class Contatori {
 		return inchiostro;
 }
 	
-	
+	/**
+	 * @param tabellone
+	 * @return The total number of scrolls
+	 */
+
 	public int contaPergamene(Tabellone tabellone) {
 		l=tabellone.getSize();
 		int pergamene=0;

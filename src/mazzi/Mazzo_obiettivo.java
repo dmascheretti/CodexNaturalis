@@ -45,19 +45,31 @@ public class Mazzo_obiettivo extends Mazzo{
 		mazzo_obiettivo.add(carta_obiettivo20);
 	}
 
+/**
+ * print deck
+ */
 public void printMazzo() {
     for (int i = 0; i < mazzo_obiettivo.size(); i++)
     	mazzo_obiettivo.get(i).getCarta();
 }
 
+/**
+ * shuffle deck
+ */
 public void mescolaMazzo() {
     Collections.shuffle(mazzo_obiettivo);
 }
+/**
+ *get deck
+ */
 public void getMazzo() {
 	for(int i=0;i<mazzo_obiettivo.size();i++) mazzo_obiettivo.get(i);
 }
 
 
+/**
+ *@return the first card of the deck
+ */
 public Carta_obiettivo pescaCarta() {
     return mazzo_obiettivo.get(0);
 }
@@ -66,6 +78,9 @@ public Carta_obiettivo pescaCartaIndex(int i) {
 	return mazzo_obiettivo.get(i);
 }
 
+/**
+ *remove the drawn card
+ */
 public void rimuoviCarta() {
 	mazzo_obiettivo.remove(0);
 }
@@ -84,7 +99,7 @@ public int getLenght() {
 
 @Override
 public void printCarta(Carta carta) {
-	// TODO Auto-generated method stub
+	// TODO Auto-generated method stub
 	
 }
 

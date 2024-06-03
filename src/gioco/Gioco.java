@@ -1,4 +1,4 @@
-package progetto;
+package gioco;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -230,7 +230,6 @@ public class Gioco {
 			for(int p=0; p< giocatori.length; p++) System.out.println("PUNTEGGIO GIOCATORE "+giocatori[p].getName()
 					+": "+giocatori[p].getSomma());
 			
-			
 			stampa.stampaObiettivo(campo_gioco);
 
 
@@ -238,6 +237,9 @@ public class Gioco {
 			//SWITCHING TURN
 
 			for(int giocatore=0;giocatore<giocatori.length;giocatore++) {
+				
+				
+				//giocatori[giocatore].turno(mazzo_oro, mazzo_risorse, campo_gioco);
 				
 				boolean blocca=false;
 				int start=0;
@@ -322,14 +324,10 @@ public class Gioco {
 
 
 
-
-				//blocca=false;
-
 				do {
 					x=0;
 					y=0;
 					System.out.println("in che posizione del tabellone vuoi piazzarla? prima x, poi y (tra 1 e "+ (giocatori[giocatore].getTabellone().getSize()-2)+")");
-					//boolean blocca=false;
 					blocca=false;
 					while (!blocca || x<1 || x>(giocatori[giocatore].getTabellone().getSize()-2) ) {
 						try {

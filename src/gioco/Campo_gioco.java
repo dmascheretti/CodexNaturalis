@@ -1,4 +1,4 @@
-package progetto;
+package gioco;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;

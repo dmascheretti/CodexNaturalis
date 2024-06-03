@@ -1,4 +1,4 @@
-package progetto;
+package carte;
 
 public enum Regno {
 	

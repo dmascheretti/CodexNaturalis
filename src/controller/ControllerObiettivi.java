@@ -1,7 +1,7 @@
 package controller;
 
-import progetto.Tabellone;
-import progetto.Colore_carta;
+import carte.Colore_carta;
+import gioco.Tabellone;
 
 public class ControllerObiettivi {
 	private Contatori contatore;

@@ -5,8 +5,8 @@ import java.util.Collections;
 
 import carte.Carta;
 import carte.Carta_oro;
-import progetto.Colore_carta;
-import progetto.Regno;
+import carte.Colore_carta;
+import carte.Regno;
 
 
 public class Mazzo_oro extends Mazzo{
@@ -29,7 +29,7 @@ public class Mazzo_oro extends Mazzo{
 			1,"VVI (1 PUNTO PER PERGAMENA)", Colore_carta.VERDE,Regno.VEGE.toString(),64);
 	
 	private Carta_oro carta_oro65=new Carta_oro(Regno.NULL.toString(),Regno.INCH.toString(),Regno.ANIM.toString(),Regno.FUNG.toString(),
-			2,"AIV (PUNTI PER ANGOLO COPERTO)", Colore_carta.ROSSO,Regno.FUNG.toString(),65);
+			2,"AVV (PUNTI PER ANGOLO COPERTO)", Colore_carta.ROSSO,Regno.FUNG.toString(),65);
 	
 	private Carta_oro carta_oro66=new Carta_oro("████",Regno.INCH.toString(),Regno.INSE.toString(),"████",
 			2,"III (PUNTI PER ANGOLO COPERTO)", Colore_carta.ROSSO,Regno.FUNG.toString(),66);
@@ -66,10 +66,10 @@ public class Mazzo_oro extends Mazzo{
 	
 	
 	private Carta_oro carta_oro77=new Carta_oro(Regno.FUNG.toString(),Regno.INCH.toString(),"████",Regno.INSE.toString(),
-			2,"IAF", Colore_carta.VIOLA,Regno.INSE.toString(),77);
+			2,"IIF", Colore_carta.VIOLA,Regno.INSE.toString(),77);
 
 	private Carta_oro carta_oro78=new Carta_oro(Regno.INSE.toString(),Regno.INCH.toString(),Regno.INSE.toString(),"████",
-			2,"IAFV", Colore_carta.VIOLA,Regno.INSE.toString(),78);
+			2,"AAFV", Colore_carta.VIOLA,Regno.INSE.toString(),78);
 
 	private Carta_oro carta_oro79=new Carta_oro(Regno.NULL.toString(),Regno.INCH.toString(),"████","████",
 			3,"AAA", Colore_carta.BLU,Regno.ANIM.toString(),79);
@@ -189,15 +189,24 @@ public class Mazzo_oro extends Mazzo{
 
 	}
 
+	/**
+	 * print deck
+	 */
 	public void printMazzo() {
 		for(int i=0;i<mazzo_oro.size();i++) System.out.println(mazzo_oro.get(i).printCard());
 	}
 
+	/**
+	 *get deck
+	 */
 	public void getMazzo() {
 		for(int i=0;i<mazzo_oro.size();i++) mazzo_oro.get(i);
 	}
 
 
+	/**
+	 *shuffle deck
+	 */
 	public void mescolaMazzo() {
 		Collections.shuffle(mazzo_oro);
 	}
@@ -210,22 +219,34 @@ public class Mazzo_oro extends Mazzo{
 	}
 
 
+	/**
+	 *get the first card of the deck
+	 */
 	public Carta_oro pescaCarta(){
 
 		return mazzo_oro.get(0);
 	}
 
+
+	/**
+	 *uses getcarta and print the taken card
+	 */
 	public void printCarta(Carta carta_oro) {
 		System.out.println("Hai pescato:\t\t");
 		carta_oro.getCarta();
 	}
 
+	/**
+	 *@returnthe size of the card
+	 */
 	public int getLenght() {
 		return mazzo_oro.size();
 
 	}
 
 }
+
+
 
 
 

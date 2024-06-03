@@ -1,8 +1,5 @@
 package carte;
 
-
-import progetto.Colore_carta;
-
 public abstract class Carta {
 
 	protected String risorsenec;

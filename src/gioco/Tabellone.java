@@ -1,8 +1,9 @@
-package progetto;
+package gioco;
 
 
 import carte.Carta;
 import carte.Carta_iniziale;
+import carte.Colore_carta;
 
 
 /**

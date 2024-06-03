@@ -1,7 +1,5 @@
 package carte;
 
-import progetto.Colore_carta;
-
 public class Carta_oro extends Carta{
 
 public Carta_oro(String risorse1, String risorse2, String risorse3, String risorse4, int punti, String risorsenec,

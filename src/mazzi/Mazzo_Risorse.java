@@ -5,8 +5,8 @@ import java.util.Collections;
 
 import carte.Carta;
 import carte.Carta_risorsa;
-import progetto.Colore_carta;
-import progetto.Regno;
+import carte.Colore_carta;
+import carte.Regno;
 
 
 public class Mazzo_risorse extends Mazzo{
@@ -179,29 +179,45 @@ public class Mazzo_risorse extends Mazzo{
 
 
 
+    /**
+	 * print deck
+	 */
 	public void printMazzo() {
         for (int i = 0; i < mazzo_risorse.size(); i++)
             System.out.println(mazzo_risorse.get(i).getPunti());
     }
-
+	/**
+	 *get deck
+	 */
 	public void getMazzo() {
 		for(int i=0;i<mazzo_risorse.size();i++) mazzo_risorse.get(i);
 	}
+	/**
+	 * shuffle deck
+	 */
     public void mescolaMazzo() {
         Collections.shuffle(mazzo_risorse);
     }
-
+    /**
+     *remove the drawn card
+     */
     public void rimuoviCarta()
     {
     	mazzo_risorse.remove(0);
     }
 
     
+    /**
+     *@return the first card of mazzo risorsa
+     */
     public Carta_risorsa pescaCarta() {
  
         return mazzo_risorse.get(0);
     }
 
+    /**
+     *@return length of mazzo risorsa 
+     */
     public int getLenght() {
     	return mazzo_risorse.size();
     	
@@ -216,10 +232,14 @@ public class Mazzo_risorse extends Mazzo{
 
 
 
+
 	@Override
 	public void printCarta(Carta carta) {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+
   
 }

@@ -1,7 +1,5 @@
 package carte;
 
-import progetto.Colore_carta;
-
 public class Carta_risorsa extends Carta{
 	private int punti;
 	private Colore_carta color;

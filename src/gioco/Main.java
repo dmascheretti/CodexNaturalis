@@ -1,4 +1,4 @@
-package progetto;
+package gioco;
 
 import java.io.IOException;
 

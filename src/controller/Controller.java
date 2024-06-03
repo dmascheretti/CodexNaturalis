@@ -3,11 +3,8 @@ package controller;
 
 
 import carte.Carta;
-
-import progetto.Giocatore;
-
-
-import progetto.Tabellone;
+import gioco.Giocatore;
+import gioco.Tabellone;
 
 public class Controller {
 
@@ -19,7 +16,7 @@ public class Controller {
 
 	}
 
-
+	
 	public void classifica(Giocatore [] giocatori) {
 		for(int cl=0;cl<giocatori.length;cl++) {
 			System.out.println("\n"+giocatori[cl].getName()+" HA TOTALIZZATO "+giocatori[cl].getSomma()+"PUNTI");
@@ -27,6 +24,11 @@ public class Controller {
 	}
 
 
+	/**The function checks whether the move associated with a certain id is valid by checking some specific conditions of the "Tabellone"
+	 * @param id
+	 * @param tabellone
+	 * @return
+	 */
 	public Boolean mossaValida(int id, Tabellone tabellone) {
 
 
@@ -41,7 +43,7 @@ public class Controller {
 		else return false;
 		case 64: if(contatore.contaVegetali(tabellone)>1 && contatore.contaInsetti(tabellone)>0) return true;
 		else return false;
-		case 65: if(contatore.contaAnimali(tabellone)>0 && contatore.contaInsetti(tabellone)>0 && contatore.contaVegetali(tabellone)>0) return true;
+		case 65: if(contatore.contaAnimali(tabellone)>0 && contatore.contaVegetali(tabellone)>1) return true;
 		else return false;
 		case 66: if(contatore.contaInsetti(tabellone)>2) return true;
 		else return false;
@@ -65,9 +67,9 @@ public class Controller {
 		else return false;
 		case 76: if(contatore.contaInsetti(tabellone)>4) return true;
 		else return false;
-		case 77: if(contatore.contaInsetti(tabellone)>0 && contatore.contaAnimali(tabellone)>0 && contatore.contaFunghi(tabellone)>0) return true;
+		case 77: if(contatore.contaInsetti(tabellone)>1 && contatore.contaFunghi(tabellone)>0) return true;
 		else return false;
-		case 78: if(contatore.contaInsetti(tabellone)>0 && contatore.contaAnimali(tabellone)>0 && contatore.contaFunghi(tabellone)>0 && contatore.contaVegetali(tabellone)>0) return true;
+		case 78: if(contatore.contaAnimali(tabellone)>1 && contatore.contaFunghi(tabellone)>0 && contatore.contaVegetali(tabellone)>0)return true;
 		else return false;
 		case 79: if(contatore.contaAnimali(tabellone)>2) return true;
 		else return false;
@@ -118,6 +120,14 @@ public class Controller {
 	}
 
 
+	/**
+	 * function that returns the points of each carfunction that returns the points of each card
+	 * @param carta
+	 * @param tabellone
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public int getPunti(Carta carta, Tabellone tabellone, int x, int y) {
 		switch(carta.getID()) {
 
@@ -170,6 +180,13 @@ public class Controller {
 	}
 
 
+	
+	/**
+	 * @param tabellone
+	 * @param x
+	 * @param y
+	 * @return the number of angles occupied
+	 */
 
 	public int contaAngoli(Tabellone tabellone, int x, int y)
 	{
@@ -186,6 +203,14 @@ public class Controller {
 
 
 	}
+	
+	
+	/**
+	 * Check if the number of points is 20 to end the game
+	 * @param giocatori
+	 * @return 
+	 */
+
 	public Boolean checkWin(Giocatore[] giocatori) {
 		boolean win=false;
 		for(int current=0;current<giocatori.length;current++){ 
@@ -198,6 +223,11 @@ public class Controller {
 		return win;
 	}
 	
+	
+	/**Function that tells who won
+	 * @param giocatori
+	 */
+
 	public void vittoria (Giocatore[] giocatori) {
 		int max=0;
 		int contatore=0;
