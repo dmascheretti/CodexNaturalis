@@ -48,7 +48,7 @@ public class Gioco {
 
 
 		System.out.println("CODEX NATURALIS\n");
-		
+
 		System.out.println("\n\nSPIEGAZIONE RISORSE:\n\n-FUNG=FUNGO\n-INSE=INSETTO\n-ANIM=ANIMALE\n-VEGE=VEGETALE\n-NULL=SPAZIO VUOTO COPRIBILE"
 				+ "\n-████=SPAZIO NON COPRIBILE\n-INCH=INCHIOSTRO\n-PERG=PERGAMENA\n-PIUM=PIUMA\n\nImportante!!! Nelle risorse necessarie "
 				+ "delle carte oro la lettera I corrsisponde alla risorsa 'Insetto'");
@@ -56,11 +56,11 @@ public class Gioco {
 		Scanner sc=new Scanner(System.in);
 		int inizio=1;
 		while(inizio!=0) {
-		System.out.println("\n\nPREMI 0 PER INIZIARE UNA NUOVA PARTITA, 1 PER TERMINARE");
-		inizio=sc.nextInt();
-		if(inizio==1) Runtime.getRuntime().exit(inizio);
+			System.out.println("\n\nPREMI 0 PER INIZIARE UNA NUOVA PARTITA, 1 PER TERMINARE");
+			inizio=sc.nextInt();
+			if(inizio==1) Runtime.getRuntime().exit(inizio);
 		}
-		
+
 		int n=0;
 		Boolean blocca=false;
 
@@ -87,12 +87,12 @@ public class Gioco {
 				for (int i=0;i<n;i++) {
 					String name;;
 					do {
-						
-					System.out.println("\nSelezione nome giocatore "+(i+1)+", il nome non può essere vuoto ");
-					name=sc2.nextLine();
-					
+
+						System.out.println("\nSelezione nome giocatore "+(i+1)+", il nome non può essere vuoto ");
+						name=sc2.nextLine();
+
 					}while(name.isBlank());
-					
+
 					this.giocatori[i]=new Giocatore(name);
 
 				}
@@ -104,9 +104,9 @@ public class Gioco {
 
 		}
 	}
-	
-	
-	
+
+
+
 
 
 
@@ -128,8 +128,8 @@ public class Gioco {
 
 		Scanner sc=new Scanner(System.in);
 
-		
-		
+
+
 		for(int i=0;i<giocatori.length;i++) {
 
 			System.out.println("\nTURNO DEL GIOCATORE "+giocatori[i].getName().toUpperCase()+", PREMI INVIO PER CONTUINUARE");
@@ -138,7 +138,7 @@ public class Gioco {
 			TimeUnit.SECONDS.sleep(1);
 
 			//GIVING CARD TO EACH PLAYER
-			
+
 			giocatori[i].aggiungiaMano(mazzo_iniziale.pescaCarta());
 			mazzo_iniziale.rimuoviCarta();
 			giocatori[i].aggiungiaMano(mazzo_oro.pescaCarta());
@@ -148,11 +148,11 @@ public class Gioco {
 				giocatori[i].aggiungiaMano(mazzo_risorse.pescaCarta());
 				mazzo_risorse.rimuoviCarta();
 			}
-			
+
 			//END GIVING CARD TO EACH PLAYER
-			
-		
-			
+
+
+
 			//CHOOSING A GOAL CARD EACH PLAYER
 
 			System.out.println("\nSCEGLI UNA CARTA OBIETTIVO TRA: \n");
@@ -207,7 +207,7 @@ public class Gioco {
 			if(scelta_iniziale==fronte) giocatori[i].scegliCarta(0).setRisFronte();
 
 			//PLACING STARTING CARD IN TABELLONE
-			
+
 			giocatori[i].getTabellone().setCella((size/2), (size/2), giocatori[i].scegliCarta(0));
 			giocatori[i].removeCard(); //REMOVING STARTING CARD FROM HAND
 			sc.nextLine();
@@ -215,7 +215,7 @@ public class Gioco {
 		}//FINE FOR
 
 		//ADD CARDS TO CAMPO GIOCO
-		
+
 		campo_gioco.riempi(mazzo_oro, mazzo_risorse, mazzo_obiettivo);
 
 
@@ -224,12 +224,12 @@ public class Gioco {
 		int turno=1;
 		int h= 0,x = 0,y = 0;
 		do {
-			
+
 			stampa.stampaTurno(turno);
-			
+
 			for(int p=0; p< giocatori.length; p++) System.out.println("PUNTEGGIO GIOCATORE "+giocatori[p].getName()
 					+": "+giocatori[p].getSomma());
-			
+
 			stampa.stampaObiettivo(campo_gioco);
 
 
@@ -237,10 +237,10 @@ public class Gioco {
 			//SWITCHING TURN
 
 			for(int giocatore=0;giocatore<giocatori.length;giocatore++) {
-				
-				
+
+
 				//giocatori[giocatore].turno(mazzo_oro, mazzo_risorse, campo_gioco);
-				
+
 				boolean blocca=false;
 				int start=0;
 				while (!blocca || start!=0) {
@@ -254,9 +254,9 @@ public class Gioco {
 
 					}
 				}
-				
+
 				//PRINT ALL THE INFORMATIONS ABOUT THE PLAYER 
-				
+
 				stampa.stampaGiocatore(giocatori[giocatore]);
 
 
@@ -303,9 +303,9 @@ public class Gioco {
 					}
 
 					if(scelta==fronte) {
-					
+
 						//CHECK THE NECESSARY RESOURCES
-						
+
 						block=giocatori[giocatore].controlla(giocatori[giocatore].scegliCarta(h-1).getID());
 
 						if(block==false) System.out.println("\nnon puoi piazzare questa carta, non hai le risorse necessarie\n".toUpperCase());
@@ -360,13 +360,13 @@ public class Gioco {
 							giocatori[giocatore].getTabellone().checkCorner(x,y)==false) System.out.println("NON PUOI PIAZZARE LA CARTA IN QUESTA POSIZIONE");
 
 					//CHECKING THE POSSIBILITY TO PLAY THE CARD 
-					
+
 				}while(giocatori[giocatore].getTabellone().checkCorner(x,y)==false || giocatori[giocatore].getTabellone().checkNext(x, y)==false
 						||giocatori[giocatore].getTabellone().checkEmpty(x, y)!=0);
-				
-				
+
+
 				giocatori[giocatore].getTabellone().removeCorner(x, y);
-				
+
 				if(scelta==fronte) {
 
 					giocatori[giocatore].getPunteggio(controller.getPunti(giocatori[giocatore].scegliCarta(h-1),giocatori[giocatore].getTabellone(),
@@ -378,8 +378,8 @@ public class Gioco {
 
 
 
-				
-				
+
+
 				giocatori[giocatore].removeCardIndex(h-1); //REMOVING CARD FROM HAND
 
 				System.out.println("PIAZZAMENTO CARTA IN CORSO...");
@@ -389,9 +389,9 @@ public class Gioco {
 				giocatori[giocatore].getTabellone().printTabellone();
 
 				System.out.println("PUNTEGGIO DOPO PIAZZAMENTO: "+giocatori[giocatore].getSomma());
-				
+
 				//PRINT THE TABLE 
-				
+
 				TimeUnit.SECONDS.sleep(3);
 				System.out.println("\n-----MAZZI-----");
 				TimeUnit.SECONDS.sleep(1);
@@ -403,7 +403,7 @@ public class Gioco {
 				System.out.println();
 
 				TimeUnit.SECONDS.sleep(2);
-				
+
 				campo_gioco.stampaCartaCampo();
 
 
@@ -430,7 +430,7 @@ public class Gioco {
 				giocatori[giocatore].aggiungiaMano(carta_nuova); //ADD CARD TO PLAYER HAND
 				System.out.println("\nHAI PESCATO: \n");
 				System.out.println(carta_nuova.printCard());
-				
+
 				Boolean fineturno=true;
 				if(giocatori[giocatore].getSomma()>19 && (giocatore!=giocatori.length-1)) {
 					System.out.println("HAI RAGGIUNTO 20 PUNTI, ASPETTA CHE FINISCA IL TURNO");

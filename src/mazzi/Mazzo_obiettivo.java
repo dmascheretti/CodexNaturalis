@@ -8,7 +8,7 @@ import carte.Carta_obiettivo;
 
 public class Mazzo_obiettivo extends Mazzo{
 	private ArrayList <Carta_obiettivo> mazzo_obiettivo= new ArrayList<Carta_obiettivo>();
-	
+
 	private Carta_obiettivo carta_obiettivo5= new Carta_obiettivo(5, 3, "pergamena, inchiostro, piuma\n".toUpperCase());
 	private Carta_obiettivo carta_obiettivo6= new Carta_obiettivo(6, 2, "\nVIOLA\n\tVIOLA\n\t\tVIOLA\n");
 	private Carta_obiettivo carta_obiettivo7= new Carta_obiettivo(7, 2, "\nVERDE\n\tVERDE\n\t\tVERDE\n");
@@ -25,7 +25,7 @@ public class Mazzo_obiettivo extends Mazzo{
 	private Carta_obiettivo carta_obiettivo18= new Carta_obiettivo(18, 2, "insetto, insetto, insetto\n".toUpperCase());
 	private Carta_obiettivo carta_obiettivo19= new Carta_obiettivo(19, 2, "pergamena, pergamena\n".toUpperCase());
 	private Carta_obiettivo carta_obiettivo20= new Carta_obiettivo(20, 2, "piuma, piuma\n".toUpperCase());
-	
+
 	public Mazzo_obiettivo() {
 		mazzo_obiettivo.add(carta_obiettivo5);
 		mazzo_obiettivo.add(carta_obiettivo6);
@@ -45,63 +45,63 @@ public class Mazzo_obiettivo extends Mazzo{
 		mazzo_obiettivo.add(carta_obiettivo20);
 	}
 
-/**
- * print deck
- */
-public void printMazzo() {
-    for (int i = 0; i < mazzo_obiettivo.size(); i++)
-    	mazzo_obiettivo.get(i).getCarta();
-}
+	/**
+	 * print deck
+	 */
+	public void printMazzo() {
+		for (int i = 0; i < mazzo_obiettivo.size(); i++)
+			mazzo_obiettivo.get(i).getCarta();
+	}
 
-/**
- * shuffle deck
- */
-public void mescolaMazzo() {
-    Collections.shuffle(mazzo_obiettivo);
-}
-/**
- *get deck
- */
-public void getMazzo() {
-	for(int i=0;i<mazzo_obiettivo.size();i++) mazzo_obiettivo.get(i);
-}
+	/**
+	 * shuffle deck
+	 */
+	public void mescolaMazzo() {
+		Collections.shuffle(mazzo_obiettivo);
+	}
+	/**
+	 *get deck
+	 */
+	public void getMazzo() {
+		for(int i=0;i<mazzo_obiettivo.size();i++) mazzo_obiettivo.get(i);
+	}
 
 
-/**
- *@return the first card of the deck
- */
-public Carta_obiettivo pescaCarta() {
-    return mazzo_obiettivo.get(0);
-}
+	/**
+	 *@return the first card of the deck
+	 */
+	public Carta_obiettivo pescaCarta() {
+		return mazzo_obiettivo.get(0);
+	}
 
-public Carta_obiettivo pescaCartaIndex(int i) {
-	return mazzo_obiettivo.get(i);
-}
+	public Carta_obiettivo pescaCartaIndex(int i) {
+		return mazzo_obiettivo.get(i);
+	}
 
-/**
- *remove the drawn card
- */
-public void rimuoviCarta() {
-	mazzo_obiettivo.remove(0);
-}
+	/**
+	 *remove the drawn card
+	 */
+	public void rimuoviCarta() {
+		mazzo_obiettivo.remove(0);
+	}
 
-@Override
-public Carta getRetro() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public Carta getRetro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-@Override
-public int getLenght() {
-	// TODO Auto-generated method stub
-	return 0;
-}
+	@Override
+	public int getLenght() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
-@Override
-public void printCarta(Carta carta) {
-	// TODO Auto-generated method stub
-	
-}
+	@Override
+	public void printCarta(Carta carta) {
+		// TODO Auto-generated method stub
+
+	}
 
 
 

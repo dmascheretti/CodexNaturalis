@@ -12,59 +12,59 @@ import carte.Regno;
 public class Mazzo_oro extends Mazzo{
 
 	private ArrayList<Carta_oro> mazzo_oro = new ArrayList<Carta_oro>();
-	
+
 	private Carta_oro carta_oro60=new Carta_oro(Regno.NULL.toString(),Regno.PERG.toString(),Regno.NULL.toString(),"████",
 			1,"AAA (1 PUNTO PER PIUMA)", Colore_carta.BLU,Regno.ANIM.toString(),60);
-	
+
 	private Carta_oro carta_oro61=new Carta_oro(Regno.NULL.toString(),Regno.INCH.toString(),"████",Regno.NULL.toString(),
 			1,"VAA (1 PUNTO PER INCHIOSTRO)", Colore_carta.BLU,Regno.ANIM.toString(),61);
-	
+
 	private Carta_oro carta_oro62=new Carta_oro("████",Regno.PERG.toString(),Regno.NULL.toString(),"████",
 			1,"IAA (1 PUNTO PER INCHIOSTRO)", Colore_carta.BLU,Regno.ANIM.toString(),62);
-	
+
 	private Carta_oro carta_oro63=new Carta_oro(Regno.NULL.toString(),Regno.PIUM.toString(),Regno.ANIM.toString(),"████",
 			2,"VII (PUNTI PER ANGOLO COPERTO)", Colore_carta.VERDE,Regno.VEGE.toString(),63);
-	
+
 	private Carta_oro carta_oro64=new Carta_oro(Regno.NULL.toString(),Regno.PIUM.toString(),"████",Regno.VEGE.toString(),
 			1,"VVI (1 PUNTO PER PERGAMENA)", Colore_carta.VERDE,Regno.VEGE.toString(),64);
-	
+
 	private Carta_oro carta_oro65=new Carta_oro(Regno.NULL.toString(),Regno.INCH.toString(),Regno.ANIM.toString(),Regno.FUNG.toString(),
 			2,"AVV (PUNTI PER ANGOLO COPERTO)", Colore_carta.ROSSO,Regno.FUNG.toString(),65);
-	
+
 	private Carta_oro carta_oro66=new Carta_oro("████",Regno.INCH.toString(),Regno.INSE.toString(),"████",
 			2,"III (PUNTI PER ANGOLO COPERTO)", Colore_carta.ROSSO,Regno.FUNG.toString(),66);
-	
+
 	private Carta_oro carta_oro67=new Carta_oro(Regno.NULL.toString(),Regno.PERG.toString(),"████",Regno.VEGE.toString(),
 			1,"VVV (1 PUNTO PER PERGAMENA)", Colore_carta.ROSSO,Regno.FUNG.toString(),67);
-	
+
 	private Carta_oro carta_oro68=new Carta_oro(Regno.NULL.toString(),Regno.PERG.toString(),Regno.FUNG.toString(),Regno.INSE.toString(),
 			1,"FFF (1 PUNTO PER POZIONE)", Colore_carta.BLU,Regno.ANIM.toString(),68);
-	
+
 	private Carta_oro carta_oro69=new Carta_oro(Regno.NULL.toString(),"████",Regno.PIUM.toString(),"████",
 			2,"FAA (PUNTI PER ANGOLO COPERTO)", Colore_carta.BLU,Regno.ANIM.toString(),69);
-	
+
 	private Carta_oro carta_oro70=new Carta_oro(Regno.NULL.toString(),Regno.PIUM.toString(),Regno.INCH.toString(),"████",
 			1,"IIF (1 PUNTO PER INCHIOSTRO)", Colore_carta.VERDE,Regno.VEGE.toString(),70);
-	
+
 	private Carta_oro carta_oro71=new Carta_oro(Regno.NULL.toString(),Regno.INCH.toString(),Regno.NULL.toString(),Regno.NULL.toString(),
 			2,"VFF (PUNTI PER ANGOLO COPERTO)", Colore_carta.VERDE,Regno.VEGE.toString(),71);
-	
+
 	private Carta_oro carta_oro72=new Carta_oro(Regno.ANIM.toString(),Regno.INCH.toString(),Regno.VEGE.toString(),"████",
 			1,"VVA", Colore_carta.ROSSO,Regno.FUNG.toString(),72);
-	
+
 	private Carta_oro carta_oro73=new Carta_oro(Regno.INCH.toString(),Regno.PERG.toString(),Regno.VEGE.toString(),"████",
 			3,"AAAI", Colore_carta.ROSSO,Regno.FUNG.toString(),73);
-	
+
 	private Carta_oro carta_oro74=new Carta_oro(Regno.NULL.toString(),Regno.PERG.toString(),"████",Regno.ANIM.toString(),
 			2,"FFVI", Colore_carta.BLU,Regno.ANIM.toString(),74);
-	
+
 	private Carta_oro carta_oro75=new Carta_oro(Regno.NULL.toString(),"████","████","████",
 			1,"AAV", Colore_carta.BLU,Regno.ANIM.toString(),75);
-	
+
 	private Carta_oro carta_oro76=new Carta_oro(Regno.NULL.toString(),"████",Regno.PERG.toString(),Regno.INSE.toString(),
 			5,"IIIII", Colore_carta.VIOLA,Regno.INSE.toString(),76);
-	
-	
+
+
 	private Carta_oro carta_oro77=new Carta_oro(Regno.FUNG.toString(),Regno.INCH.toString(),"████",Regno.INSE.toString(),
 			2,"IIF", Colore_carta.VIOLA,Regno.INSE.toString(),77);
 
@@ -213,7 +213,7 @@ public class Mazzo_oro extends Mazzo{
 	public void rimuoviCarta(){
 		mazzo_oro.remove(0);
 	}
-	
+
 	public Carta_oro getRetro() {
 		return mazzo_oro.get(0);
 	}

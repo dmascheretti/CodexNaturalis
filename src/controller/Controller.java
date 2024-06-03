@@ -1,7 +1,5 @@
 package controller;
 
-
-
 import carte.Carta;
 import gioco.Giocatore;
 import gioco.Tabellone;
@@ -16,7 +14,7 @@ public class Controller {
 
 	}
 
-	
+
 	public void classifica(Giocatore [] giocatori) {
 		for(int cl=0;cl<giocatori.length;cl++) {
 			System.out.println("\n"+giocatori[cl].getName()+" HA TOTALIZZATO "+giocatori[cl].getSomma()+"PUNTI");
@@ -180,7 +178,7 @@ public class Controller {
 	}
 
 
-	
+
 	/**
 	 * @param tabellone
 	 * @param x
@@ -203,8 +201,8 @@ public class Controller {
 
 
 	}
-	
-	
+
+
 	/**
 	 * Check if the number of points is 20 to end the game
 	 * @param giocatori
@@ -222,8 +220,8 @@ public class Controller {
 		}
 		return win;
 	}
-	
-	
+
+
 	/**Function that tells who won
 	 * @param giocatori
 	 */
@@ -240,20 +238,20 @@ public class Controller {
 				}
 				max=punteggio;
 			}
-			
+
 		}
 		if (contatore>0)
 		{
 			System.out.println("\nPAREGGIO");
 		}else {
-		for (int l1= 0; l1<giocatori.length;l1++) {
-			if (contatore==0 && giocatori[l1].getSomma()==max)
-			{
-				System.out.println("\n"+giocatori[l1].getName()+" HA VINTO ");
+			for (int l1= 0; l1<giocatori.length;l1++) {
+				if (contatore==0 && giocatori[l1].getSomma()==max)
+				{
+					System.out.println("\n"+giocatori[l1].getName()+" HA VINTO ");
+				}
 			}
 		}
-		}
-		
+
 	}
 }
 

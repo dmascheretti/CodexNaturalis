@@ -20,10 +20,10 @@ public class Campo_gioco {
 		this.campo_risorsa=new ArrayList<Carta_risorsa>();
 		this.carte_obiettivo=new ArrayList<Carta_obiettivo>();
 	}
-	
+
 	/**
 	 * Add card to campo gioco (gold and resource)
-	 
+
 	 */
 	public void riempi(Mazzo_oro mazzo_oro, Mazzo_risorse mazzo_risorse, Mazzo_obiettivo mazzo_obiettivo) {
 		for(int l=0;l<2;l++) {
@@ -38,18 +38,18 @@ public class Campo_gioco {
 		}	
 	}
 
-	
+
 	/**
 	 * Print cards in campo_gioco
-	 
+
 	 */
-	
+
 	public void stampaCartaCampo() throws InterruptedException {
 
 		System.out.println("\n\n\n\n"); 
 		System.out.println("\n\n-----CARTE SUL CAMPO ORO-----");
 		TimeUnit.SECONDS.sleep(1);
-		
+
 		System.out.println("\nCARTA 1                 CARTA 2");
 		for(int d=0;d<campo_oro.size();d++) System.out.print("-----------------------┬");
 		System.out.print("\n\n");
@@ -115,7 +115,7 @@ public class Campo_gioco {
 
 	/**
 	 * Return all the campo_gioco and obiettivo
-	 
+
 	 */
 	public ArrayList<Carta_oro> returnOro(){
 		return campo_oro;

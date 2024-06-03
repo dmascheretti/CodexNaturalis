@@ -13,15 +13,15 @@ public abstract class Carta {
 	protected String ris2Retro;
 	protected String ris3Retro;
 	protected String ris4Retro;
-	
+
 	protected String ris1Centro;
 	protected String ris2Centro;
-	
+
 	protected Colore_carta colore;
 	protected String obiettivo;
 	protected final int ID;
 
-	
+
 	/**Constructor method that creates a gold card
 	 * @param ris1Fronte front resource 
 	 * @param ris2Fronte front resource 
@@ -45,14 +45,14 @@ public abstract class Carta {
 		this.punti=punti;
 		this.colore=colore;
 		this.ID=ID;
-		
+
 		this.ris1Retro="    ";
 		this.ris2Retro="    ";
 		this.ris3Retro="    ";
 		this.ris4Retro="    ";
 		this.ris2Centro="    ";
 	}
-	
+
 	/**Constructor method that creates a resource card 
 	 * @param ris1Fronte front resource 
 	 * @param ris2Fronte front resource 
@@ -65,7 +65,7 @@ public abstract class Carta {
 	 */
 	public Carta(String ris1Fronte,String ris2Fronte, String ris3Fronte,String ris4Fronte,int punti, Colore_carta colore,
 			String ris1Centro, int ID) {
-		
+
 		this.ris1Centro=ris1Centro;
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
@@ -74,13 +74,13 @@ public abstract class Carta {
 		this.punti=punti;
 		this.colore=colore;
 		this.ID=ID;
-		
+
 		this.ris1Retro="    ";
 		this.ris2Retro="    ";
 		this.ris3Retro="    ";
 		this.ris4Retro="    ";
 		this.ris2Centro="    ";
-		
+
 	}
 
 	/** Constructor method that creates a starting card
@@ -104,18 +104,18 @@ public abstract class Carta {
 		this.ris2Retro=ris2Retro;
 		this.ris3Retro=ris3Retro;
 		this.ris4Retro=ris4Retro;
-		
+
 		this.ris1Fronte=ris1Fronte;
 		this.ris2Fronte=ris2Fronte;
 		this.ris3Fronte=ris3Fronte;
 		this.ris4Fronte=ris4Fronte;
-		
+
 		this.ris1Centro=ris1Centro;
 		this.ris2Centro=ris2Centro;
 		this.ID=ID;
 		this.colore=Colore_carta.NULL;
 	}
-	
+
 	/**Constructor method that creates a goal card
 	 * @param ID the card identification code 
 	 * @param punti card's points
@@ -131,7 +131,7 @@ public abstract class Carta {
 	/**
 	 * @return the front resource
 	 */
-	
+
 	public String getRis1Fronte() {
 		return ris1Fronte;
 	}
@@ -153,8 +153,8 @@ public abstract class Carta {
 	public String getRis4Fronte() {
 		return ris4Fronte;
 	}
-	
-	
+
+
 	/**
 	 * prints card
 	 */
@@ -177,14 +177,14 @@ public abstract class Carta {
 	}
 	public String getColore() {
 		return colore.toString();	
-		}
-	
+	}
+
 	/**This method sets the color to null 
 	 */
 	public void setColore() {
 		colore=Colore_carta.NULL;
 	}
-	
+
 	public String getRisorse() {
 		return risorsenec;
 	}
@@ -197,10 +197,10 @@ public abstract class Carta {
 	 * @return card in String
 	 */
 	public String printCard() {
-		
+
 		return ("ID: "+ID+" \n"+"COLORE "+colore.toString()+"\nRISORSE NECESSARIE: "+risorsenec+"\nFRONTE\n"
-		+"-----------------------------\n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+
-		"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
+				+"-----------------------------\n"+ris1Fronte+ "\t\t\t" +ris2Fronte+ "\n"+ris3Fronte+"\t\t\t"+ris4Fronte+
+				"\n-----------------------------"+ "\n\nRETRO:\n-----------------------------\n" + "[]\t"+ris1Retro+"\t[]\n-----------------------------\n");
 	}
 
 	/**This method prints the final version of the card
@@ -211,17 +211,17 @@ public abstract class Carta {
 		return ("\n---------------------╗\n\n"
 				+ris1Retro+ "\t"+ris1Centro+"\t" +ris2Retro+ "\n\n"+ris3Retro+"\t"+ris2Centro+"\t"+ris4Retro+"\n\n---------------------╝");
 	}
-	
+
 	/**
-	**This method prints the back of a card
+	 **This method prints the back of a card
 	 * @return the back of the card with its resources
 	 */
 
-public String printCardR() {
-	
-	return ("\n---------------------╗\n\n"
-			+"\t" +ris1Centro+ "\n\n"+"    "+"\t\t"+"    "+"\n\n---------------------╝");
-}
+	public String printCardR() {
+
+		return ("\n---------------------╗\n\n"
+				+"\t" +ris1Centro+ "\n\n"+"    "+"\t\t"+"    "+"\n\n---------------------╝");
+	}
 
 	public void setRis1Retro(){
 		ris1Retro="    ";
@@ -242,8 +242,8 @@ public String printCardR() {
 	public void setPunti() {
 		punti=0;
 	}
-	
-	
+
+
 
 	/**
 	 * Set retro resource=front resource (when you play front card)
@@ -304,7 +304,4 @@ public String printCardR() {
 		return ris2Centro;
 	}
 
-	
-	
-	
-	}
+}
