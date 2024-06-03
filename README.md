@@ -10,7 +10,7 @@ You can also play any card in your hand face down, which expands your play area 
 The game concludes after a player reaches 20 points and the current round is completed.
 
 ### Our group's version
-We created an accurate digital version of the board game using JavaScript, delivering a fun and immersive experience for all players. To play the game, simply open your Java IDE and get ready for an entertaining match with your friends.
+We created an accurate digital version of the board game using Java, delivering a fun and immersive experience for all players. To play the game, simply open your Java IDE and get ready for an entertaining match with your friends.
 
 #### Contributors in alphabetical order
 - Caglioni Gabriele
