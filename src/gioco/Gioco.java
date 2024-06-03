@@ -55,15 +55,23 @@ public class Gioco {
 
 		Scanner sc=new Scanner(System.in);
 		int inizio=1;
-		while(inizio!=0) {
-			System.out.println("\n\nPREMI 0 PER INIZIARE UNA NUOVA PARTITA, 1 PER TERMINARE");
-			inizio=sc.nextInt();
-			if(inizio==1) Runtime.getRuntime().exit(inizio);
-		}
 
 		int n=0;
 		Boolean blocca=false;
+		while (!blocca || inizio!=0 && inizio!=1 ) {
+		try {
+			System.out.println("\n\nPREMI 0 PER INIZIARE UNA NUOVA PARTITA, 1 PER TERMINARE");
+			inizio=sc.nextInt();
+			if(inizio==1) Runtime.getRuntime().exit(inizio);
+			blocca = true; 
+		} catch (InputMismatchException e) {
+			System.out.println("Errore inserisci un numero valido");
+			sc.nextLine(); //consuma quello che ho nel buffer e svuota
 
+		}
+	}
+		
+		blocca=false;
 		while (!blocca || n<2 || n>4 ) {
 			try {
 				System.out.print("\n\nInserisci un numero di giocatori tra 2 e 4: \n");
@@ -437,7 +445,7 @@ public class Gioco {
 					System.out.println("HAI RAGGIUNTO 20 PUNTI, ASPETTA CHE FINISCA IL TURNO");
 					fineturno=false;
 				}
-				if(fineturno!=false) System.out.println("\n\nCAMBIO TURNO...\n");
+				if((fineturno==false && giocatore!=giocatori.length-1)|| fineturno==true) System.out.println("\n\nCAMBIO TURNO...\n");
 
 
 			}
