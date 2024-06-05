@@ -1,3 +1,4 @@
+"Questo progetto digitale è stato realizzato esclusivamente per scopi educativi e non commerciali. Codex Naturalis è un prodotto protetto da copyright, e tutti i diritti relativi al nome, ai contenuti e alle immagini di Codex Naturalis sono di proprietà dei legittimi proprietari. L'utilizzo di Codex Naturalis in questo progetto è inteso unicamente a fini didattici e non implica alcuna affiliazione o approvazione da parte dei proprietari del copyright."
 # CODEX NATURALIS | BOARD GAME
 ## A project of the University of Bergamo
 ![codex naturalis banner](https://github.com/dmascheretti/Codex/assets/126692938/ca54c2f8-a47a-4038-b5ca-5910b9d8e569)
